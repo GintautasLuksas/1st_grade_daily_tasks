@@ -1,0 +1,86 @@
+{
+  "Pirmadienis (Monday)": [
+    {
+      "subject": "🇬🇧 Anglų kalba: Žodžių medžioklė",
+      "description": "Paklausk 3 žodžių, kuriuos nori sužinoti anglų kalba. Parašysim juos.",
+      "prompts": ["Žodis 1 (LT):", "Žodis 1 (EN):", "Žodis 2 (LT):", "Žodis 2 (EN):", "Žodis 3 (LT):", "Žodis 3 (EN):"]
+    },
+    {
+      "subject": "🧮 Matematika: Sekos",
+      "description": "Parašyk sekančius 4 sekos elementus.",
+      "prompts": ["Seka 1 (5, 8, 11, 14...):", "Seka 2 (10, 20, 30...):", "Seka 3 (2, 4, 8...):"]
+    }
+  ],
+  "Antradienis (Tuesday)": [
+    {
+      "subject": "🇬🇧 Anglų kalba: Dienos įvykis",
+      "description": "Parašykime 3 sakinius anglų kalba su pirmadienio žodžiais.",
+      "prompts": ["Sakinys 1:", "Sakinys 2:", "Sakinys 3:"]
+    },
+    {
+      "subject": "🧮 Matematika: Laikas",
+      "description": "Apskaičiuokite laiką.",
+      "prompts": ["Dabar 06:44. Kiek bus po 22 min?", "Dabar 10:18. Kiek bus po 19 min?"]
+    }
+  ],
+  "Trečiadienis (Wednesday)": [
+    {
+      "subject": "🇬🇧 Anglų kalba: Perskaitykime kartu",
+      "description": "Sukurk trumpą istoriją iš savo žodžių.",
+      "prompts": ["Tavo istorija:"]
+    },
+    {
+      "subject": "🧮 Matematika: Veiksmai",
+      "description": "Išspręskite šiuos uždavinius.",
+      "prompts": ["12 * 12 =", "33 + 38 =", "160 - 14 ="]
+    }
+  ],
+  "Ketvirtadienis (Thursday)": [
+    {
+      "subject": "🇬🇧 Anglų kalba: Dienos žodis",
+      "description": "Išmok naują žodį ir pavartok jį.",
+      "prompts": ["Naujas žodis:", "Sakinys su juo:"]
+    },
+    {
+      "subject": "🧮 Matematika: Pinigai",
+      "description": "Apskaičiuok grąžą.",
+      "prompts": ["Turi 5.70€, ledai kainuoja 1.50€. Kiek liko?", "Kitas pirkimas (sugalvok):"]
+    }
+  ],
+  "Penktadienis (Friday)": [
+    {
+      "subject": "🇬🇧 Anglų kalba: Filmukas",
+      "description": "Parašyk 3 sakinius apie tai, ką matei filmuke.",
+      "prompts": ["Sakinys 1:", "Sakinys 2:", "Sakinys 3:"]
+    },
+    {
+      "subject": "🧮 Matematika: Loginė užduotis",
+      "description": "Išspręsk šiandienos galvosūkį.",
+      "prompts": ["Tavo atsakymas:"]
+    }
+  ],
+  "Šeštadienis (Saturday)": [
+    {
+      "subject": "🇬🇧 Anglų kalba: Klausome ir piešiame",
+      "description": "Aprašyk 3 dalykus, kuriuos nupiešei klausydama.",
+      "prompts": ["Dalykas 1:", "Dalykas 2:", "Dalykas 3:"]
+    },
+    {
+      "subject": "🧮 Matematika: Loginė užduotis 2",
+      "description": "Antroji savaitės mįslė.",
+      "prompts": ["Sprendimas:"]
+    }
+  ],
+  "Sekmadienis (Sunday)": [
+    {
+      "subject": "🇬🇧 Anglų kalba: Laisvas skaitymas",
+      "description": "Apibendrink savaitę anglų kalba.",
+      "prompts": ["Mano savaitė:"]
+    },
+    {
+      "subject": "🧮 Matematika: Greitas skaičiavimas",
+      "description": "Baigiamieji savaitės veiksmai.",
+      "prompts": ["16 * 2 =", "66 + 13 =", "21 * 3 =", "199 - 13 ="]
+    }
+  ]
+}
