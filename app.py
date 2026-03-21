@@ -4,8 +4,7 @@ import csv
 import os
 from datetime import datetime
 
-# --- CONFIGURATION ---
-st.set_page_config(page_title="Jorės Užduotys", page_icon="📚", layout="centered")
+st.set_page_config(page_title="Užduotys", page_icon="📚", layout="centered")
 
 
 # --- LOAD DATA ---

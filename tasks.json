@@ -1,8 +1,8 @@
 {
   "Pirmadienis (Monday)": [
     {
-      "subject": "🇬🇧 Anglų kalba: Žodžių medžioklė",
-      "description": "Paklausk 3 žodžių, kuriuos nori sužinoti anglų kalba. Parašysim juos.",
+      "subject": "Anglų kalba: Žodžių medžioklė",
+      "description": "Parašyk 3 žodžius lietuviškai, kuriuos nori sužinoti anglų kalba.",
       "prompts": ["Žodis 1 (LT):", "Žodis 1 (EN):", "Žodis 2 (LT):", "Žodis 2 (EN):", "Žodis 3 (LT):", "Žodis 3 (EN):"]
     },
     {
@@ -13,7 +13,7 @@
   ],
   "Antradienis (Tuesday)": [
     {
-      "subject": "🇬🇧 Anglų kalba: Dienos įvykis",
+      "subject": "Anglų kalba: Dienos įvykis",
       "description": "Parašykime 3 sakinius anglų kalba su pirmadienio žodžiais.",
       "prompts": ["Sakinys 1:", "Sakinys 2:", "Sakinys 3:"]
     },
@@ -25,7 +25,7 @@
   ],
   "Trečiadienis (Wednesday)": [
     {
-      "subject": "🇬🇧 Anglų kalba: Perskaitykime kartu",
+      "subject": "Anglų kalba: Perskaitykime kartu",
       "description": "Sukurk trumpą istoriją iš savo žodžių.",
       "prompts": ["Tavo istorija:"]
     },
@@ -37,7 +37,7 @@
   ],
   "Ketvirtadienis (Thursday)": [
     {
-      "subject": "🇬🇧 Anglų kalba: Dienos žodis",
+      "subject": "Anglų kalba: Dienos žodis",
       "description": "Išmok naują žodį ir pavartok jį.",
       "prompts": ["Naujas žodis:", "Sakinys su juo:"]
     },
@@ -49,7 +49,7 @@
   ],
   "Penktadienis (Friday)": [
     {
-      "subject": "🇬🇧 Anglų kalba: Filmukas",
+      "subject": "Anglų kalba: Filmukas",
       "description": "Parašyk 3 sakinius apie tai, ką matei filmuke.",
       "prompts": ["Sakinys 1:", "Sakinys 2:", "Sakinys 3:"]
     },
@@ -61,7 +61,7 @@
   ],
   "Šeštadienis (Saturday)": [
     {
-      "subject": "🇬🇧 Anglų kalba: Klausome ir piešiame",
+      "subject": "Anglų kalba: Klausome ir piešiame",
       "description": "Aprašyk 3 dalykus, kuriuos nupiešei klausydama.",
       "prompts": ["Dalykas 1:", "Dalykas 2:", "Dalykas 3:"]
     },
@@ -73,7 +73,7 @@
   ],
   "Sekmadienis (Sunday)": [
     {
-      "subject": "🇬🇧 Anglų kalba: Laisvas skaitymas",
+      "subject": "Anglų kalba: Laisvas skaitymas",
       "description": "Apibendrink savaitę anglų kalba.",
       "prompts": ["Mano savaitė:"]
     },
