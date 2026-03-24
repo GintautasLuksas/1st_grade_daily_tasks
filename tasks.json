@@ -1,15 +1,18 @@
 {
   "Pirmadienis (Monday)": [
     {
-      "subject": "Anglų kalba: Žodžių medžioklė",
-      "description": "Parašyk 3 žodžius lietuviškai, kuriuos nori sužinoti anglų kalba.",
-      "prompts": ["Žodis 1 (LT):", "Žodis 1 (EN):", "Žodis 2 (LT):", "Žodis 2 (EN):", "Žodis 3 (LT):", "Žodis 3 (EN):"]
+      "subject": "🇬🇧 Anglų kalba: Žodžių medžioklė",
+      "description": "Paklausk 3 žodžių, kuriuos nori sužinoti anglų kalba.",
+      "prompts": ["Žodis 1:", "Žodis 2:", "Žodis 3:"],
+      "answers": ["apple", "bread", "water"]
     },
     {
       "subject": "🧮 Matematika: Sekos",
-      "description": "Parašyk sekančius 4 sekos elementus.",
-      "prompts": ["Seka 1 (5, 8, 11, 14...):", "Seka 2 (10, 20, 30...):", "Seka 3 (2, 4, 8...):"]
+      "description": "Įrašyk sekančius 4 sekos elementus (pvz. seka didėja po 3).",
+      "prompts": ["5, 8, 11, 14..."],
+      "answers": ["17, 20, 23, 26"]
     }
+
   ],
   "Antradienis (Tuesday)": [
     {
