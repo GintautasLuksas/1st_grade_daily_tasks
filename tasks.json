@@ -1,89 +1,208 @@
 {
   "Pirmadienis (Monday)": [
     {
-      "subject": "🇬🇧 Anglų kalba: Žodžių medžioklė",
-      "description": "Paklausk 3 žodžių, kuriuos nori sužinoti anglų kalba.",
-      "prompts": ["Žodis 1:", "Žodis 2:", "Žodis 3:"],
-      "answers": ["apple", "bread", "water"]
+      "subject": "Anglų kalba",
+      "symbol": "📚",
+      "type": "translation",
+      "prompts": ["Žodis 1", "Žodis 2", "Žodis 3"],
+      "lt_words": ["Obuolys", "Duona", "Vanduo"],
+      "en_answers": ["Apple", "Bread", "Water"]
     },
     {
-      "subject": "🧮 Matematika: Sekos",
-      "description": "Įrašyk sekančius 4 sekos elementus (pvz. seka didėja po 3).",
-      "prompts": ["5, 8, 11, 14..."],
-      "answers": ["17, 20, 23, 26"]
+      "subject": "Matematika: Sekos",
+      "symbol": "🔢",
+      "type": "sequence",
+      "prompts": ["5, 8, 11...", "10, 20, 30...", "A, B, C, D..."],
+      "answers": [
+        ["14", "17", "20", "23"],
+        ["40", "50", "60", "70"],
+        ["E", "F", "G", "H"]
+      ]
     }
-
   ],
   "Antradienis (Tuesday)": [
     {
-      "subject": "Anglų kalba: Dienos įvykis",
-      "description": "Parašykime 3 sakinius anglų kalba su pirmadienio žodžiais.",
-      "prompts": ["Sakinys 1:", "Sakinys 2:", "Sakinys 3:"]
+      "subject": "Anglų kalba: Sakiniai",
+      "symbol": "✍️",
+      "type": "text",
+      "check": false,
+      "prompts": [
+        "Sakinys su 'Apple':",
+        "Sakinys su 'Bread':",
+        "Sakinys su 'Water':"
+      ],
+      "answers": ["", "", ""]
     },
     {
-      "subject": "🧮 Matematika: Laikas",
-      "description": "Apskaičiuokite laiką.",
-      "prompts": ["Dabar 06:44. Kiek bus po 22 min?", "Dabar 10:18. Kiek bus po 19 min?"]
+      "subject": "Matematika: Laikas",
+      "symbol": "⏰",
+      "type": "text",
+      "check": true,
+      "prompts": [
+        "06:44 + 0:22 = ?",
+        "07:10 + 0:44 = ?",
+        "12:15 + 1:15 = ?"
+      ],
+      "answers": ["07:06", "07:54", "13:30"]
     }
   ],
   "Trečiadienis (Wednesday)": [
     {
-      "subject": "Anglų kalba: Perskaitykime kartu",
-      "description": "Sukurk trumpą istoriją iš savo žodžių.",
-      "prompts": ["Tavo istorija:"]
+      "subject": "Anglų kalba: Istorija",
+      "symbol": "📝",
+      "type": "area",
+      "check": false,
+      "prompts": ["Sukurk istoriją (bent 2 sakinius) su žodžiais: Apple, Bread, Water"],
+      "answers": [""]
     },
     {
-      "subject": "🧮 Matematika: Veiksmai",
-      "description": "Išspręskite šiuos uždavinius.",
-      "prompts": ["12 * 12 =", "33 + 38 =", "160 - 14 ="]
+      "subject": "Matematika: Laikrodis",
+      "symbol": "🕒",
+      "type": "clock",
+      "prompts": ["Kokia tai valanda?", "Kokia tai valanda?"],
+      "times": ["03:30", "10:15"]
     }
   ],
-  "Ketvirtadienis (Thursday)": [
+"Ketvirtadienis (Thursday)": [
     {
-      "subject": "Anglų kalba: Dienos žodis",
-      "description": "Išmok naują žodį ir pavartok jį.",
-      "prompts": ["Naujas žodis:", "Sakinys su juo:"]
+      "subject": "Anglų kalba: Naujas žodis 'Friend' (Draugas)",
+      "symbol": "🆕",
+      "type": "text",
+      "check": false,
+      "prompts": [
+        "Parašyk 1-ą sakinį su žodžiu 'Friend':",
+        "Parašyk 2-ą sakinį su žodžiu 'Friend':",
+        "Parašyk 3-ią sakinį su žodžiu 'Friend':"
+      ],
+      "answers": ["", "", ""]
     },
     {
-      "subject": "🧮 Matematika: Pinigai",
-      "description": "Apskaičiuok grąžą.",
-      "prompts": ["Turi 5.70€, ledai kainuoja 1.50€. Kiek liko?", "Kitas pirkimas (sugalvok):"]
+      "subject": "Matematika: Pinigai ir grąža",
+      "symbol": "💶",
+      "type": "text",
+      "check": true,
+      "prompts": [
+        "Turi 5€ 71ct. Perki vynuoges už 1€ 64ct. Kiek liks?",
+        "Turi 8€ 33ct. Perki kebabą už 2€ 89ct. Kiek liko?",
+        "Turi 12€ 41ct. Perki agurkus už 1€ 07ct. Kiek liko?"
+      ],
+      "answers": ["4.07", "5.44", "11.34"]
     }
   ],
-  "Penktadienis (Friday)": [
+
+"Penktadienis (Friday)": [
     {
-      "subject": "Anglų kalba: Filmukas",
-      "description": "Parašyk 3 sakinius apie tai, ką matei filmuke.",
-      "prompts": ["Sakinys 1:", "Sakinys 2:", "Sakinys 3:"]
+      "subject": "Anglų kalba: Filmuko apžvalga",
+      "symbol": "🎬",
+      "type": "area",
+      "check": false,
+      "prompts": ["Parašyk bent 3 sakinius apie žiūrėtą filmuką (ką matei, kas patiko?):"],
+      "answers": [""]
     },
     {
-      "subject": "🧮 Matematika: Loginė užduotis",
-      "description": "Išspręsk šiandienos galvosūkį.",
-      "prompts": ["Tavo atsakymas:"]
+      "subject": "Matematika: Logika (Autobusas)",
+      "symbol": "🚌",
+      "type": "text",
+      "check": true,
+      "prompts": [
+        "Autobuse važiavo 8 vaikai. Stotelėje išlipo 3, o įlipo 5. Kiek dabar autobuse vaikų?"
+      ],
+      "answers": ["10"]
+    },
+    {
+      "subject": "Matematika: Obuolių grandinėlė",
+      "symbol": "🍎",
+      "type": "text",
+      "check": true,
+      "prompts": [
+        "Turėjau 10 obuolių, suvalgiau 5. Kiek liko?",
+        "Tada tėtis atnešė dar 6 obuolius. Kiek dabar turiu iš viso?"
+      ],
+      "answers": ["5", "11"]
     }
   ],
+
+
   "Šeštadienis (Saturday)": [
     {
-      "subject": "Anglų kalba: Klausome ir piešiame",
-      "description": "Aprašyk 3 dalykus, kuriuos nupiešei klausydama.",
-      "prompts": ["Dalykas 1:", "Dalykas 2:", "Dalykas 3:"]
+      "subject": "Logika: Skaičių mįslė",
+      "symbol": "🧩",
+      "type": "text",
+      "check": true,
+      "prompts": [
+        "Aš esu skaičius. Jei prie manęs pridėsi 5, gausi 15. Koks aš skaičius?"
+      ],
+      "answers": ["10"]
     },
     {
-      "subject": "🧮 Matematika: Loginė užduotis 2",
-      "description": "Antroji savaitės mįslė.",
-      "prompts": ["Sprendimas:"]
+      "subject": "Logika: Batų poros",
+      "symbol": "👟",
+      "type": "text",
+      "check": true,
+      "prompts": [
+        "Spintoje yra 3 poros batų. Kiek batų iš viso yra spintoje?"
+      ],
+      "answers": ["6"]
+    },
+    {
+      "subject": "Logika: Kas sunkesnis?",
+      "symbol": "⚖️",
+      "type": "text",
+      "check": true,
+      "prompts": [
+        "Kas sunkesnis: 1 kilogramas vatos ar 1 kilogramas geležies? (Rašyk: abu vienodai / vata / geležis)"
+      ],
+      "answers": ["abu vienodai"]
     }
   ],
-  "Sekmadienis (Sunday)": [
+
+"Sekmadienis (Sunday)": [
     {
-      "subject": "Anglų kalba: Laisvas skaitymas",
-      "description": "Apibendrink savaitę anglų kalba.",
-      "prompts": ["Mano savaitė:"]
+      "subject": "Anglų kalba: Savaitės kartojimas",
+      "symbol": "🔄",
+      "type": "area",
+      "check": false,
+      "prompts": ["Sukurk 3 sakinius anglų kalba naudodama žodžius: Apple, Bread, Water"],
+      "answers": [""]
     },
     {
-      "subject": "🧮 Matematika: Greitas skaičiavimas",
-      "description": "Baigiamieji savaitės veiksmai.",
-      "prompts": ["16 * 2 =", "66 + 13 =", "21 * 3 =", "199 - 13 ="]
+      "subject": "Matematika: Daugyba",
+      "symbol": "✖️",
+      "type": "text",
+      "check": true,
+      "prompts": [
+        "11 * 4 =",
+        "9 * 10 =",
+        "8 * 7 =",
+        "7 * 9 ="
+      ],
+      "answers": ["44", "90", "56", "63"]
+    },
+    {
+      "subject": "Matematika: Sudėtis",
+      "symbol": "➕",
+      "type": "text",
+      "check": true,
+      "prompts": [
+        "29 + 79 =",
+        "58 + 22 =",
+        "47 + 28 =",
+        "116 + 78 ="
+      ],
+      "answers": ["108", "80", "75", "194"]
+    },
+    {
+      "subject": "Matematika: Atimtis",
+      "symbol": "➖",
+      "type": "text",
+      "check": true,
+      "prompts": [
+        "116 - 79 =",
+        "76 - 17 =",
+        "980 - 72 =",
+        "758 - 101 ="
+      ],
+      "answers": ["37", "59", "908", "657"]
     }
   ]
 }

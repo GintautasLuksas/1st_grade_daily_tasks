@@ -1,83 +1,148 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import json
-import csv
 import os
+import math
 from datetime import datetime
 
-st.set_page_config(page_title="Užduotys", page_icon="📚", layout="centered")
+# --- APP CONFIG ---
+st.set_page_config(page_title="Jorės Mokykla", page_icon="🇱🇹", layout="centered")
 
 
-# --- LOAD DATA ---
-# This function loads the tasks from your JSON file
-def load_tasks(filepath="tasks.json"):
+def load_data():
+    """Safe loading of tasks.json."""
     try:
-        with open(filepath, "r", encoding="utf-8") as file:
-            return json.load(file)
-    except FileNotFoundError:
-        st.error("Nerastas tasks.json failas! Prašau sukurti failą su užduotimis.")
+        if not os.path.exists("tasks.json"):
+            st.error("Nerastas 'tasks.json' failas!")
+            return {}
+        with open("tasks.json", "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        st.error(f"JSON Klaida: {e}")
         return {}
 
 
-# This function saves the answers to a CSV log file
-def save_log(day, answers_dict):
-    file_exists = os.path.isfile("log.csv")
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+def draw_clock(time_str):
+    """Upgraded Analog Clock with 1-12 numbers and distinct hands."""
+    try:
+        h, m = map(int, time_str.split(':'))
+        hour_angle = (h % 12) * 30 + m * 0.5
+        min_angle = m * 6
 
-    with open("log.csv", mode="a", newline="", encoding="utf-8") as file:
-        writer = csv.writer(file)
-        # Write headers if the file is brand new
-        if not file_exists:
-            writer.writerow(["Data ir Laikas", "Diena", "Užduotis", "Atliktas Atsakymas"])
+        # Math for Number Placement
+        nums = ""
+        for i in range(1, 13):
+            angle = math.radians(i * 30 - 90)
+            x, y = 50 + 36 * math.cos(angle), 52 + 36 * math.sin(angle)
+            nums += f'<text x="{x}" y="{y}" font-size="7" font-family="Arial" font-weight="bold" text-anchor="middle" fill="#333">{i}</text>'
 
-        # Write each answer as a new row
-        for question, answer in answers_dict.items():
-            writer.writerow([timestamp, day, question, answer])
+        html = f"""
+        <div style="display: flex; justify-content: center;">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="48" stroke="#333" stroke-width="2" fill="#f8f9fa" />
+                <circle cx="50" cy="50" r="44" stroke="white" stroke-width="1" fill="white" />
+                {nums}
+                <line x1="50" y1="50" x2="50" y2="28" stroke="#222" stroke-width="3.5" stroke-linecap="round" transform="rotate({hour_angle} 50 50)" />
+                <line x1="50" y1="50" x2="50" y2="15" stroke="#D32F2F" stroke-width="2" stroke-linecap="round" transform="rotate({min_angle} 50 50)" />
+                <circle cx="50" cy="50" r="2.5" fill="#333" />
+            </svg>
+        </div>
+        """
+        components.html(html, height=210)
+    except:
+        st.warning("Nepavyko pavaizduoti laikrodžio.")
 
 
-# --- MAIN APP LOGIC ---
-st.title("📚 Jorės Dienos Užduotys")
-st.write("Pasirink savaitės dieną ir atlik savo dienos užduotis!")
+# --- UI START ---
+data = load_data()
 
-tasks_data = load_tasks()
+if data:
+    # Header Section
+    c1, c2 = st.columns([5, 1])
+    c1.title("🇱🇹 Jorės Mokymosi Centras")
+    c2.image("https://flagcdn.com/w80/lt.png")
 
-if tasks_data:
-    # Get the days available in the JSON file
-    days_available = list(tasks_data.keys())
-
-    # Try to guess today's day to set as default, otherwise pick the first one
-    current_weekday = datetime.today().weekday()
-    default_index = current_weekday if current_weekday < len(days_available) else 0
-
-    selected_day = st.selectbox("Kokia šiandien diena?", days_available, index=default_index)
-
+    days = list(data.keys())
+    selected_day = st.selectbox("Pasirink savaitės dieną:", days)
     st.divider()
 
-    # We use a dictionary to temporarily store her answers on the screen
-    current_answers = {}
+    day_tasks = data[selected_day]
+    score, total_tasks = 0, 0
 
-    # Dynamically generate the layout based on the JSON file
-    day_tasks = tasks_data[selected_day]
+    for s_idx, sec in enumerate(day_tasks):
+        st.header(f"{sec.get('symbol', '📝')} {sec['subject']}")
 
-    for section in day_tasks:
-        st.header(section["subject"])
-        if section["description"]:
-            st.write(section["description"])
+        # 1. TRANSLATION (Monday)
+        if sec["type"] == "translation":
+            for i, p in enumerate(sec["prompts"]):
+                lt_word = sec["lt_words"][i]
+                correct = sec["en_answers"][i]
+                st.write(f"**{p}:** {lt_word}")
+                ans = st.text_input("Angliškai:", key=f"tr_{s_idx}_{i}").strip()
+                total_tasks += 1
+                if ans.lower() == correct.lower():
+                    st.success("Teisingai!")
+                    score += 1
 
-        for prompt in section["prompts"]:
-            # Create a unique key for Streamlit to track each input box
-            unique_key = f"{selected_day}_{section['subject']}_{prompt}"
-            # Show the text input and save what she types into our dictionary
-            user_input = st.text_input(prompt, key=unique_key)
-            current_answers[prompt] = user_input
+        # 2. SEQUENCE (Monday)
+        elif sec["type"] == "sequence":
+            for i, p in enumerate(sec["prompts"]):
+                st.write(f"**{p}**")
+                cols = st.columns(4)
+                user_vals = [cols[j].text_input("", key=f"sq_{s_idx}_{i}_{j}", label_visibility="collapsed").strip() for
+                             j in range(4)]
+                total_tasks += 1
+                if [v.lower() for v in user_vals] == [c.lower() for c in sec["answers"][i]]:
+                    st.success("Puiku!")
+                    score += 1
 
+        # 3. TEXT / AREA (Sentences, Stories, Logic, Money)
+        elif sec["type"] in ["text", "area"]:
+            for i, p in enumerate(sec["prompts"]):
+                if sec["type"] == "area":
+                    ans = st.text_area(p, key=f"ar_{s_idx}_{i}", placeholder="Parašyk savo pasakojimą čia...").strip()
+                else:
+                    ans = st.text_input(p, key=f"tx_{s_idx}_{i}").strip()
+
+                total_tasks += 1
+                if ans:
+                    if sec.get("check", True):  # Checks for exact answers (Math/Time)
+                        if ans.lower().replace(',', '.') == sec["answers"][i].lower():
+                            st.success("Teisingai! ✅")
+                            score += 1
+                    else:  # Checks for length/punctuation (Stories/Sentences)
+                        # Verifies at least 2 punctuation marks for stories
+                        punctuation = ans.count('.') + ans.count('!') + ans.count('?')
+                        if sec["type"] == "area" and punctuation < 2:
+                            st.warning("Parašyk šiek tiek daugiau (bent 2 sakinius)!")
+                        else:
+                            st.success("Šaunuolė! Atlikta. 👍")
+                            score += 1
+
+        # 4. CLOCK (Wednesday)
+        elif sec["type"] == "clock":
+            for i, p in enumerate(sec["prompts"]):
+                st.write(f"**{p}**")
+                draw_clock(sec["times"][i])
+                ans = st.text_input("Laikas (pvz., 03:30):", key=f"cl_{s_idx}_{i}").strip()
+                total_tasks += 1
+                if ans == sec["times"][i]:
+                    st.success("Laikas teisingas! 🕒")
+                    score += 1
+
+    # --- PROGRESS BAR ---
+    st.sidebar.metric("Tavo taškai", f"{score} / {total_tasks}")
+    if total_tasks > 0:
+        st.sidebar.progress(score / total_tasks)
+
+    # --- SAVE / FINISH ---
     st.divider()
-
-    # --- SAVE BUTTON ---
-    if st.button("Išsaugoti ir Užbaigti Dienos Užduotis! 🎉"):
-        # Check if all fields are filled out (optional, but good practice)
-        if all(value.strip() != "" for value in current_answers.values()):
-            save_log(selected_day, current_answers)
-            st.success("Šaunuolė! Užduotys sėkmingai atliktos ir išsaugotos į žurnalą. 🌟")
+    if st.button("Išsaugoti ir Baigti 🎉", use_container_width=True):
+        if score == total_tasks:
             st.balloons()
+            if "Friday" in selected_day or "Penktadienis" in selected_day:
+                st.success("VALIO! Įveikei visą savaitę! Gero savaitgalio! 🍦")
+            else:
+                st.success("Šios dienos užduotys atliktos puikiai!")
         else:
-            st.warning("Prieš išsaugant, prašau užpildyti visus laukelius! ✍️")
+            st.warning(f"Liko {total_tasks - score} nebaigtos užduotys.")
