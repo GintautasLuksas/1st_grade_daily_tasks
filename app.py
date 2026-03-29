@@ -1,15 +1,23 @@
 import streamlit as st
 import streamlit.components.v1 as components
-import json, os, math, pandas as pd
+import json, os, math, random
+import pandas as pd
 from datetime import datetime
 
 # --- KONFIGŪRACIJA ---
 st.set_page_config(page_title="Jorės Mokykla", page_icon="🏫", layout="wide")
 
 
-def load_data():
-    if not os.path.exists("tasks.json"): return {}
-    with open("tasks.json", "r", encoding="utf-8") as f: return json.load(f)
+def load_json(filename):
+    if not os.path.exists(filename):
+        return {} if filename == "tasks.json" else []
+    try:
+        with open(filename, "r", encoding="utf-8") as f:
+            content = f.read().strip()
+            if not content: return {} if filename == "tasks.json" else []
+            return json.loads(content)
+    except:
+        return {} if filename == "tasks.json" else []
 
 
 def save_detailed_log(rinkinys, diena, task_name, user_ans, correct_ans):
@@ -39,124 +47,133 @@ def draw_clock(time_str):
         st.error("Laikrodžio formatas HH:MM!")
 
 
-# --- PROGRAMA ---
-data = load_data()
-if not data:
-    st.error("Nerastas tasks.json!")
-    st.stop()
+# --- DUOMENŲ UŽKROVIMAS ---
+data = load_json("tasks.json")
+numbers_db = load_json("numbers.json")
+logic_db = load_json("logic.json")
 
 st.sidebar.title("🎮 Valdymas")
-mode = st.sidebar.radio("Režimas:", ["📖 Jorės pamokos", "👨‍🏫 Tėčio kambarys"])
+mode = st.sidebar.radio("Režimas:", ["📖 Pamokos", "🧮 Matematika", "🧩 Logika", "👨‍🏫 Tėčiui"])
 
-if mode == "👨‍🏫 Tėčio kambarys":
-    st.title("👨‍🏫 Apžvalga")
-    t1, t2 = st.tabs(["📋 Atsakymai", "🔤 Žodynas"])
-    with t1:
-        if os.path.exists("detalus_atsakymai.csv"):
-            df = pd.read_csv("detalus_atsakymai.csv")
-            st.dataframe(df.iloc[::-1], use_container_width=True)
-            if st.button("Trinti istoriją"):
-                os.remove("detalus_atsakymai.csv")
-                st.rerun()
-    with t2:
-        vocab = []
-        for r in data:
-            for d in data[r]:
-                for t in data[r][d]:
-                    if t["type"] == "translation":
-                        for lt, en in zip(t["lt_words"], t["en_answers"]):
-                            vocab.append({"Lietuviškai": lt, "Angliškai": en, "Šaltinis": f"{r}-{d}"})
-        if vocab:
-            st.table(pd.DataFrame(vocab).drop_duplicates())
-        else:
-            st.info("Žodynas tuščias")
+# --- 🧩 LOGIKA ---
+if mode == "🧩 Logika":
+    st.title("🧩 Loginių mįslių kampelis")
+    if not logic_db:
+        st.warning("Užpildyk logic.json failą!")
+    else:
+        if 'logic_drill' not in st.session_state: st.session_state.logic_drill = []
+        c1, c2 = st.columns([1, 2])
+        kiek = c1.slider("Kiek mįslių?", 3, 10, 5)
+        if c2.button("🎲 Naujos mįslės", type="primary"):
+            st.session_state.logic_drill = random.sample(logic_db, min(kiek, len(logic_db)))
 
-else:
+        if st.session_state.logic_drill:
+            score = 0
+            for i, task in enumerate(st.session_state.logic_drill):
+                with st.container(border=True):
+                    st.write(f"**{i + 1}. {task['q']}**")
+                    ans = st.text_input("Tavo atsakymas", key=f"log_{i}", label_visibility="collapsed").strip().lower()
+                    if ans == task['a'].lower():
+                        st.success("Teisingai! ✨")
+                        score += 1
+            if score == len(st.session_state.logic_drill) and score > 0:
+                st.balloons()
+
+# --- 🧮 MATEMATIKA ---
+elif mode == "🧮 Matematika":
+    st.title("🧮 Skaičių laboratorija")
+    if not numbers_db:
+        st.warning("numbers.json tuščias!")
+    else:
+        if 'math_drill' not in st.session_state: st.session_state.math_drill = []
+        c1, c2 = st.columns([1, 2])
+        kiek = c1.selectbox("Užduočių skaičius", [8, 12, 16, 24])
+        if c2.button("🎲 Generuoti veiksmus", type="primary"):
+            st.session_state.math_drill = random.sample(numbers_db, min(kiek, len(numbers_db)))
+
+        if st.session_state.math_drill:
+            m_cols = st.columns(4)
+            score = 0
+            for i, t in enumerate(st.session_state.math_drill):
+                col = m_cols[i % 4]
+                col.write(f"**{t['q']}**")
+                ans = col.text_input("Ats", key=f"m_{i}", label_visibility="collapsed").strip()
+                if ans.replace(',', '.') == str(t['a']).replace(',', '.'): score += 1
+            st.sidebar.metric("Progresas", f"{score}/{len(st.session_state.math_drill)}")
+            if score == len(st.session_state.math_drill) and score > 0: st.balloons()
+
+# --- 📖 PAMOKOS ---
+elif mode == "📖 Pamokos":
+    if not data: st.error("tasks.json nerastas arba tuščias!"); st.stop()
+
     sel_week = st.sidebar.selectbox("📦 Rinkinys:", list(data.keys()))
     sel_day = st.sidebar.selectbox("📅 Diena:", list(data[sel_week].keys()))
-
     st.title(f"🌟 {sel_week} — {sel_day}")
-    tasks = data[sel_week][sel_day]
-    score, total = 0, 0
 
-    for s_idx, sec in enumerate(tasks):
+    score, total = 0, 0
+    for s_idx, sec in enumerate(data[sel_week][sel_day]):
         with st.container(border=True):
+            # Rodome simbolį ir temos pavadinimą aiškiai
             st.subheader(f"{sec.get('symbol', '📝')} {sec['subject']}")
 
-            # --- Dinaminis stulpelių valdymas matematikai ---
-            # Jei užduočių daug (pvz. sekmadienį), skaidome į 4 stulpelius
             prompts = sec.get("prompts", [])
             is_math_heavy = len(prompts) > 4 and sec["type"] == "text"
-
-            if is_math_heavy:
-                cols = st.columns(4)
+            cols = st.columns(4) if is_math_heavy else [st]
 
             for i, p in enumerate(prompts):
                 total += 1
-                key = f"{sel_week}_{sel_day}_{s_idx}_{i}"
-
-                # Pasirenkame, kur dėti laukelį
+                key = f"p_{sel_week}_{sel_day}_{s_idx}_{i}"
                 target = cols[i % 4] if is_math_heavy else st
 
                 if sec["type"] == "translation":
-                    st.write(f"**{sec['lt_words'][i]}**")
-                    ans = st.text_input("Atsakymas anglų k.", key=f"tr_{key}", label_visibility="collapsed").strip()
+                    target.write(f"**{sec['lt_words'][i]}**")
+                    ans = target.text_input("Vertimas", key=f"tr_{key}", label_visibility="collapsed").strip()
                     correct = sec["en_answers"][i]
-
                 elif sec["type"] == "clock":
                     draw_clock(sec["times"][i])
-                    ans = st.text_input("Laikas (HH:MM)", key=f"cl_{key}", label_visibility="collapsed").strip()
+                    ans = target.text_input("HH:MM", key=f"cl_{key}", label_visibility="collapsed").strip()
                     correct = sec["times"][i]
-
                 elif sec["type"] == "sequence":
-                    st.write(p)
-                    sq_cols = st.columns(4)
-                    u_vals = []
-                    for j in range(4):
-                        v = sq_cols[j].text_input(f"Seka {j}", key=f"sq_{key}_{j}",
-                                                  label_visibility="collapsed").strip()
-                        u_vals.append(v)
+                    target.write(p)
+                    sq_c = st.columns(4)
+                    u_vals = [sq_c[j].text_input(f"s{j}", key=f"sq_{key}_{j}", label_visibility="collapsed").strip() for
+                              j in range(4)]
                     ans, correct = str(u_vals), str(sec["answers"][i])
-
                 elif sec["type"] == "area":
-                    st.write(f"**{p}**")
-                    ans = st.text_area("Tavo istorija", key=f"ar_{key}", label_visibility="collapsed")
-                    correct = "Laisvas tekstas"
-
-                else:  # Standartinis text/math
+                    target.write(f"**{p}**")
+                    ans = target.text_area("Tekstas", key=f"ar_{key}", label_visibility="collapsed")
+                    correct = "Laisvas"
+                else:
                     target.write(p)
                     ans = target.text_input("Atsakymas", key=f"tx_{key}", label_visibility="collapsed").strip()
                     correct = sec["answers"][i] if sec.get("check") else "Laisvas"
 
                 # Tikrinimas
-                is_correct = False
+                is_ok = False
                 if sec["type"] == "sequence":
-                    is_correct = [v.lower() for v in u_vals] == [c.lower() for c in sec["answers"][i]]
-                elif sec.get("check", True) and correct != "Laisvas tekstas":
-                    is_correct = ans.lower().replace(',', '.') == str(correct).lower().replace(',', '.')
+                    is_ok = [v.lower() for v in u_vals] == [c.lower() for c in sec["answers"][i]]
+                elif sec.get("check", True) and correct != "Laisvas":
+                    is_ok = ans.lower().replace(',', '.') == str(correct).lower().replace(',', '.')
                 else:
-                    is_correct = len(ans.strip()) > 2  # Jei laisvas tekstas, užtenka kelių simbolių
+                    is_ok = len(ans.strip()) > 2
 
-                if is_correct: score += 1
+                if is_ok: score += 1
 
-                # Mažas išsaugojimo mygtukas po kiekvienu (tik jei ne matematinė "paklodė")
-                if not is_math_heavy:
-                    if st.button("Išsaugoti", key=f"btn_{key}"):
-                        save_detailed_log(sel_week, sel_day, p or sec['subject'], ans, correct)
-                        st.toast("Išsaugota!")
-
-    # --- ŠONINĖS JUOSTOS PROGRESAS ---
     st.sidebar.divider()
-    st.sidebar.metric("Surinkti Taškai", f"{score} / {total}")
-    if total > 0: st.sidebar.progress(score / total)
+    st.sidebar.metric("Šios dienos progresas", f"{score}/{total}")
+    if st.button("IŠSAUGOTI REZULTATĄ 🏆", use_container_width=True, type="primary"):
+        save_detailed_log(sel_week, sel_day, "DIENOS PLANAS", f"{score}/{total}", "-")
+        st.success("Rezultatas įrašytas į tėčio žurnalą!")
+        if score == total and total > 0: st.balloons()
 
-    # --- PABAIGOS MYGTUKAS ---
-    st.divider()
-    if st.button("BAIGTI ŠIOS DIENOS UŽDUOTIS 🏆", use_container_width=True, type="primary"):
-        # Išsaugom galutinį rezultatą į logus
-        save_detailed_log(sel_week, sel_day, "DIENOS REZULTATAS", f"{score}/{total}", "---")
-        if score == total:
-            st.balloons()
-            st.success("Tobula! Viskas teisingai! 🎉")
-        else:
-            st.warning(f"Baigta! Rezultatas: {score} iš {total}. Pasitaisyk klaidas, jei nori balionų! 🎈")
+# --- 👨‍🏫 TĖČIUI ---
+else:
+    st.title("👨‍🏫 Administravimas")
+    if os.path.exists("detalus_atsakymai.csv"):
+        df = pd.read_csv("detalus_atsakymai.csv")
+        st.dataframe(df.iloc[::-1], use_container_width=True)
+        if st.button("Išvalyti istoriją"):
+            os.remove("detalus_atsakymai.csv")
+            st.rerun()
+    else:
+        st.info("Istorija tuščia. Jorė dar nesprendė užduočių!")
