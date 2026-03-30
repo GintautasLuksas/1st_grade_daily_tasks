@@ -233,12 +233,24 @@ mode = st.sidebar.radio(
 )
 st.sidebar.markdown("---")
 
-
 # ═══════════════════════════════════════════════════════════════
 #  🧩  LOGIKA
 # ═══════════════════════════════════════════════════════════════
 if mode == "🧩 Logika":
     st.markdown("# 🧩 Loginių mįslių kampelis")
+
+    # Funkcija lietuviškų raidžių „nuvalymui“
+    def simplify(text):
+        mapping = str.maketrans("ąčęėįšųūž", "aceeisuuz")
+        return text.lower().strip().translate(mapping)
+
+    # --- PAGALBOS KODAS (MOKYTOJO REŽIMAS) ---
+    with st.sidebar:
+        st.markdown("---")
+        secret_code = st.text_input("🔑 Pagalbos kodas", type="password", placeholder="Įvesk kodą...")
+        show_hints = (secret_code == "2000")
+        if show_hints:
+            st.success("🔓 Atsakymai atidengti!")
 
     if not logic_db:
         st.warning("Užpildyk logic.json failą!")
@@ -247,7 +259,7 @@ if mode == "🧩 Logika":
             st.session_state.logic_drill = []
 
         c1, c2 = st.columns([1, 2])
-        kiek = c1.slider("Kiek mįslių?", 3, 10, 5)
+        kiek = c1.slider("Kiek mįslių?", 3, 15, 5)
         if c2.button("🎲 Naujos mįslės", type="primary"):
             st.session_state.logic_drill = random.sample(logic_db, min(kiek, len(logic_db)))
 
@@ -255,15 +267,24 @@ if mode == "🧩 Logika":
         score = 0
         for i, task in enumerate(st.session_state.logic_drill):
             with st.container(border=True):
-                st.markdown(f'<div class="q-text">🔎 {i+1}.&nbsp; {task["q"]}</div>',
+                st.markdown(f'<div class="q-text">🔎 {i + 1}.&nbsp; {task["q"]}</div>',
                             unsafe_allow_html=True)
+
+                # Atsakymo laukas
                 ans = st.text_input(
                     "Atsakymas", key=f"log_{i}",
                     label_visibility="collapsed",
                     placeholder="Įrašyk atsakymą..."
-                ).strip().lower()
+                )
+
+                if show_hints:
+                    st.markdown(
+                        f'<p style="color:#6366f1; font-size:0.9rem; margin-top:5px;">💡 Teisingas atsakymas: <b>{task["a"]}</b></p>',
+                        unsafe_allow_html=True)
+
                 if ans:
-                    ok = (ans == task['a'].lower())
+                    # Lyginame supaprastintus variantus be LT raidžių
+                    ok = (simplify(ans) == simplify(task['a']))
                     show_feedback(ok)
                     if ok: score += 1
 
