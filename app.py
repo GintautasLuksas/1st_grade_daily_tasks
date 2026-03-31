@@ -3,7 +3,6 @@ import streamlit.components.v1 as components
 import json, os, math, random
 import pandas as pd
 from datetime import datetime
-from typing import Tuple
 
 st.set_page_config(page_title="Jorės Mokykla", page_icon="🌟", layout="wide")
 
