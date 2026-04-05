@@ -132,7 +132,7 @@
         "type": "text",
         "check": true,
         "prompts": ["Kas sunkesnis: 1kg vatos ar 1kg geležies?"],
-        "answers": ["abu vienodai"]
+        "answers": ["abu lygus"]
       }
     ],
     "Sekmadienis": [
