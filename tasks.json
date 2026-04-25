@@ -5,19 +5,50 @@
         "subject": "Anglų kalba: Vertimas",
         "symbol": "🇬🇧",
         "type": "translation",
-        "prompts": ["Išversk į anglų kalbą", "Išversk į anglų kalbą", "Išversk į anglų kalbą"],
-        "lt_words": ["Obuolys", "Duona", "Vanduo"],
-        "en_answers": ["Apple", "Bread", "Water"]
+        "prompts": [
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą"
+        ],
+        "lt_words": [
+          "Obuolys",
+          "Duona",
+          "Vanduo"
+        ],
+        "en_answers": [
+          "Apple",
+          "Bread",
+          "Water"
+        ]
       },
       {
         "subject": "Matematika: Sekos",
         "symbol": "🔢",
         "type": "sequence",
-        "prompts": ["2, 4, 6, ...", "10, 20, 30, ...", "A, B, C, ..."],
+        "prompts": [
+          "2, 4, 6, ...",
+          "10, 20, 30, ...",
+          "A, B, C, ..."
+        ],
         "answers": [
-          ["8", "10", "12", "14"],
-          ["40", "50", "60", "70"],
-          ["D", "E", "F", "G"]
+          [
+            "8",
+            "10",
+            "12",
+            "14"
+          ],
+          [
+            "40",
+            "50",
+            "60",
+            "70"
+          ],
+          [
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
         ]
       }
     ],
@@ -27,8 +58,16 @@
         "symbol": "✍️",
         "type": "text",
         "check": false,
-        "prompts": ["Sakinys 1 su Apple:", "Sakinys 2 su Bread:", "Sakinys 3 su Water:"],
-        "answers": ["", "", ""]
+        "prompts": [
+          "Sakinys 1 su Apple:",
+          "Sakinys 2 su Bread:",
+          "Sakinys 3 su Water:"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
       },
       {
         "subject": "Matematika: Laikas",
@@ -40,7 +79,11 @@
           "Jei dabar yra 09:15, kiek bus po 1 val. 10 min.?",
           "Jei dabar yra 18:45, kiek bus po 15 min.?"
         ],
-        "answers": ["16:30", "10:25", "19:00"]
+        "answers": [
+          "16:30",
+          "10:25",
+          "19:00"
+        ]
       }
     ],
     "Trečiadienis": [
@@ -49,16 +92,32 @@
         "symbol": "📖",
         "type": "area",
         "check": false,
-        "prompts": ["Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: Dog, Ball, Park:"],
-        "answers": [""]
+        "prompts": [
+          "Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: Dog, Ball, Park:"
+        ],
+        "answers": [
+          ""
+        ]
       },
       {
         "subject": "Matematika: Analoginis laikrodis",
         "symbol": "🕒",
         "type": "clock",
-        "prompts": ["Koks laikas rodomas? (1)", "Koks laikas rodomas? (2)", "Koks laikas rodomas? (3)"],
-        "times": ["03:30", "08:15", "12:45"],
-        "answers": ["03:30", "08:15", "12:45"]
+        "prompts": [
+          "Koks laikas rodomas? (1)",
+          "Koks laikas rodomas? (2)",
+          "Koks laikas rodomas? (3)"
+        ],
+        "times": [
+          "03:30",
+          "08:15",
+          "12:45"
+        ],
+        "answers": [
+          "03:30",
+          "08:15",
+          "12:45"
+        ]
       }
     ],
     "Ketvirtadienis": [
@@ -67,8 +126,16 @@
         "symbol": "🆕",
         "type": "text",
         "check": false,
-        "prompts": ["Parašyk 1 sakinį su žodžiu 'Friend':", "Parašyk 2 sakinį su žodžiu 'Friend':", "Parašyk 3 sakinį su žodžiu 'Friend':"],
-        "answers": ["", "", ""]
+        "prompts": [
+          "Parašyk 1 sakinį su žodžiu 'Friend':",
+          "Parašyk 2 sakinį su žodžiu 'Friend':",
+          "Parašyk 3 sakinį su žodžiu 'Friend':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
       },
       {
         "subject": "Matematika: Pinigai ir grąža",
@@ -80,7 +147,11 @@
           "Turi 8.33€. Perki kebabą už 2.89€. Kiek liko?",
           "Turi 12.41€. Perki agurkus už 1.07€. Kiek liko?"
         ],
-        "answers": ["4.07", "5.44", "11.34"]
+        "answers": [
+          "4.07",
+          "5.44",
+          "11.34"
+        ]
       }
     ],
     "Penktadienis": [
@@ -89,24 +160,38 @@
         "symbol": "🎬",
         "type": "area",
         "check": false,
-        "prompts": ["Parašyk 3 sakinius apie žiūrėtą filmuką:"],
-        "answers": [""]
+        "prompts": [
+          "Parašyk 3 sakinius apie žiūrėtą filmuką:"
+        ],
+        "answers": [
+          ""
+        ]
       },
       {
         "subject": "Matematika: Logika (Autobusas)",
         "symbol": "🚌",
         "type": "text",
         "check": true,
-        "prompts": ["Autobuse važiavo 8 vaikai. Stotelėje išlipo 3, o įlipo 5. Kiek dabar autobuse vaikų?"],
-        "answers": ["10"]
+        "prompts": [
+          "Autobuse važiavo 8 vaikai. Stotelėje išlipo 3, o įlipo 5. Kiek dabar autobuse vaikų?"
+        ],
+        "answers": [
+          "10"
+        ]
       },
       {
         "subject": "Matematika: Obuolių grandinėlė",
         "symbol": "🍎",
         "type": "text",
         "check": true,
-        "prompts": ["Turėjau 10 obuolių, suvalgiau 5. Kiek liko?", "Tada tėtis atnešė dar 6 obuolius. Kiek dabar turiu iš viso?"],
-        "answers": ["5", "11"]
+        "prompts": [
+          "Turėjau 10 obuolių, suvalgiau 5. Kiek liko?",
+          "Tada tėtis atnešė dar 6 obuolius. Kiek dabar turiu iš viso?"
+        ],
+        "answers": [
+          "5",
+          "11"
+        ]
       }
     ],
     "Šeštadienis": [
@@ -115,24 +200,36 @@
         "symbol": "🧩",
         "type": "text",
         "check": true,
-        "prompts": ["Aš esu skaičius. Jei prie manęs pridėsi 5, gausi 15. Koks aš skaičius?"],
-        "answers": ["10"]
+        "prompts": [
+          "Aš esu skaičius. Jei prie manęs pridėsi 5, gausi 15. Koks aš skaičius?"
+        ],
+        "answers": [
+          "10"
+        ]
       },
       {
         "subject": "Logika: Batų poros",
         "symbol": "👟",
         "type": "text",
         "check": true,
-        "prompts": ["Spintoje yra 3 poros batų. Kiek batų iš viso yra spintoje?"],
-        "answers": ["6"]
+        "prompts": [
+          "Spintoje yra 3 poros batų. Kiek batų iš viso yra spintoje?"
+        ],
+        "answers": [
+          "6"
+        ]
       },
       {
         "subject": "Logika: Svoris",
         "symbol": "⚖️",
         "type": "text",
         "check": true,
-        "prompts": ["Kas sunkesnis: 1kg vatos ar 1kg geležies?"],
-        "answers": ["abu lygus"]
+        "prompts": [
+          "Kas sunkesnis: 1kg vatos ar 1kg geležies?"
+        ],
+        "answers": [
+          "abu lygus"
+        ]
       }
     ],
     "Sekmadienis": [
@@ -141,32 +238,70 @@
         "symbol": "🔄",
         "type": "text",
         "check": false,
-        "prompts": ["Sakinys su 'Apple':", "Sakinys su 'Bread':", "Sakinys su 'Water':"],
-        "answers": ["", "", ""]
+        "prompts": [
+          "Sakinys su 'Apple':",
+          "Sakinys su 'Bread':",
+          "Sakinys su 'Water':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
       },
       {
         "subject": "Matematika: Daugyba",
         "symbol": "✖️",
         "type": "text",
         "check": true,
-        "prompts": ["11 * 4 =", "9 * 10 =", "8 * 7 =", "7 * 9 =" ],
-        "answers": ["44", "90", "56", "63"]
+        "prompts": [
+          "11 * 4 =",
+          "9 * 10 =",
+          "8 * 7 =",
+          "7 * 9 ="
+        ],
+        "answers": [
+          "44",
+          "90",
+          "56",
+          "63"
+        ]
       },
       {
         "subject": "Matematika: Sudėtis",
         "symbol": "➕",
         "type": "text",
         "check": true,
-        "prompts": ["29 + 79 =", "58 + 22 =", "47 + 28 =", "116 + 78 =" ],
-        "answers": ["108", "80", "75", "194"]
+        "prompts": [
+          "29 + 79 =",
+          "58 + 22 =",
+          "47 + 28 =",
+          "116 + 78 ="
+        ],
+        "answers": [
+          "108",
+          "80",
+          "75",
+          "194"
+        ]
       },
       {
         "subject": "Matematika: Atimtis",
         "symbol": "➖",
         "type": "text",
         "check": true,
-        "prompts": ["116 - 79 =", "76 - 17 =", "980 - 72 =", "758 - 101 =" ],
-        "answers": ["37", "59", "908", "657"]
+        "prompts": [
+          "116 - 79 =",
+          "76 - 17 =",
+          "980 - 72 =",
+          "758 - 101 ="
+        ],
+        "answers": [
+          "37",
+          "59",
+          "908",
+          "657"
+        ]
       }
     ]
   },
@@ -176,19 +311,50 @@
         "subject": "Anglų kalba: Vertimas",
         "symbol": "🇬🇧",
         "type": "translation",
-        "prompts": ["Išversk į anglų kalbą", "Išversk į anglų kalbą", "Išversk į anglų kalbą"],
-        "lt_words": ["Šuo", "Katė", "Paukštis"],
-        "en_answers": ["Dog", "Cat", "Bird"]
+        "prompts": [
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą"
+        ],
+        "lt_words": [
+          "Šuo",
+          "Katė",
+          "Paukštis"
+        ],
+        "en_answers": [
+          "Dog",
+          "Cat",
+          "Bird"
+        ]
       },
       {
         "subject": "Matematika: Sekos",
         "symbol": "🔢",
         "type": "sequence",
-        "prompts": ["3, 6, 9, ...", "100, 200, 300, ...", "Z, Y, X, ..."],
+        "prompts": [
+          "3, 6, 9, ...",
+          "100, 200, 300, ...",
+          "Z, Y, X, ..."
+        ],
         "answers": [
-          ["12", "15", "18", "21"],
-          ["400", "500", "600", "700"],
-          ["W", "V", "U", "T"]
+          [
+            "12",
+            "15",
+            "18",
+            "21"
+          ],
+          [
+            "400",
+            "500",
+            "600",
+            "700"
+          ],
+          [
+            "W",
+            "V",
+            "U",
+            "T"
+          ]
         ]
       }
     ],
@@ -198,8 +364,16 @@
         "symbol": "✍️",
         "type": "text",
         "check": false,
-        "prompts": ["Sakinys 1 su Dog:", "Sakinys 2 su Cat:", "Sakinys 3 su Bird:"],
-        "answers": ["", "", ""]
+        "prompts": [
+          "Sakinys 1 su Dog:",
+          "Sakinys 2 su Cat:",
+          "Sakinys 3 su Bird:"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
       },
       {
         "subject": "Matematika: Laikas",
@@ -211,7 +385,11 @@
           "Jei dabar yra 14:15, kiek bus po 45 min.?",
           "Jei dabar yra 20:40, kiek bus po 20 min.?"
         ],
-        "answers": ["11:30", "15:00", "21:00"]
+        "answers": [
+          "11:30",
+          "15:00",
+          "21:00"
+        ]
       }
     ],
     "Trečiadienis": [
@@ -220,16 +398,32 @@
         "symbol": "📖",
         "type": "area",
         "check": false,
-        "prompts": ["Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: Sun, Sky, Cloud:"],
-        "answers": [""]
+        "prompts": [
+          "Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: Sun, Sky, Cloud:"
+        ],
+        "answers": [
+          ""
+        ]
       },
       {
         "subject": "Matematika: Analoginis laikrodis",
         "symbol": "🕒",
         "type": "clock",
-        "prompts": ["Koks laikas rodomas? (1)", "Koks laikas rodomas? (2)", "Koks laikas rodomas? (3)"],
-        "times": ["04:20", "09:10", "11:55"],
-        "answers": ["04:20", "09:10", "11:55"]
+        "prompts": [
+          "Koks laikas rodomas? (1)",
+          "Koks laikas rodomas? (2)",
+          "Koks laikas rodomas? (3)"
+        ],
+        "times": [
+          "04:20",
+          "09:10",
+          "11:55"
+        ],
+        "answers": [
+          "04:20",
+          "09:10",
+          "11:55"
+        ]
       }
     ],
     "Ketvirtadienis": [
@@ -238,8 +432,16 @@
         "symbol": "🆕",
         "type": "text",
         "check": false,
-        "prompts": ["Parašyk 1 sakinį su žodžiu 'House':", "Parašyk 2 sakinį su žodžiu 'House':", "Parašyk 3 sakinį su žodžiu 'House':"],
-        "answers": ["", "", ""]
+        "prompts": [
+          "Parašyk 1 sakinį su žodžiu 'House':",
+          "Parašyk 2 sakinį su žodžiu 'House':",
+          "Parašyk 3 sakinį su žodžiu 'House':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
       },
       {
         "subject": "Matematika: Pinigai ir grąža",
@@ -251,7 +453,11 @@
           "Turi 5.20€. Perki sūrį už 1.10€. Kiek liko?",
           "Turi 20.00€. Perki tortą už 12.00€. Kiek liko?"
         ],
-        "answers": ["7.50", "4.10", "8.00"]
+        "answers": [
+          "7.50",
+          "4.10",
+          "8.00"
+        ]
       }
     ],
     "Penktadienis": [
@@ -260,24 +466,38 @@
         "symbol": "🎬",
         "type": "area",
         "check": false,
-        "prompts": ["Parašyk 3 sakinius apie žiūrėtą filmuką:"],
-        "answers": [""]
+        "prompts": [
+          "Parašyk 3 sakinius apie žiūrėtą filmuką:"
+        ],
+        "answers": [
+          ""
+        ]
       },
       {
         "subject": "Matematika: Logika (Parkas)",
         "symbol": "🌳",
         "type": "text",
         "check": true,
-        "prompts": ["Parke žaidė 12 vaikų. 4 išėjo namo, o 2 nauji atėjo. Kiek dabar vaikų žaidžia?"],
-        "answers": ["10"]
+        "prompts": [
+          "Parke žaidė 12 vaikų. 4 išėjo namo, o 2 nauji atėjo. Kiek dabar vaikų žaidžia?"
+        ],
+        "answers": [
+          "10"
+        ]
       },
       {
         "subject": "Matematika: Saldainių grandinėlė",
         "symbol": "🍬",
         "type": "text",
         "check": true,
-        "prompts": ["Turėjau 20 saldainių, atidaviau draugui 5. Kiek liko?", "Tada mama nupirko dar 10. Kiek dabar turiu iš viso?"],
-        "answers": ["15", "25"]
+        "prompts": [
+          "Turėjau 20 saldainių, atidaviau draugui 5. Kiek liko?",
+          "Tada mama nupirko dar 10. Kiek dabar turiu iš viso?"
+        ],
+        "answers": [
+          "15",
+          "25"
+        ]
       }
     ],
     "Šeštadienis": [
@@ -286,24 +506,36 @@
         "symbol": "🧩",
         "type": "text",
         "check": true,
-        "prompts": ["Aš esu skaičius. Jei iš manęs atimsi 10, gausi 20. Koks aš skaičius?"],
-        "answers": ["30"]
+        "prompts": [
+          "Aš esu skaičius. Jei iš manęs atimsi 10, gausi 20. Koks aš skaičius?"
+        ],
+        "answers": [
+          "30"
+        ]
       },
       {
         "subject": "Logika: Gyvūnų kojos",
         "symbol": "🐾",
         "type": "text",
         "check": true,
-        "prompts": ["Kambaryje yra 2 katės ir 1 šuo. Kiek iš viso kojų yra kambaryje?"],
-        "answers": ["12"]
+        "prompts": [
+          "Kambaryje yra 2 katės ir 1 šuo. Kiek iš viso kojų yra kambaryje?"
+        ],
+        "answers": [
+          "12"
+        ]
       },
       {
         "subject": "Logika: Mįslė",
         "symbol": "❓",
         "type": "text",
         "check": true,
-        "prompts": ["Kas bėga, bet neturi kojų? (Vienas žodis)"],
-        "answers": ["upė"]
+        "prompts": [
+          "Kas bėga, bet neturi kojų? (Vienas žodis)"
+        ],
+        "answers": [
+          "upė"
+        ]
       }
     ],
     "Sekmadienis": [
@@ -312,32 +544,70 @@
         "symbol": "🔄",
         "type": "text",
         "check": false,
-        "prompts": ["Sakinys su 'Dog':", "Sakinys su 'Cat':", "Sakinys su 'Bird':"],
-        "answers": ["", "", ""]
+        "prompts": [
+          "Sakinys su 'Dog':",
+          "Sakinys su 'Cat':",
+          "Sakinys su 'Bird':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
       },
       {
         "subject": "Matematika: Daugyba",
         "symbol": "✖️",
         "type": "text",
         "check": true,
-        "prompts": ["5 * 8 =", "6 * 6 =", "7 * 3 =", "10 * 12 =" ],
-        "answers": ["40", "36", "21", "120"]
+        "prompts": [
+          "5 * 8 =",
+          "6 * 6 =",
+          "7 * 3 =",
+          "10 * 12 ="
+        ],
+        "answers": [
+          "40",
+          "36",
+          "21",
+          "120"
+        ]
       },
       {
         "subject": "Matematika: Sudėtis",
         "symbol": "➕",
         "type": "text",
         "check": true,
-        "prompts": ["45 + 15 =", "88 + 22 =", "130 + 70 =", "51 + 49 =" ],
-        "answers": ["60", "110", "200", "100"]
+        "prompts": [
+          "45 + 15 =",
+          "88 + 22 =",
+          "130 + 70 =",
+          "51 + 49 ="
+        ],
+        "answers": [
+          "60",
+          "110",
+          "200",
+          "100"
+        ]
       },
       {
         "subject": "Matematika: Atimtis",
         "symbol": "➖",
         "type": "text",
         "check": true,
-        "prompts": ["100 - 35 =", "80 - 16 =", "150 - 75 =", "999 - 111 =" ],
-        "answers": ["65", "64", "75", "888"]
+        "prompts": [
+          "100 - 35 =",
+          "80 - 16 =",
+          "150 - 75 =",
+          "999 - 111 ="
+        ],
+        "answers": [
+          "65",
+          "64",
+          "75",
+          "888"
+        ]
       }
     ]
   },
@@ -347,19 +617,50 @@
         "subject": "Anglų kalba: Vertimas",
         "symbol": "🇬🇧",
         "type": "translation",
-        "prompts": ["Išversk į anglų kalbą", "Išversk į anglų kalbą", "Išversk į anglų kalbą"],
-        "lt_words": ["Automobilis", "Dviratis", "Traukinys"],
-        "en_answers": ["Car", "Bike", "Train"]
+        "prompts": [
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą"
+        ],
+        "lt_words": [
+          "Automobilis",
+          "Dviratis",
+          "Traukinys"
+        ],
+        "en_answers": [
+          "Car",
+          "Bike",
+          "Train"
+        ]
       },
       {
         "subject": "Matematika: Sekos",
         "symbol": "🔢",
         "type": "sequence",
-        "prompts": ["1, 3, 5, ...", "50, 45, 40, ...", "a, b, c, ..."],
+        "prompts": [
+          "1, 3, 5, ...",
+          "50, 45, 40, ...",
+          "a, b, c, ..."
+        ],
         "answers": [
-          ["7", "9", "11", "13"],
-          ["35", "30", "25", "20"],
-          ["d", "e", "f", "g"]
+          [
+            "7",
+            "9",
+            "11",
+            "13"
+          ],
+          [
+            "35",
+            "30",
+            "25",
+            "20"
+          ],
+          [
+            "d",
+            "e",
+            "f",
+            "g"
+          ]
         ]
       }
     ],
@@ -369,8 +670,16 @@
         "symbol": "✍️",
         "type": "text",
         "check": false,
-        "prompts": ["Sakinys 1 su Car:", "Sakinys 2 su Bike:", "Sakinys 3 su Train:"],
-        "answers": ["", "", ""]
+        "prompts": [
+          "Sakinys 1 su Car:",
+          "Sakinys 2 su Bike:",
+          "Sakinys 3 su Train:"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
       },
       {
         "subject": "Matematika: Laikas",
@@ -382,7 +691,11 @@
           "Jei dabar yra 16:30, kiek bus po 15 min.?",
           "Jei dabar yra 08:50, kiek bus po 20 min.?"
         ],
-        "answers": ["15:00", "16:45", "09:10"]
+        "answers": [
+          "15:00",
+          "16:45",
+          "09:10"
+        ]
       }
     ],
     "Trečiadienis": [
@@ -391,16 +704,32 @@
         "symbol": "📖",
         "type": "area",
         "check": false,
-        "prompts": ["Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: Forest, Wolf, Moon:"],
-        "answers": [""]
+        "prompts": [
+          "Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: Forest, Wolf, Moon:"
+        ],
+        "answers": [
+          ""
+        ]
       },
       {
         "subject": "Matematika: Analoginis laikrodis",
         "symbol": "🕒",
         "type": "clock",
-        "prompts": ["Koks laikas rodomas? (1)", "Koks laikas rodomas? (2)", "Koks laikas rodomas? (3)"],
-        "times": ["06:00", "10:25", "02:50"],
-        "answers": ["06:00", "10:25", "02:50"]
+        "prompts": [
+          "Koks laikas rodomas? (1)",
+          "Koks laikas rodomas? (2)",
+          "Koks laikas rodomas? (3)"
+        ],
+        "times": [
+          "06:00",
+          "10:25",
+          "02:50"
+        ],
+        "answers": [
+          "06:00",
+          "10:25",
+          "02:50"
+        ]
       }
     ],
     "Ketvirtadienis": [
@@ -409,8 +738,16 @@
         "symbol": "🆕",
         "type": "text",
         "check": false,
-        "prompts": ["Parašyk 1 sakinį su žodžiu 'Family':", "Parašyk 2 sakinį su žodžiu 'Family':", "Parašyk 3 sakinį su žodžiu 'Family':"],
-        "answers": ["", "", ""]
+        "prompts": [
+          "Parašyk 1 sakinį su žodžiu 'Family':",
+          "Parašyk 2 sakinį su žodžiu 'Family':",
+          "Parašyk 3 sakinį su žodžiu 'Family':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
       },
       {
         "subject": "Matematika: Pinigai ir grąža",
@@ -422,7 +759,11 @@
           "Turi 3.50€. Perki vandenį už 0.90€. Kiek liko?",
           "Turi 50.00€. Perki batus už 35.00€. Kiek liko?"
         ],
-        "answers": ["6.50", "2.60", "15.00"]
+        "answers": [
+          "6.50",
+          "2.60",
+          "15.00"
+        ]
       }
     ],
     "Penktadienis": [
@@ -431,24 +772,38 @@
         "symbol": "🎬",
         "type": "area",
         "check": false,
-        "prompts": ["Parašyk 3 sakinius apie žiūrėtą filmuką:"],
-        "answers": [""]
+        "prompts": [
+          "Parašyk 3 sakinius apie žiūrėtą filmuką:"
+        ],
+        "answers": [
+          ""
+        ]
       },
       {
         "subject": "Matematika: Logika (Paukščiai)",
         "symbol": "🐦",
         "type": "text",
         "check": true,
-        "prompts": ["Medžio šakoje tupėjo 5 paukščiai. 2 nuskrido, bet po to atskrido 4. Kiek paukščių dabar?"],
-        "answers": ["7"]
+        "prompts": [
+          "Medžio šakoje tupėjo 5 paukščiai. 2 nuskrido, bet po to atskrido 4. Kiek paukščių dabar?"
+        ],
+        "answers": [
+          "7"
+        ]
       },
       {
         "subject": "Matematika: Knygų grandinėlė",
         "symbol": "📚",
         "type": "text",
         "check": true,
-        "prompts": ["Lentynoje buvo 30 knygų. Perskaičiau 10. Kiek liko neperskaitytų?", "Tada nupirkome dar 5 naujas. Kiek dabar iš viso yra knygų?"],
-        "answers": ["20", "25"]
+        "prompts": [
+          "Lentynoje buvo 30 knygų. Perskaičiau 10. Kiek liko neperskaitytų?",
+          "Tada nupirkome dar 5 naujas. Kiek dabar iš viso yra knygų?"
+        ],
+        "answers": [
+          "20",
+          "25"
+        ]
       }
     ],
     "Šeštadienis": [
@@ -457,24 +812,36 @@
         "symbol": "🧩",
         "type": "text",
         "check": true,
-        "prompts": ["Mano pusė yra lygi 6. Koks aš skaičius?"],
-        "answers": ["12"]
+        "prompts": [
+          "Mano pusė yra lygi 6. Koks aš skaičius?"
+        ],
+        "answers": [
+          "12"
+        ]
       },
       {
         "subject": "Logika: Figūros",
         "symbol": "🔲",
         "type": "text",
         "check": true,
-        "prompts": ["Turiu 4 kampus ir visos mano kraštinės lygios. Kokia aš figūra?"],
-        "answers": ["kvadratas"]
+        "prompts": [
+          "Turiu 4 kampus ir visos mano kraštinės lygios. Kokia aš figūra?"
+        ],
+        "answers": [
+          "kvadratas"
+        ]
       },
       {
         "subject": "Logika: Mįslė",
         "symbol": "❓",
         "type": "text",
         "check": true,
-        "prompts": ["Eina per stiklą, bet jo nesudaužo. Kas? (Vienas žodis)"],
-        "answers": ["šviesa"]
+        "prompts": [
+          "Eina per stiklą, bet jo nesudaužo. Kas? (Vienas žodis)"
+        ],
+        "answers": [
+          "šviesa"
+        ]
       }
     ],
     "Sekmadienis": [
@@ -483,339 +850,1601 @@
         "symbol": "🔄",
         "type": "text",
         "check": false,
-        "prompts": ["Sakinys su 'Car':", "Sakinys su 'Bike':", "Sakinys su 'Train':"],
-        "answers": ["", "", ""]
+        "prompts": [
+          "Sakinys su 'Car':",
+          "Sakinys su 'Bike':",
+          "Sakinys su 'Train':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
       },
       {
         "subject": "Matematika: Daugyba",
         "symbol": "✖️",
         "type": "text",
         "check": true,
-        "prompts": ["4 * 4 =", "8 * 9 =", "3 * 7 =", "5 * 11 =" ],
-        "answers": ["16", "72", "21", "55"]
+        "prompts": [
+          "4 * 4 =",
+          "8 * 9 =",
+          "3 * 7 =",
+          "5 * 11 ="
+        ],
+        "answers": [
+          "16",
+          "72",
+          "21",
+          "55"
+        ]
       },
       {
         "subject": "Matematika: Sudėtis",
         "symbol": "➕",
         "type": "text",
         "check": true,
-        "prompts": ["33 + 44 =", "120 + 80 =", "67 + 13 =", "500 + 250 =" ],
-        "answers": ["77", "200", "80", "750"]
+        "prompts": [
+          "33 + 44 =",
+          "120 + 80 =",
+          "67 + 13 =",
+          "500 + 250 ="
+        ],
+        "answers": [
+          "77",
+          "200",
+          "80",
+          "750"
+        ]
       },
       {
         "subject": "Matematika: Atimtis",
         "symbol": "➖",
         "type": "text",
         "check": true,
-        "prompts": ["50 - 22 =", "100 - 45 =", "300 - 150 =", "88 - 39 =" ],
-        "answers": ["28", "55", "150", "49"]
+        "prompts": [
+          "50 - 22 =",
+          "100 - 45 =",
+          "300 - 150 =",
+          "88 - 39 ="
+        ],
+        "answers": [
+          "28",
+          "55",
+          "150",
+          "49"
+        ]
+      }
+    ]
+  },
+  "Rinkinys 4": {
+    "Pirmadienis": [
+      {
+        "subject": "Anglų kalba: Vertimas",
+        "symbol": "🇬🇧",
+        "type": "translation",
+        "prompts": [
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą"
+        ],
+        "lt_words": [
+          "Raudona",
+          "Žalia",
+          "Mėlyna"
+        ],
+        "en_answers": [
+          "Red",
+          "Green",
+          "Blue"
+        ]
+      },
+      {
+        "subject": "Matematika: Sekos",
+        "symbol": "🔢",
+        "type": "sequence",
+        "prompts": [
+          "5, 10, 15, ...",
+          "1, 2, 4, ...",
+          "C, F, I, ..."
+        ],
+        "answers": [
+          [
+            "20",
+            "25",
+            "30",
+            "35"
+          ],
+          [
+            "8",
+            "16",
+            "32",
+            "64"
+          ],
+          [
+            "L",
+            "O",
+            "R",
+            "U"
+          ]
+        ]
+      }
+    ],
+    "Antradienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai su pirmadienio žodžiais",
+        "symbol": "✍️",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Sakinys 1 su Red:",
+          "Sakinys 2 su Green:",
+          "Sakinys 3 su Blue:"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Laikas",
+        "symbol": "⏰",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Jei dabar yra 07:00, kiek bus po 3 val. 15 min.?",
+          "Jei dabar yra 12:30, kiek bus po 1 val. 20 min.?",
+          "Jei dabar yra 21:50, kiek bus po 10 min.?"
+        ],
+        "answers": [
+          "10:15",
+          "13:50",
+          "22:00"
+        ]
+      }
+    ],
+    "Trečiadienis": [
+      {
+        "subject": "Anglų kalba: Istorija",
+        "symbol": "📖",
+        "type": "area",
+        "check": false,
+        "prompts": [
+          "Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: Cat, Rainbow, Garden:"
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Analoginis laikrodis",
+        "symbol": "🕒",
+        "type": "clock",
+        "prompts": [
+          "Koks laikas rodomas? (1)",
+          "Koks laikas rodomas? (2)",
+          "Koks laikas rodomas? (3)"
+        ],
+        "times": [
+          "07:15",
+          "01:30",
+          "05:45"
+        ],
+        "answers": [
+          "07:15",
+          "01:30",
+          "05:45"
+        ]
+      }
+    ],
+    "Ketvirtadienis": [
+      {
+        "subject": "Anglų kalba: Naujas žodis 'Happy'",
+        "symbol": "🆕",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Parašyk 1 sakinį su žodžiu 'Happy':",
+          "Parašyk 2 sakinį su žodžiu 'Happy':",
+          "Parašyk 3 sakinį su žodžiu 'Happy':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Pinigai ir grąža",
+        "symbol": "💶",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Turi 6.00€. Perki saldainių už 1.75€. Kiek liks?",
+          "Turi 9.50€. Perki sulčių už 2.30€. Kiek liko?",
+          "Turi 15.00€. Perki žaislą už 6.45€. Kiek liko?"
+        ],
+        "answers": [
+          "4.25",
+          "7.20",
+          "8.55"
+        ]
+      }
+    ],
+    "Penktadienis": [
+      {
+        "subject": "Anglų kalba: Filmuko apžvalga",
+        "symbol": "🎬",
+        "type": "area",
+        "check": false,
+        "prompts": [
+          "Parašyk 3 sakinius apie žiūrėtą filmuką:"
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Logika (Traukinys)",
+        "symbol": "🚂",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Traukinyje sėdėjo 15 žmonių. Stotelėje išlipo 6, o įlipo 4. Kiek žmonių dabar traukinyje?"
+        ],
+        "answers": [
+          "13"
+        ]
+      },
+      {
+        "subject": "Matematika: Žuvų grandinėlė",
+        "symbol": "🐟",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Akvariumo yra 12 žuvų. Parduodame 4. Kiek liko?",
+          "Tada nupirkome dar 7 žuvis. Kiek dabar iš viso?"
+        ],
+        "answers": [
+          "8",
+          "15"
+        ]
+      }
+    ],
+    "Šeštadienis": [
+      {
+        "subject": "Logika: Skaičių mįslė",
+        "symbol": "🧩",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Aš esu skaičius. Jei mane padalinsi iš 2, gausi 7. Koks aš skaičius?"
+        ],
+        "answers": [
+          "14"
+        ]
+      },
+      {
+        "subject": "Logika: Gyvūnų kojos",
+        "symbol": "🐾",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Kambaryje yra 1 katė ir 2 paukščiai. Kiek iš viso kojų yra kambaryje?"
+        ],
+        "answers": [
+          "8"
+        ]
+      },
+      {
+        "subject": "Logika: Mįslė",
+        "symbol": "❓",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Kuo daugiau džiovi, tuo labiau drėkstu. Kas aš? (Vienas žodis)"
+        ],
+        "answers": [
+          "rankšluostis"
+        ]
+      }
+    ],
+    "Sekmadienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai",
+        "symbol": "🔄",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Sakinys su 'Red':",
+          "Sakinys su 'Green':",
+          "Sakinys su 'Blue':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Daugyba",
+        "symbol": "✖️",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "6 * 4 =",
+          "7 * 8 =",
+          "9 * 3 =",
+          "5 * 6 ="
+        ],
+        "answers": [
+          "24",
+          "56",
+          "27",
+          "30"
+        ]
+      },
+      {
+        "subject": "Matematika: Sudėtis",
+        "symbol": "➕",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "34 + 48 =",
+          "67 + 33 =",
+          "55 + 45 =",
+          "123 + 64 ="
+        ],
+        "answers": [
+          "82",
+          "100",
+          "100",
+          "187"
+        ]
+      },
+      {
+        "subject": "Matematika: Atimtis",
+        "symbol": "➖",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "90 - 37 =",
+          "72 - 28 =",
+          "500 - 63 =",
+          "844 - 102 ="
+        ],
+        "answers": [
+          "53",
+          "44",
+          "437",
+          "742"
+        ]
+      }
+    ]
+  },
+  "Rinkinys 5": {
+    "Pirmadienis": [
+      {
+        "subject": "Anglų kalba: Vertimas",
+        "symbol": "🇬🇧",
+        "type": "translation",
+        "prompts": [
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą"
+        ],
+        "lt_words": [
+          "Namas",
+          "Medis",
+          "Gėlė"
+        ],
+        "en_answers": [
+          "House",
+          "Tree",
+          "Flower"
+        ]
+      },
+      {
+        "subject": "Matematika: Sekos",
+        "symbol": "🔢",
+        "type": "sequence",
+        "prompts": [
+          "4, 8, 12, ...",
+          "1000, 900, 800, ...",
+          "B, D, F, ..."
+        ],
+        "answers": [
+          [
+            "16",
+            "20",
+            "24",
+            "28"
+          ],
+          [
+            "700",
+            "600",
+            "500",
+            "400"
+          ],
+          [
+            "H",
+            "J",
+            "L",
+            "N"
+          ]
+        ]
+      }
+    ],
+    "Antradienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai su pirmadienio žodžiais",
+        "symbol": "✍️",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Sakinys 1 su House:",
+          "Sakinys 2 su Tree:",
+          "Sakinys 3 su Flower:"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Laikas",
+        "symbol": "⏰",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Jei dabar yra 06:00, kiek bus po 2 val. 45 min.?",
+          "Jei dabar yra 13:20, kiek bus po 1 val. 5 min.?",
+          "Jei dabar yra 22:30, kiek bus po 40 min.?"
+        ],
+        "answers": [
+          "08:45",
+          "14:25",
+          "23:10"
+        ]
+      }
+    ],
+    "Trečiadienis": [
+      {
+        "subject": "Anglų kalba: Istorija",
+        "symbol": "📖",
+        "type": "area",
+        "check": false,
+        "prompts": [
+          "Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: River, Fish, Boat:"
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Analoginis laikrodis",
+        "symbol": "🕒",
+        "type": "clock",
+        "prompts": [
+          "Koks laikas rodomas? (1)",
+          "Koks laikas rodomas? (2)",
+          "Koks laikas rodomas? (3)"
+        ],
+        "times": [
+          "02:15",
+          "07:45",
+          "10:30"
+        ],
+        "answers": [
+          "02:15",
+          "07:45",
+          "10:30"
+        ]
+      }
+    ],
+    "Ketvirtadienis": [
+      {
+        "subject": "Anglų kalba: Naujas žodis 'School'",
+        "symbol": "🆕",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Parašyk 1 sakinį su žodžiu 'School':",
+          "Parašyk 2 sakinį su žodžiu 'School':",
+          "Parašyk 3 sakinį su žodžiu 'School':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Pinigai ir grąža",
+        "symbol": "💶",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Turi 7.00€. Perki pietus už 3.40€. Kiek liks?",
+          "Turi 11.50€. Perki kepurę už 4.25€. Kiek liko?",
+          "Turi 25.00€. Perki knygas už 9.80€. Kiek liko?"
+        ],
+        "answers": [
+          "3.60",
+          "7.25",
+          "15.20"
+        ]
+      }
+    ],
+    "Penktadienis": [
+      {
+        "subject": "Anglų kalba: Filmuko apžvalga",
+        "symbol": "🎬",
+        "type": "area",
+        "check": false,
+        "prompts": [
+          "Parašyk 3 sakinius apie žiūrėtą filmuką:"
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Logika (Biblioteka)",
+        "symbol": "📚",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Lentynoje buvo 20 knygų. Jonas paėmė 4, o Marta paėmė 3. Kiek knygų liko?"
+        ],
+        "answers": [
+          "13"
+        ]
+      },
+      {
+        "subject": "Matematika: Uogų grandinėlė",
+        "symbol": "🍓",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Turėjau 18 uogų, suvalgiau 7. Kiek liko?",
+          "Tada sesuo atidavė dar 9 uogas. Kiek dabar turiu iš viso?"
+        ],
+        "answers": [
+          "11",
+          "20"
+        ]
+      }
+    ],
+    "Šeštadienis": [
+      {
+        "subject": "Logika: Skaičių mįslė",
+        "symbol": "🧩",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Aš esu skaičius. Jei mane padauginsi iš 3, gausi 24. Koks aš skaičius?"
+        ],
+        "answers": [
+          "8"
+        ]
+      },
+      {
+        "subject": "Logika: Pirštinių poros",
+        "symbol": "🧤",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Stalčiuje yra 4 poros pirštinių. Kiek pirštinių iš viso yra stalčiuje?"
+        ],
+        "answers": [
+          "8"
+        ]
+      },
+      {
+        "subject": "Logika: Mįslė",
+        "symbol": "❓",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Visada ateina, bet niekada nepasiekia. Kas? (Vienas žodis)"
+        ],
+        "answers": [
+          "rytojus"
+        ]
+      }
+    ],
+    "Sekmadienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai",
+        "symbol": "🔄",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Sakinys su 'House':",
+          "Sakinys su 'Tree':",
+          "Sakinys su 'Flower':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Daugyba",
+        "symbol": "✖️",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "3 * 8 =",
+          "6 * 7 =",
+          "9 * 4 =",
+          "12 * 5 ="
+        ],
+        "answers": [
+          "24",
+          "42",
+          "36",
+          "60"
+        ]
+      },
+      {
+        "subject": "Matematika: Sudėtis",
+        "symbol": "➕",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "36 + 54 =",
+          "73 + 18 =",
+          "145 + 55 =",
+          "208 + 92 ="
+        ],
+        "answers": [
+          "90",
+          "91",
+          "200",
+          "300"
+        ]
+      },
+      {
+        "subject": "Matematika: Atimtis",
+        "symbol": "➖",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "85 - 38 =",
+          "120 - 64 =",
+          "400 - 155 =",
+          "632 - 217 ="
+        ],
+        "answers": [
+          "47",
+          "56",
+          "245",
+          "415"
+        ]
+      }
+    ]
+  },
+  "Rinkinys 6": {
+    "Pirmadienis": [
+      {
+        "subject": "Anglų kalba: Vertimas",
+        "symbol": "🇬🇧",
+        "type": "translation",
+        "prompts": [
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą"
+        ],
+        "lt_words": [
+          "Saulė",
+          "Mėnulis",
+          "Žvaigždė"
+        ],
+        "en_answers": [
+          "Sun",
+          "Moon",
+          "Star"
+        ]
+      },
+      {
+        "subject": "Matematika: Sekos",
+        "symbol": "🔢",
+        "type": "sequence",
+        "prompts": [
+          "7, 14, 21, ...",
+          "64, 32, 16, ...",
+          "a, c, e, ..."
+        ],
+        "answers": [
+          [
+            "28",
+            "35",
+            "42",
+            "49"
+          ],
+          [
+            "8",
+            "4",
+            "2",
+            "1"
+          ],
+          [
+            "g",
+            "i",
+            "k",
+            "m"
+          ]
+        ]
+      }
+    ],
+    "Antradienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai su pirmadienio žodžiais",
+        "symbol": "✍️",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Sakinys 1 su Sun:",
+          "Sakinys 2 su Moon:",
+          "Sakinys 3 su Star:"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Laikas",
+        "symbol": "⏰",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Jei dabar yra 08:30, kiek bus po 3 val. 20 min.?",
+          "Jei dabar yra 15:45, kiek bus po 30 min.?",
+          "Jei dabar yra 23:00, kiek bus po 1 val.?"
+        ],
+        "answers": [
+          "11:50",
+          "16:15",
+          "00:00"
+        ]
+      }
+    ],
+    "Trečiadienis": [
+      {
+        "subject": "Anglų kalba: Istorija",
+        "symbol": "📖",
+        "type": "area",
+        "check": false,
+        "prompts": [
+          "Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: Mountain, Snow, Bear:"
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Analoginis laikrodis",
+        "symbol": "🕒",
+        "type": "clock",
+        "prompts": [
+          "Koks laikas rodomas? (1)",
+          "Koks laikas rodomas? (2)",
+          "Koks laikas rodomas? (3)"
+        ],
+        "times": [
+          "05:10",
+          "08:40",
+          "01:20"
+        ],
+        "answers": [
+          "05:10",
+          "08:40",
+          "01:20"
+        ]
+      }
+    ],
+    "Ketvirtadienis": [
+      {
+        "subject": "Anglų kalba: Naujas žodis 'Strong'",
+        "symbol": "🆕",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Parašyk 1 sakinį su žodžiu 'Strong':",
+          "Parašyk 2 sakinį su žodžiu 'Strong':",
+          "Parašyk 3 sakinį su žodžiu 'Strong':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Pinigai ir grąža",
+        "symbol": "💶",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Turi 4.00€. Perki sulčių už 1.30€. Kiek liks?",
+          "Turi 13.00€. Perki marškinėlius už 5.60€. Kiek liko?",
+          "Turi 30.00€. Perki kuprinę už 17.50€. Kiek liko?"
+        ],
+        "answers": [
+          "2.70",
+          "7.40",
+          "12.50"
+        ]
+      }
+    ],
+    "Penktadienis": [
+      {
+        "subject": "Anglų kalba: Filmuko apžvalga",
+        "symbol": "🎬",
+        "type": "area",
+        "check": false,
+        "prompts": [
+          "Parašyk 3 sakinius apie žiūrėtą filmuką:"
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Logika (Klasė)",
+        "symbol": "🏫",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Klasėje sėdėjo 22 mokiniai. 5 išėjo į koridorių, o 3 grįžo atgal. Kiek mokinių dabar klasėje?"
+        ],
+        "answers": [
+          "20"
+        ]
+      },
+      {
+        "subject": "Matematika: Žibintų grandinėlė",
+        "symbol": "💡",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Gatvėje buvo 25 žibintai. 8 sudužo. Kiek liko veikiančių?",
+          "Tada komunalininkai sutvarkė 5 žibintus. Kiek dabar veikiančių?"
+        ],
+        "answers": [
+          "17",
+          "22"
+        ]
+      }
+    ],
+    "Šeštadienis": [
+      {
+        "subject": "Logika: Skaičių mįslė",
+        "symbol": "🧩",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Aš esu skaičius. Du kartus didesnis už 9. Koks aš skaičius?"
+        ],
+        "answers": [
+          "18"
+        ]
+      },
+      {
+        "subject": "Logika: Kojinių poros",
+        "symbol": "🧦",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Krepšyje yra 5 poros kojinių. Kiek kojinių iš viso yra krepšyje?"
+        ],
+        "answers": [
+          "10"
+        ]
+      },
+      {
+        "subject": "Logika: Mįslė",
+        "symbol": "❓",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Turi dantis, bet nekanda. Kas aš? (Vienas žodis)"
+        ],
+        "answers": [
+          "šukos"
+        ]
+      }
+    ],
+    "Sekmadienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai",
+        "symbol": "🔄",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Sakinys su 'Sun':",
+          "Sakinys su 'Moon':",
+          "Sakinys su 'Star':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Daugyba",
+        "symbol": "✖️",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "8 * 8 =",
+          "4 * 9 =",
+          "11 * 6 =",
+          "7 * 5 ="
+        ],
+        "answers": [
+          "64",
+          "36",
+          "66",
+          "35"
+        ]
+      },
+      {
+        "subject": "Matematika: Sudėtis",
+        "symbol": "➕",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "48 + 37 =",
+          "91 + 19 =",
+          "256 + 44 =",
+          "375 + 125 ="
+        ],
+        "answers": [
+          "85",
+          "110",
+          "300",
+          "500"
+        ]
+      },
+      {
+        "subject": "Matematika: Atimtis",
+        "symbol": "➖",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "60 - 23 =",
+          "134 - 56 =",
+          "500 - 281 =",
+          "900 - 347 ="
+        ],
+        "answers": [
+          "37",
+          "78",
+          "219",
+          "553"
+        ]
+      }
+    ]
+  },
+  "Rinkinys 7": {
+    "Pirmadienis": [
+      {
+        "subject": "Anglų kalba: Vertimas",
+        "symbol": "🇬🇧",
+        "type": "translation",
+        "prompts": [
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą"
+        ],
+        "lt_words": [
+          "Vandenynas",
+          "Sala",
+          "Tiltas"
+        ],
+        "en_answers": [
+          "Ocean",
+          "Island",
+          "Bridge"
+        ]
+      },
+      {
+        "subject": "Matematika: Sekos",
+        "symbol": "🔢",
+        "type": "sequence",
+        "prompts": [
+          "2, 6, 18, ...",
+          "80, 70, 60, ...",
+          "A, C, E, ..."
+        ],
+        "answers": [
+          [
+            "54",
+            "162",
+            "486",
+            "1458"
+          ],
+          [
+            "50",
+            "40",
+            "30",
+            "20"
+          ],
+          [
+            "G",
+            "I",
+            "K",
+            "M"
+          ]
+        ]
+      }
+    ],
+    "Antradienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai su pirmadienio žodžiais",
+        "symbol": "✍️",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Sakinys 1 su Ocean:",
+          "Sakinys 2 su Island:",
+          "Sakinys 3 su Bridge:"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Laikas",
+        "symbol": "⏰",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Jei dabar yra 09:40, kiek bus po 2 val. 25 min.?",
+          "Jei dabar yra 17:10, kiek bus po 55 min.?",
+          "Jei dabar yra 11:30, kiek bus po 3 val. 30 min.?"
+        ],
+        "answers": [
+          "12:05",
+          "18:05",
+          "15:00"
+        ]
+      }
+    ],
+    "Trečiadienis": [
+      {
+        "subject": "Anglų kalba: Istorija",
+        "symbol": "📖",
+        "type": "area",
+        "check": false,
+        "prompts": [
+          "Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: Castle, Knight, Dragon:"
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Analoginis laikrodis",
+        "symbol": "🕒",
+        "type": "clock",
+        "prompts": [
+          "Koks laikas rodomas? (1)",
+          "Koks laikas rodomas? (2)",
+          "Koks laikas rodomas? (3)"
+        ],
+        "times": [
+          "09:00",
+          "03:35",
+          "06:55"
+        ],
+        "answers": [
+          "09:00",
+          "03:35",
+          "06:55"
+        ]
+      }
+    ],
+    "Ketvirtadienis": [
+      {
+        "subject": "Anglų kalba: Naujas žodis 'Quick'",
+        "symbol": "🆕",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Parašyk 1 sakinį su žodžiu 'Quick':",
+          "Parašyk 2 sakinį su žodžiu 'Quick':",
+          "Parašyk 3 sakinį su žodžiu 'Quick':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Pinigai ir grąža",
+        "symbol": "💶",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?",
+          "Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?",
+          "Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?"
+        ],
+        "answers": [
+          "5.35",
+          "8.50",
+          "17.25"
+        ]
+      }
+    ],
+    "Penktadienis": [
+      {
+        "subject": "Anglų kalba: Filmuko apžvalga",
+        "symbol": "🎬",
+        "type": "area",
+        "check": false,
+        "prompts": [
+          "Parašyk 3 sakinius apie žiūrėtą filmuką:"
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Logika (Ledainė)",
+        "symbol": "🍦",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Ledainėje buvo 30 ledų. Vaikai nupirko 13, o pardavėja atnešė 8 naujų. Kiek ledų dabar yra?"
+        ],
+        "answers": [
+          "25"
+        ]
+      },
+      {
+        "subject": "Matematika: Spalvų grandinėlė",
+        "symbol": "🎨",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Dėžutėje buvo 24 flomasteriai. Praradi 6. Kiek liko?",
+          "Tada draugas padovanojo 4 naujus. Kiek dabar iš viso?"
+        ],
+        "answers": [
+          "18",
+          "22"
+        ]
+      }
+    ],
+    "Šeštadienis": [
+      {
+        "subject": "Logika: Skaičių mįslė",
+        "symbol": "🧩",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Aš esu skaičius. Jei mane sudauginsI iš savęs, gausi 49. Koks aš skaičius?"
+        ],
+        "answers": [
+          "7"
+        ]
+      },
+      {
+        "subject": "Logika: Ratų skaičius",
+        "symbol": "🚗",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Aikštelėje stovi 3 automobiliai ir 2 dviračiai. Kiek ratų iš viso?"
+        ],
+        "answers": [
+          "16"
+        ]
+      },
+      {
+        "subject": "Logika: Mįslė",
+        "symbol": "❓",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Kuo daugiau yra, tuo mažiau matai. Kas? (Vienas žodis)"
+        ],
+        "answers": [
+          "tamsa"
+        ]
+      }
+    ],
+    "Sekmadienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai",
+        "symbol": "🔄",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Sakinys su 'Ocean':",
+          "Sakinys su 'Island':",
+          "Sakinys su 'Bridge':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Daugyba",
+        "symbol": "✖️",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "12 * 3 =",
+          "8 * 6 =",
+          "5 * 9 =",
+          "11 * 11 ="
+        ],
+        "answers": [
+          "36",
+          "48",
+          "45",
+          "121"
+        ]
+      },
+      {
+        "subject": "Matematika: Sudėtis",
+        "symbol": "➕",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "64 + 36 =",
+          "119 + 81 =",
+          "247 + 53 =",
+          "388 + 112 ="
+        ],
+        "answers": [
+          "100",
+          "200",
+          "300",
+          "500"
+        ]
+      },
+      {
+        "subject": "Matematika: Atimtis",
+        "symbol": "➖",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "71 - 34 =",
+          "200 - 87 =",
+          "543 - 218 =",
+          "1000 - 463 ="
+        ],
+        "answers": [
+          "37",
+          "113",
+          "325",
+          "537"
+        ]
+      }
+    ]
+  },
+  "Rinkinys 8": {
+    "Pirmadienis": [
+      {
+        "subject": "Anglų kalba: Vertimas",
+        "symbol": "🇬🇧",
+        "type": "translation",
+        "prompts": [
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą",
+          "Išversk į anglų kalbą"
+        ],
+        "lt_words": [
+          "Juoda",
+          "Balta",
+          "Geltona"
+        ],
+        "en_answers": [
+          "Black",
+          "White",
+          "Yellow"
+        ]
+      },
+      {
+        "subject": "Matematika: Sekos",
+        "symbol": "🔢",
+        "type": "sequence",
+        "prompts": [
+          "6, 12, 18, ...",
+          "500, 400, 300, ...",
+          "D, G, J, ..."
+        ],
+        "answers": [
+          [
+            "24",
+            "30",
+            "36",
+            "42"
+          ],
+          [
+            "200",
+            "100",
+            "0",
+            "-100"
+          ],
+          [
+            "M",
+            "P",
+            "S",
+            "V"
+          ]
+        ]
+      }
+    ],
+    "Antradienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai su pirmadienio žodžiais",
+        "symbol": "✍️",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Sakinys 1 su Black:",
+          "Sakinys 2 su White:",
+          "Sakinys 3 su Yellow:"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Laikas",
+        "symbol": "⏰",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Jei dabar yra 05:45, kiek bus po 1 val. 15 min.?",
+          "Jei dabar yra 19:20, kiek bus po 2 val. 40 min.?",
+          "Jei dabar yra 10:55, kiek bus po 5 min.?"
+        ],
+        "answers": [
+          "07:00",
+          "22:00",
+          "11:00"
+        ]
+      }
+    ],
+    "Trečiadienis": [
+      {
+        "subject": "Anglų kalba: Istorija",
+        "symbol": "📖",
+        "type": "area",
+        "check": false,
+        "prompts": [
+          "Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: Rain, Umbrella, Puddle:"
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Analoginis laikrodis",
+        "symbol": "🕒",
+        "type": "clock",
+        "prompts": [
+          "Koks laikas rodomas? (1)",
+          "Koks laikas rodomas? (2)",
+          "Koks laikas rodomas? (3)"
+        ],
+        "times": [
+          "12:00",
+          "04:50",
+          "08:25"
+        ],
+        "answers": [
+          "12:00",
+          "04:50",
+          "08:25"
+        ]
+      }
+    ],
+    "Ketvirtadienis": [
+      {
+        "subject": "Anglų kalba: Naujas žodis 'Beautiful'",
+        "symbol": "🆕",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Parašyk 1 sakinį su žodžiu 'Beautiful':",
+          "Parašyk 2 sakinį su žodžiu 'Beautiful':",
+          "Parašyk 3 sakinį su žodžiu 'Beautiful':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Pinigai ir grąža",
+        "symbol": "💶",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Turi 20.00€. Perki maistą už 11.35€. Kiek liks?",
+          "Turi 7.80€. Perki pieštukus už 2.45€. Kiek liko?",
+          "Turi 50.00€. Perki batukus už 28.60€. Kiek liko?"
+        ],
+        "answers": [
+          "8.65",
+          "5.35",
+          "21.40"
+        ]
+      }
+    ],
+    "Penktadienis": [
+      {
+        "subject": "Anglų kalba: Filmuko apžvalga",
+        "symbol": "🎬",
+        "type": "area",
+        "check": false,
+        "prompts": [
+          "Parašyk 3 sakinius apie žiūrėtą filmuką:"
+        ],
+        "answers": [
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Logika (Zoologijos sodas)",
+        "symbol": "🦁",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Zoologijos sode buvo 18 gyvūnų. 3 pervežė į kitą zoologijos sodą, o 5 naujus atvežė. Kiek gyvūnų dabar?"
+        ],
+        "answers": [
+          "20"
+        ]
+      },
+      {
+        "subject": "Matematika: Kiaušinių grandinėlė",
+        "symbol": "🥚",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Turėjau 15 kiaušinių. Sunaudojau kepimui 6. Kiek liko?",
+          "Tada višta padėjo dar 3 kiaušinius. Kiek dabar iš viso?"
+        ],
+        "answers": [
+          "9",
+          "12"
+        ]
+      }
+    ],
+    "Šeštadienis": [
+      {
+        "subject": "Logika: Skaičių mįslė",
+        "symbol": "🧩",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Aš esu skaičius. Jei prie manęs pridėsi mane patį, gausi 22. Koks aš skaičius?"
+        ],
+        "answers": [
+          "11"
+        ]
+      },
+      {
+        "subject": "Logika: Drugelių sparnai",
+        "symbol": "🦋",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Kambaryje yra 5 drugeliai. Kiek sparnų iš viso turi visi drugeliai?"
+        ],
+        "answers": [
+          "20"
+        ]
+      },
+      {
+        "subject": "Logika: Mįslė",
+        "symbol": "❓",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "Skrenda be sparnų, bėga be kojų, plaukia be vandens. Kas? (Vienas žodis)"
+        ],
+        "answers": [
+          "debesis"
+        ]
+      }
+    ],
+    "Sekmadienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai",
+        "symbol": "🔄",
+        "type": "text",
+        "check": false,
+        "prompts": [
+          "Sakinys su 'Black':",
+          "Sakinys su 'White':",
+          "Sakinys su 'Yellow':"
+        ],
+        "answers": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Matematika: Daugyba",
+        "symbol": "✖️",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "7 * 7 =",
+          "4 * 12 =",
+          "9 * 6 =",
+          "8 * 11 ="
+        ],
+        "answers": [
+          "49",
+          "48",
+          "54",
+          "88"
+        ]
+      },
+      {
+        "subject": "Matematika: Sudėtis",
+        "symbol": "➕",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "57 + 43 =",
+          "136 + 64 =",
+          "289 + 111 =",
+          "450 + 275 ="
+        ],
+        "answers": [
+          "100",
+          "200",
+          "400",
+          "725"
+        ]
+      },
+      {
+        "subject": "Matematika: Atimtis",
+        "symbol": "➖",
+        "type": "text",
+        "check": true,
+        "prompts": [
+          "93 - 47 =",
+          "160 - 73 =",
+          "750 - 328 =",
+          "1200 - 456 ="
+        ],
+        "answers": [
+          "46",
+          "87",
+          "422",
+          "744"
+        ]
       }
     ]
   }
-,
- "Rinkinys 4": {
-   "Pirmadienis": [
-     {
-       "subject": "Anglų kalba: Vertimas",
-       "symbol": "🇬🇧",
-       "type": "translation",
-       "prompts": [
-         "Išversk į anglų kalbą",
-         "Išversk į anglų kalbą",
-         "Išversk į anglų kalbą"
-       ],
-       "lt_words": [
-         "Raudona",
-         "Žalia",
-         "Mėlyna"
-       ],
-       "en_answers": [
-         "Red",
-         "Green",
-         "Blue"
-       ]
-     },
-     {
-       "subject": "Matematika: Sekos",
-       "symbol": "🔢",
-       "type": "sequence",
-       "prompts": [
-         "5, 10, 15, ...",
-         "1, 2, 4, ...",
-         "C, F, I, ..."
-       ],
-       "answers": [
-         [
-           "20",
-           "25",
-           "30",
-           "35"
-         ],
-         [
-           "8",
-           "16",
-           "32",
-           "64"
-         ],
-         [
-           "L",
-           "O",
-           "R",
-           "U"
-         ]
-       ]
-     }
-   ],
-   "Antradienis": [
-     {
-       "subject": "Anglų kalba: Sakiniai su pirmadienio žodžiais",
-       "symbol": "✍️",
-       "type": "text",
-       "check": false,
-       "prompts": [
-         "Sakinys 1 su Red:",
-         "Sakinys 2 su Green:",
-         "Sakinys 3 su Blue:"
-       ],
-       "answers": [
-         "",
-         "",
-         ""
-       ]
-     },
-     {
-       "subject": "Matematika: Laikas",
-       "symbol": "⏰",
-       "type": "text",
-       "check": true,
-       "prompts": [
-         "Jei dabar yra 07:00, kiek bus po 3 val. 15 min.?",
-         "Jei dabar yra 12:30, kiek bus po 1 val. 20 min.?",
-         "Jei dabar yra 21:50, kiek bus po 10 min.?"
-       ],
-       "answers": [
-         "10:15",
-         "13:50",
-         "22:00"
-       ]
-     }
-   ],
-   "Trečiadienis": [
-     {
-       "subject": "Anglų kalba: Istorija",
-       "symbol": "📖",
-       "type": "area",
-       "check": false,
-       "prompts": [
-         "Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: Cat, Rainbow, Garden:"
-       ],
-       "answers": [
-         ""
-       ]
-     },
-     {
-       "subject": "Matematika: Analoginis laikrodis",
-       "symbol": "🕒",
-       "type": "clock",
-       "prompts": [
-         "Koks laikas rodomas? (1)",
-         "Koks laikas rodomas? (2)",
-         "Koks laikas rodomas? (3)"
-       ],
-       "times": [
-         "07:15",
-         "01:30",
-         "05:45"
-       ],
-       "answers": [
-         "07:15",
-         "01:30",
-         "05:45"
-       ]
-     }
-   ],
-   "Ketvirtadienis": [
-     {
-       "subject": "Anglų kalba: Naujas žodis 'Happy'",
-       "symbol": "🆕",
-       "type": "text",
-       "check": false,
-       "prompts": [
-         "Parašyk 1 sakinį su žodžiu 'Happy':",
-         "Parašyk 2 sakinį su žodžiu 'Happy':",
-         "Parašyk 3 sakinį su žodžiu 'Happy':"
-       ],
-       "answers": [
-         "",
-         "",
-         ""
-       ]
-     },
-     {
-       "subject": "Matematika: Pinigai ir grąža",
-       "symbol": "💶",
-       "type": "text",
-       "check": true,
-       "prompts": [
-         "Turi 6.00€. Perki saldainių už 1.75€. Kiek liks?",
-         "Turi 9.50€. Perki sulčių už 2.30€. Kiek liko?",
-         "Turi 15.00€. Perki žaislą už 6.45€. Kiek liko?"
-       ],
-       "answers": [
-         "4.25",
-         "7.20",
-         "8.55"
-       ]
-     }
-   ],
-   "Penktadienis": [
-     {
-       "subject": "Anglų kalba: Filmuko apžvalga",
-       "symbol": "🎬",
-       "type": "area",
-       "check": false,
-       "prompts": [
-         "Parašyk 3 sakinius apie žiūrėtą filmuką:"
-       ],
-       "answers": [
-         ""
-       ]
-     },
-     {
-       "subject": "Matematika: Logika (Traukinys)",
-       "symbol": "🚂",
-       "type": "text",
-       "check": true,
-       "prompts": [
-         "Traukinyje sėdėjo 15 žmonių. Stotelėje išlipo 6, o įlipo 4. Kiek žmonių dabar traukinyje?"
-       ],
-       "answers": [
-         "13"
-       ]
-     },
-     {
-       "subject": "Matematika: Žuvų grandinėlė",
-       "symbol": "🐟",
-       "type": "text",
-       "check": true,
-       "prompts": [
-         "Akvariumo yra 12 žuvų. Parduodame 4. Kiek liko?",
-         "Tada nupirkome dar 7 žuvis. Kiek dabar iš viso?"
-       ],
-       "answers": [
-         "8",
-         "15"
-       ]
-     }
-   ],
-   "Šeštadienis": [
-     {
-       "subject": "Logika: Skaičių mįslė",
-       "symbol": "🧩",
-       "type": "text",
-       "check": true,
-       "prompts": [
-         "Aš esu skaičius. Jei mane padalinsi iš 2, gausi 7. Koks aš skaičius?"
-       ],
-       "answers": [
-         "14"
-       ]
-     },
-     {
-       "subject": "Logika: Gyvūnų kojos",
-       "symbol": "🐾",
-       "type": "text",
-       "check": true,
-       "prompts": [
-         "Kambaryje yra 1 katė ir 2 paukščiai. Kiek iš viso kojų yra kambaryje?"
-       ],
-       "answers": [
-         "8"
-       ]
-     },
-     {
-       "subject": "Logika: Mįslė",
-       "symbol": "❓",
-       "type": "text",
-       "check": true,
-       "prompts": [
-         "Kuo daugiau džiovi, tuo labiau drėkstu. Kas aš? (Vienas žodis)"
-       ],
-       "answers": [
-         "rankšluostis"
-       ]
-     }
-   ],
-   "Sekmadienis": [
-     {
-       "subject": "Anglų kalba: Sakiniai",
-       "symbol": "🔄",
-       "type": "text",
-       "check": false,
-       "prompts": [
-         "Sakinys su 'Red':",
-         "Sakinys su 'Green':",
-         "Sakinys su 'Blue':"
-       ],
-       "answers": [
-         "",
-         "",
-         ""
-       ]
-     },
-     {
-       "subject": "Matematika: Daugyba",
-       "symbol": "✖️",
-       "type": "text",
-       "check": true,
-       "prompts": [
-         "6 * 4 =",
-         "7 * 8 =",
-         "9 * 3 =",
-         "5 * 6 ="
-       ],
-       "answers": [
-         "24",
-         "56",
-         "27",
-         "30"
-       ]
-     },
-     {
-       "subject": "Matematika: Sudėtis",
-       "symbol": "➕",
-       "type": "text",
-       "check": true,
-       "prompts": [
-         "34 + 48 =",
-         "67 + 33 =",
-         "55 + 45 =",
-         "123 + 64 ="
-       ],
-       "answers": [
-         "82",
-         "100",
-         "100",
-         "187"
-       ]
-     },
-     {
-       "subject": "Matematika: Atimtis",
-       "symbol": "➖",
-       "type": "text",
-       "check": true,
-       "prompts": [
-         "90 - 37 =",
-         "72 - 28 =",
-         "500 - 63 =",
-         "844 - 102 ="
-       ],
-       "answers": [
-         "53",
-         "44",
-         "437",
-         "742"
-       ]
-     }
-   ]
- }}
+}
