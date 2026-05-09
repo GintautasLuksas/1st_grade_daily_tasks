@@ -2446,5 +2446,497 @@
         ]
       }
     ]
+  },
+  "Rinkinys 9": {
+    "Pirmadienis": [
+      {
+        "subject": "Anglų kalba: Vertimas",
+        "symbol": "🔤",
+        "type": "translation",
+        "prompts": ["Išversk į anglų kalbą", "Išversk į anglų kalbą", "Išversk į anglų kalbą"],
+        "lt_words": ["Marškinėliai", "Batai", "Kepurė"],
+        "en_answers": ["Shirt", "Shoes", "Hat"]
+      },
+      {
+        "subject": "Matematika: Sekos",
+        "symbol": "🔢",
+        "type": "sequence",
+        "prompts": ["3, 6, 9, ...", "5, 10, 15, ...", "Z, Y, X, ..."],
+        "answers": [["12", "15", "18", "21"], ["20", "25", "30", "35"], ["W", "V", "U", "T"]]
+      }
+    ],
+    "Antradienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai su pirmadienio žodžiais",
+        "symbol": "✏️",
+        "type": "text",
+        "check": false,
+        "prompts": ["Sakinys su Shirt:", "Sakinys su Shoes:", "Sakinys su Hat:"],
+        "answers": ["", "", ""]
+      },
+      {
+        "subject": "Matematika: Laikas",
+        "symbol": "🕒",
+        "type": "text",
+        "check": true,
+        "prompts": ["Jei dabar 08:30, kiek bus po 1 val.?", "Jei dabar 15:45, kiek bus po 15 min.?", "Jei dabar 12:00, kiek buvo prieš 30 min.?"],
+        "answers": ["09:30", "16:00", "11:30"]
+      }
+    ],
+    "Trečiadienis": [
+      {
+        "subject": "Matematika: Laikrodis",
+        "symbol": "🕒",
+        "type": "clock",
+        "prompts": ["Koks laikas?", "Koks laikas?", "Koks laikas?"],
+        "times": ["07:15", "11:45", "18:30"]
+      },
+      {
+        "subject": "Lietuvių kalba: Aprašymas",
+        "symbol": "✏️",
+        "type": "area",
+        "prompts": ["Aprašyk savo mėgstamiausius drabužius 2 sakiniais."],
+        "answers": [""]
+      }
+    ],
+    "Ketvirtadienis": [
+      {
+        "subject": "Matematika: Sudėtis",
+        "symbol": "➕",
+        "type": "text",
+        "check": true,
+        "prompts": ["48 + 27 =", "125 + 75 =", "306 + 94 =", "560 + 140 ="],
+        "answers": ["75", "200", "400", "700"]
+      },
+      {
+        "subject": "Logika: Trumpi klausimai",
+        "symbol": "🧩",
+        "type": "text",
+        "check": true,
+        "prompts": ["Kiek porų batų reikia 3 vaikams?", "Kas didesnis: 90 ar 109?", "Kiek dienų turi viena savaitė?"],
+        "answers": ["3", "109", "7"]
+      }
+    ],
+    "Penktadienis": [
+      {
+        "subject": "Matematika: Atimtis",
+        "symbol": "➖",
+        "type": "text",
+        "check": true,
+        "prompts": ["100 - 46 =", "230 - 80 =", "415 - 115 =", "900 - 250 ="],
+        "answers": ["54", "150", "300", "650"]
+      },
+      {
+        "subject": "Anglų kalba: Kartojimas",
+        "symbol": "🔤",
+        "type": "text",
+        "check": true,
+        "prompts": ["Marškinėliai angliškai:", "Batai angliškai:", "Kepurė angliškai:"],
+        "answers": ["Shirt", "Shoes", "Hat"]
+      }
+    ],
+    "Šeštadienis": [
+      {
+        "subject": "Kūrybinis rašymas",
+        "symbol": "✏️",
+        "type": "area",
+        "prompts": ["Parašyk trumpą istoriją apie pamestą kepurę."],
+        "answers": [""]
+      },
+      {
+        "subject": "Matematika: Daugyba",
+        "symbol": "✖️",
+        "type": "text",
+        "check": true,
+        "prompts": ["6 * 4 =", "7 * 5 =", "8 * 3 =", "9 * 2 ="],
+        "answers": ["24", "35", "24", "18"]
+      }
+    ],
+    "Sekmadienis": [
+      {
+        "subject": "Savaitės kartojimas",
+        "symbol": "🔁",
+        "type": "text",
+        "check": true,
+        "prompts": ["12 + 18 =", "70 - 25 =", "5 * 6 =", "Hat lietuviškai:"],
+        "answers": ["30", "45", "30", "Kepurė"]
+      },
+      {
+        "subject": "Laisvas atsakymas",
+        "symbol": "✏️",
+        "type": "area",
+        "prompts": ["Kas šią savaitę buvo lengviausia?"],
+        "answers": [""]
+      }
+    ]
+  },
+  "Rinkinys 10": {
+    "Pirmadienis": [
+      {
+        "subject": "Anglų kalba: Vertimas",
+        "symbol": "🔤",
+        "type": "translation",
+        "prompts": ["Išversk į anglų kalbą", "Išversk į anglų kalbą", "Išversk į anglų kalbą"],
+        "lt_words": ["Mama", "Tėtis", "Sesė"],
+        "en_answers": ["Mother", "Father", "Sister"]
+      },
+      {
+        "subject": "Matematika: Sekos",
+        "symbol": "🔢",
+        "type": "sequence",
+        "prompts": ["4, 8, 12, ...", "100, 90, 80, ...", "M, N, O, ..."],
+        "answers": [["16", "20", "24", "28"], ["70", "60", "50", "40"], ["P", "Q", "R", "S"]]
+      }
+    ],
+    "Antradienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai su šeimos žodžiais",
+        "symbol": "✏️",
+        "type": "text",
+        "check": false,
+        "prompts": ["Sakinys su Mother:", "Sakinys su Father:", "Sakinys su Sister:"],
+        "answers": ["", "", ""]
+      },
+      {
+        "subject": "Matematika: Pinigai",
+        "symbol": "💶",
+        "type": "text",
+        "check": true,
+        "prompts": ["Turi 2 eurus ir gauni dar 3 eurus. Kiek turi?", "Kainuoja 7 eurus, duodi 10. Kiek grąžos?", "Du saldainiai po 2 eurus. Kiek kainuoja?"],
+        "answers": ["5", "3", "4"]
+      }
+    ],
+    "Trečiadienis": [
+      {
+        "subject": "Matematika: Laikrodis",
+        "symbol": "🕒",
+        "type": "clock",
+        "prompts": ["Koks laikas?", "Koks laikas?", "Koks laikas?"],
+        "times": ["06:00", "13:30", "20:45"]
+      },
+      {
+        "subject": "Lietuvių kalba: Šeima",
+        "symbol": "✏️",
+        "type": "area",
+        "prompts": ["Parašyk 3 sakinius apie savo šeimą."],
+        "answers": [""]
+      }
+    ],
+    "Ketvirtadienis": [
+      {
+        "subject": "Matematika: Sudėtis",
+        "symbol": "➕",
+        "type": "text",
+        "check": true,
+        "prompts": ["66 + 34 =", "180 + 20 =", "245 + 55 =", "399 + 101 ="],
+        "answers": ["100", "200", "300", "500"]
+      },
+      {
+        "subject": "Logika: Šeimos uždaviniai",
+        "symbol": "🧩",
+        "type": "text",
+        "check": true,
+        "prompts": ["Mama turi 3 vaikus. Kiek vaikų turi mama?", "Du broliai turi po vieną sesę. Kiek vaikų šeimoje?", "Kiek rankų turi 4 žmonės?"],
+        "answers": ["3", "3", "8"]
+      }
+    ],
+    "Penktadienis": [
+      {
+        "subject": "Matematika: Atimtis",
+        "symbol": "➖",
+        "type": "text",
+        "check": true,
+        "prompts": ["150 - 75 =", "500 - 125 =", "320 - 45 =", "1000 - 400 ="],
+        "answers": ["75", "375", "275", "600"]
+      },
+      {
+        "subject": "Anglų kalba: Kartojimas",
+        "symbol": "🔤",
+        "type": "text",
+        "check": true,
+        "prompts": ["Mama angliškai:", "Tėtis angliškai:", "Sesė angliškai:"],
+        "answers": ["Mother", "Father", "Sister"]
+      }
+    ],
+    "Šeštadienis": [
+      {
+        "subject": "Kūrybinis rašymas",
+        "symbol": "✏️",
+        "type": "area",
+        "prompts": ["Sukurk kvietimą šeimos vakarienei."],
+        "answers": [""]
+      },
+      {
+        "subject": "Matematika: Daugyba",
+        "symbol": "✖️",
+        "type": "text",
+        "check": true,
+        "prompts": ["3 * 9 =", "4 * 8 =", "6 * 6 =", "5 * 11 ="],
+        "answers": ["27", "32", "36", "55"]
+      }
+    ],
+    "Sekmadienis": [
+      {
+        "subject": "Savaitės kartojimas",
+        "symbol": "🔁",
+        "type": "text",
+        "check": true,
+        "prompts": ["Mother lietuviškai:", "Father lietuviškai:", "40 + 60 =", "12 * 3 ="],
+        "answers": ["Mama", "Tėtis", "100", "36"]
+      },
+      {
+        "subject": "Laisvas atsakymas",
+        "symbol": "✏️",
+        "type": "area",
+        "prompts": ["Kokį gerą darbą gali padaryti šeimai?"],
+        "answers": [""]
+      }
+    ]
+  },
+  "Rinkinys 11": {
+    "Pirmadienis": [
+      {
+        "subject": "Anglų kalba: Vertimas",
+        "symbol": "🔤",
+        "type": "translation",
+        "prompts": ["Išversk į anglų kalbą", "Išversk į anglų kalbą", "Išversk į anglų kalbą"],
+        "lt_words": ["Namas", "Kambarys", "Langas"],
+        "en_answers": ["House", "Room", "Window"]
+      },
+      {
+        "subject": "Matematika: Sekos",
+        "symbol": "🔢",
+        "type": "sequence",
+        "prompts": ["7, 14, 21, ...", "1, 3, 5, ...", "20, 25, 30, ..."],
+        "answers": [["28", "35", "42", "49"], ["7", "9", "11", "13"], ["35", "40", "45", "50"]]
+      }
+    ],
+    "Antradienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai apie namus",
+        "symbol": "✏️",
+        "type": "text",
+        "check": false,
+        "prompts": ["Sakinys su House:", "Sakinys su Room:", "Sakinys su Window:"],
+        "answers": ["", "", ""]
+      },
+      {
+        "subject": "Matematika: Ilgis",
+        "symbol": "📏",
+        "type": "text",
+        "check": true,
+        "prompts": ["100 cm yra kiek metrų?", "2 m yra kiek cm?", "50 cm + 50 cm = kiek cm?"],
+        "answers": ["1", "200", "100"]
+      }
+    ],
+    "Trečiadienis": [
+      {
+        "subject": "Matematika: Laikrodis",
+        "symbol": "🕒",
+        "type": "clock",
+        "prompts": ["Koks laikas?", "Koks laikas?", "Koks laikas?"],
+        "times": ["09:00", "14:15", "17:45"]
+      },
+      {
+        "subject": "Lietuvių kalba: Mano kambarys",
+        "symbol": "✏️",
+        "type": "area",
+        "prompts": ["Aprašyk savo kambarį 3 sakiniais."],
+        "answers": [""]
+      }
+    ],
+    "Ketvirtadienis": [
+      {
+        "subject": "Matematika: Sudėtis",
+        "symbol": "➕",
+        "type": "text",
+        "check": true,
+        "prompts": ["88 + 12 =", "175 + 25 =", "460 + 40 =", "720 + 180 ="],
+        "answers": ["100", "200", "500", "900"]
+      },
+      {
+        "subject": "Logika: Namų klausimai",
+        "symbol": "🧩",
+        "type": "text",
+        "check": true,
+        "prompts": ["Kiek kampų turi kvadratinis langas?", "Kiek durų turi kambarys, jei yra vienas įėjimas?", "Kas turi stogą, bet nėra skėtis?"],
+        "answers": ["4", "1", "namas"]
+      }
+    ],
+    "Penktadienis": [
+      {
+        "subject": "Matematika: Atimtis",
+        "symbol": "➖",
+        "type": "text",
+        "check": true,
+        "prompts": ["200 - 35 =", "600 - 250 =", "480 - 80 =", "1000 - 333 ="],
+        "answers": ["165", "350", "400", "667"]
+      },
+      {
+        "subject": "Anglų kalba: Kartojimas",
+        "symbol": "🔤",
+        "type": "text",
+        "check": true,
+        "prompts": ["Namas angliškai:", "Kambarys angliškai:", "Langas angliškai:"],
+        "answers": ["House", "Room", "Window"]
+      }
+    ],
+    "Šeštadienis": [
+      {
+        "subject": "Kūrybinis rašymas",
+        "symbol": "✏️",
+        "type": "area",
+        "prompts": ["Sukurk svajonių namo aprašymą."],
+        "answers": [""]
+      },
+      {
+        "subject": "Matematika: Daugyba",
+        "symbol": "✖️",
+        "type": "text",
+        "check": true,
+        "prompts": ["7 * 4 =", "8 * 8 =", "9 * 5 =", "12 * 2 ="],
+        "answers": ["28", "64", "45", "24"]
+      }
+    ],
+    "Sekmadienis": [
+      {
+        "subject": "Savaitės kartojimas",
+        "symbol": "🔁",
+        "type": "text",
+        "check": true,
+        "prompts": ["House lietuviškai:", "Room lietuviškai:", "Window lietuviškai:", "25 + 75 ="],
+        "answers": ["Namas", "Kambarys", "Langas", "100"]
+      },
+      {
+        "subject": "Laisvas atsakymas",
+        "symbol": "✏️",
+        "type": "area",
+        "prompts": ["Kas tavo namuose tau patinka labiausiai?"],
+        "answers": [""]
+      }
+    ]
+  },
+  "Rinkinys 12": {
+    "Pirmadienis": [
+      {
+        "subject": "Anglų kalba: Vertimas",
+        "symbol": "🔤",
+        "type": "translation",
+        "prompts": ["Išversk į anglų kalbą", "Išversk į anglų kalbą", "Išversk į anglų kalbą"],
+        "lt_words": ["Bėgti", "Šokti", "Skaityti"],
+        "en_answers": ["Run", "Jump", "Read"]
+      },
+      {
+        "subject": "Matematika: Sekos",
+        "symbol": "🔢",
+        "type": "sequence",
+        "prompts": ["9, 18, 27, ...", "2, 5, 8, ...", "50, 45, 40, ..."],
+        "answers": [["36", "45", "54", "63"], ["11", "14", "17", "20"], ["35", "30", "25", "20"]]
+      }
+    ],
+    "Antradienis": [
+      {
+        "subject": "Anglų kalba: Sakiniai su veiksmais",
+        "symbol": "✏️",
+        "type": "text",
+        "check": false,
+        "prompts": ["Sakinys su Run:", "Sakinys su Jump:", "Sakinys su Read:"],
+        "answers": ["", "", ""]
+      },
+      {
+        "subject": "Matematika: Veiksmai",
+        "symbol": "🔢",
+        "type": "text",
+        "check": true,
+        "prompts": ["18 + 24 =", "64 - 29 =", "7 * 8 =", "90 / 10 ="],
+        "answers": ["42", "35", "56", "9"]
+      }
+    ],
+    "Trečiadienis": [
+      {
+        "subject": "Matematika: Laikrodis",
+        "symbol": "🕒",
+        "type": "clock",
+        "prompts": ["Koks laikas?", "Koks laikas?", "Koks laikas?"],
+        "times": ["10:10", "12:30", "19:00"]
+      },
+      {
+        "subject": "Lietuvių kalba: Dienos veikla",
+        "symbol": "✏️",
+        "type": "area",
+        "prompts": ["Parašyk, ką šiandien veikei po pamokų."],
+        "answers": [""]
+      }
+    ],
+    "Ketvirtadienis": [
+      {
+        "subject": "Matematika: Sudėtis",
+        "symbol": "➕",
+        "type": "text",
+        "check": true,
+        "prompts": ["135 + 65 =", "275 + 125 =", "520 + 280 =", "999 + 1 ="],
+        "answers": ["200", "400", "800", "1000"]
+      },
+      {
+        "subject": "Logika: Veiksmai",
+        "symbol": "🧩",
+        "type": "text",
+        "check": true,
+        "prompts": ["Ką darai su knyga?", "Ką darai su kamuoliu: skaitai ar žaidi?", "Kas greičiau: eiti ar bėgti?"],
+        "answers": ["skaitau", "žaidžiu", "bėgti"]
+      }
+    ],
+    "Penktadienis": [
+      {
+        "subject": "Matematika: Atimtis",
+        "symbol": "➖",
+        "type": "text",
+        "check": true,
+        "prompts": ["300 - 125 =", "850 - 350 =", "1000 - 1 =", "456 - 123 ="],
+        "answers": ["175", "500", "999", "333"]
+      },
+      {
+        "subject": "Anglų kalba: Kartojimas",
+        "symbol": "🔤",
+        "type": "text",
+        "check": true,
+        "prompts": ["Bėgti angliškai:", "Šokti angliškai:", "Skaityti angliškai:"],
+        "answers": ["Run", "Jump", "Read"]
+      }
+    ],
+    "Šeštadienis": [
+      {
+        "subject": "Kūrybinis rašymas",
+        "symbol": "✏️",
+        "type": "area",
+        "prompts": ["Sukurk trumpą sporto dienos planą."],
+        "answers": [""]
+      },
+      {
+        "subject": "Matematika: Daugyba",
+        "symbol": "✖️",
+        "type": "text",
+        "check": true,
+        "prompts": ["6 * 7 =", "9 * 9 =", "11 * 4 =", "12 * 5 ="],
+        "answers": ["42", "81", "44", "60"]
+      }
+    ],
+    "Sekmadienis": [
+      {
+        "subject": "Savaitės kartojimas",
+        "symbol": "🔁",
+        "type": "text",
+        "check": true,
+        "prompts": ["Run lietuviškai:", "Jump lietuviškai:", "Read lietuviškai:", "36 + 64 ="],
+        "answers": ["Bėgti", "Šokti", "Skaityti", "100"]
+      },
+      {
+        "subject": "Laisvas atsakymas",
+        "symbol": "✏️",
+        "type": "area",
+        "prompts": ["Kurią veiklą norėtum daryti dažniau?"],
+        "answers": [""]
+      }
+    ]
   }
 }

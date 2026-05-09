@@ -1,0 +1,146 @@
+[
+  {
+    "q": "Kortelės 5, 4, 3, 2, 1. Kuris ženklų pasirinkimas duoda 5: 5 + 4 - 3 - 2 + 1 ar 5 - 4 - 3 + 2 + 1?",
+    "a": "5 + 4 - 3 - 2 + 1"
+  },
+  {
+    "q": "Iš skaičių 1, 2, 3, 4, 5 pasirink du skirtingus. Kokia mažiausia jų suma?",
+    "a": "3"
+  },
+  {
+    "q": "Iš skaičių 1, 2, 3, 4, 5 pasirink du skirtingus. Kokia didžiausia jų suma?",
+    "a": "9"
+  },
+  {
+    "q": "Kiek skirtingų sumų galima gauti sudėjus du skirtingus skaičius iš 1, 2, 3, 4, 5?",
+    "a": "7"
+  },
+  {
+    "q": "Turi monetas 1, 1, 1, 2, 2 eurai. Ar gali sudaryti 5 eurus?",
+    "a": "taip"
+  },
+  {
+    "q": "Kiek eurų yra: 2 + 2 + 1?",
+    "a": "5"
+  },
+  {
+    "q": "Turi 10 eurų. Nusipirkai daiktą už 6 eurus. Kiek eurų liko?",
+    "a": "4"
+  },
+  {
+    "q": "Kas turi daugiau: 8 eurus ar 5 eurus ir 2 eurus kartu?",
+    "a": "8 eurus"
+  },
+  {
+    "q": "Žaidime vienas metimas gali duoti 0, 2, 3, 4 arba 6 taškus. Kokia didžiausia suma iš 3 metimų?",
+    "a": "18"
+  },
+  {
+    "q": "Surink 9 taškus trimis metimais: 0, 3 ir kiek?",
+    "a": "6"
+  },
+  {
+    "q": "Surink 9 taškus trimis vienodais metimais. Kiek taškų turi būti kiekvienas metimas?",
+    "a": "3"
+  },
+  {
+    "q": "Jei trys metimai turi būti į skirtingas dėžes 6, 4 ir 3, kokia suma?",
+    "a": "13"
+  },
+  {
+    "q": "Yra 3 ledų skoniai ir 2 indai: vaflis arba indelis. Kiek vieno rutuliuko variantų galima pasirinkti?",
+    "a": "6"
+  },
+  {
+    "q": "Ledų skoniai: citrina, braškė, šokoladas. Kiek skirtingų dviejų rutuliukų porų galima sudaryti, jei galima kartoti skonį?",
+    "a": "6"
+  },
+  {
+    "q": "Seka: citrina, braškė, šokoladas, citrina, braškė, ... Koks kitas skonis?",
+    "a": "šokoladas"
+  },
+  {
+    "q": "Jei vaflyje gali būti citrina, braškė arba šokoladas, kiek pasirinkimų yra tik vafliui?",
+    "a": "3"
+  },
+  {
+    "q": "Statinių aukščiai yra 2, 5, 3, 4 kaladėlės. Kokia tvarka nuo žemiausio iki aukščiausio?",
+    "a": "2, 3, 4, 5"
+  },
+  {
+    "q": "Kuris statinys aukštesnis: 4 kaladėlių ar 6 kaladėlių?",
+    "a": "6"
+  },
+  {
+    "q": "Jei statinys A turi 3 kaladėles, B turi 5, C turi 2, kuris žemiausias?",
+    "a": "C"
+  },
+  {
+    "q": "Jei statinius 4 ir 2 reikia surikiuoti nuo žemiausio, ar juos reikia sukeisti?",
+    "a": "taip"
+  },
+  {
+    "q": "Kuri tavo ranka paprastai rašo, jei esi dešiniarankis?",
+    "a": "dešinė"
+  },
+  {
+    "q": "Jei kamuolys yra prie tavo kairės rankos, kurioje pusėje jis yra?",
+    "a": "kairėje"
+  },
+  {
+    "q": "Jei automobilis rodo dešinį posūkį, į kurią pusę jis suks?",
+    "a": "dešinę"
+  },
+  {
+    "q": "Urtė rado 18 grybų, Tomas 16. Kas rado daugiau?",
+    "a": "Urtė"
+  },
+  {
+    "q": "Kiek daugiau grybų rado Urtė, jei ji rado 18, o Tomas 16?",
+    "a": "2"
+  },
+  {
+    "q": "Kairė ar dešinė: jei žengi viena koja į dešinę pusę, į kurią pusę pasislinkai?",
+    "a": "dešinę"
+  },
+  {
+    "q": "Turi korteles 1, 2, 3. Kokia jų suma?",
+    "a": "6"
+  },
+  {
+    "q": "Turi korteles 2, 3, 4. Ką reikia pridėti iki 10?",
+    "a": "1"
+  },
+  {
+    "q": "Kiek monetų po 1 eurą reikia, kad gautum 5 eurus?",
+    "a": "5"
+  },
+  {
+    "q": "Turi 2 eurus, 2 eurus ir 1 eurą. Ar tai lygu 5 eurams?",
+    "a": "taip"
+  },
+  {
+    "q": "Trys metimai: 2, 3, 4. Kiek taškų iš viso?",
+    "a": "9"
+  },
+  {
+    "q": "Trys metimai: 6, 6, 0. Kiek taškų iš viso?",
+    "a": "12"
+  },
+  {
+    "q": "Seka: raudona, mėlyna, raudona, mėlyna, ... Kokia kita spalva?",
+    "a": "raudona"
+  },
+  {
+    "q": "Seka: 1, 2, 1, 2, 1, ... Koks kitas skaičius?",
+    "a": "2"
+  },
+  {
+    "q": "Jei statiniai yra 1, 3, 2, ką reikia sukeisti, kad būtų nuo žemiausio?",
+    "a": "3 ir 2"
+  },
+  {
+    "q": "Jei stovi eilėje ir draugas yra prie tavo dešinės rankos, kurioje pusėje jis stovi?",
+    "a": "dešinėje"
+  }
+]
