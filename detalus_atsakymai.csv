@@ -1,21 +1,313 @@
-Laikas,Rinkinys,Diena,Uzduotis,Jores Atsakymas,Teisingas Atsakymas
-2026-04-06 11:07,Rinkinys 2,Pirmadienis,DIENOS PLANAS,6/6,-
-2026-04-06 11:07,Rinkinys 2,Pirmadienis,DIENOS PLANAS,6/6,-
-2026-04-06 11:07,Rinkinys 2,Pirmadienis,DIENOS PLANAS,6/6,-
-2026-04-07 19:13,Rinkinys 2,Antradienis,DIENOS PLANAS,6/6,-
-2026-04-09 18:09,Rinkinys 2,Trečiadienis,DIENOS PLANAS,4/4,-
-2026-04-09 18:18,Rinkinys 2,Ketvirtadienis,DIENOS PLANAS,6/6,-
-2026-04-10 21:17,Rinkinys 2,Penktadienis,DIENOS PLANAS,4/4,-
-2026-04-12 10:15,Rinkinys 2,Sekmadienis,DIENOS PLANAS,15/15,-
-2026-04-13 20:14,Rinkinys 3,Pirmadienis,DIENOS PLANAS,6/6,-
-2026-04-14 18:50,Rinkinys 3,Antradienis,DIENOS PLANAS,6/6,-
-2026-04-15 20:42,Rinkinys 3,Trečiadienis,DIENOS PLANAS,4/4,-
-2026-04-18 20:16,Rinkinys 3,Šeštadienis,DIENOS PLANAS,3/3,-
-2026-04-18 20:28,Rinkinys 3,Sekmadienis,DIENOS PLANAS,15/15,-
-2026-04-22 19:43,Rinkinys 4,Trečiadienis,DIENOS PLANAS,4/4,-
-2026-04-22 19:54,Rinkinys 4,Antradienis,DIENOS PLANAS,6/6,-
-2026-04-23 19:05,Rinkinys 4,Ketvirtadienis,DIENOS PLANAS,6/6,-
-2026-04-24 19:31,Rinkinys 4,Penktadienis,DIENOS PLANAS,4/4,-
-2026-04-24 19:31,Rinkinys 4,Penktadienis,DIENOS PLANAS,4/4,-
-2026-04-24 19:37,Rinkinys 4,Šeštadienis,DIENOS PLANAS,3/3,-
-2026-04-24 19:37,Rinkinys 4,Šeštadienis,DIENOS PLANAS,3/3,-
+Laikas,Rinkinys,Diena,Uzduotis,Jores Atsakymas,Teisingas Atsakymas,Režimas,Užduotis,Klausimas,Vaiko atsakymas,Teisingas atsakymas,Rezultatas,Sesija
+2026-04-06 11:07,Rinkinys 2,Pirmadienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-04-06 11:07,Rinkinys 2,Pirmadienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-04-06 11:07,Rinkinys 2,Pirmadienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-04-07 19:13,Rinkinys 2,Antradienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-04-09 18:09,Rinkinys 2,Trečiadienis,DIENOS PLANAS,4/4,-,,,,,,,
+2026-04-09 18:18,Rinkinys 2,Ketvirtadienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-04-10 21:17,Rinkinys 2,Penktadienis,DIENOS PLANAS,4/4,-,,,,,,,
+2026-04-12 10:15,Rinkinys 2,Sekmadienis,DIENOS PLANAS,15/15,-,,,,,,,
+2026-04-13 20:14,Rinkinys 3,Pirmadienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-04-14 18:50,Rinkinys 3,Antradienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-04-15 20:42,Rinkinys 3,Trečiadienis,DIENOS PLANAS,4/4,-,,,,,,,
+2026-04-18 20:16,Rinkinys 3,Šeštadienis,DIENOS PLANAS,3/3,-,,,,,,,
+2026-04-18 20:28,Rinkinys 3,Sekmadienis,DIENOS PLANAS,15/15,-,,,,,,,
+2026-04-22 19:43,Rinkinys 4,Trečiadienis,DIENOS PLANAS,4/4,-,,,,,,,
+2026-04-22 19:54,Rinkinys 4,Antradienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-04-23 19:05,Rinkinys 4,Ketvirtadienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-04-24 19:31,Rinkinys 4,Penktadienis,DIENOS PLANAS,4/4,-,,,,,,,
+2026-04-24 19:31,Rinkinys 4,Penktadienis,DIENOS PLANAS,4/4,-,,,,,,,
+2026-04-24 19:37,Rinkinys 4,Šeštadienis,DIENOS PLANAS,3/3,-,,,,,,,
+2026-04-24 19:37,Rinkinys 4,Šeštadienis,DIENOS PLANAS,3/3,-,,,,,,,
+2026-04-26 08:23,Rinkinys 4,Sekmadienis,DIENOS PLANAS,15/15,-,,,,,,,
+2026-04-27 19:42,Rinkinys 5,Pirmadienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-04-28 17:59,Rinkinys 5,Antradienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-04-29 17:27,Rinkinys 5,Trečiadienis,DIENOS PLANAS,4/4,-,,,,,,,
+2026-05-02 10:40,Rinkinys 5,Penktadienis,DIENOS PLANAS,4/4,-,,,,,,,
+2026-05-02 10:43,Rinkinys 5,Šeštadienis,DIENOS PLANAS,3/3,-,,,,,,,
+2026-05-03 19:10,Rinkinys 5,Ketvirtadienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-05-03 19:40,Rinkinys 5,Sekmadienis,DIENOS PLANAS,15/15,-,,,,,,,
+2026-05-04 16:35,Rinkinys 6,Pirmadienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-05-04 16:45,Rinkinys 6,Trečiadienis,DIENOS PLANAS,3/4,-,,,,,,,
+2026-05-05 18:44,Rinkinys 6,Antradienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-05-05 18:44,Rinkinys 6,Antradienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-05-09 18:13,Rinkinys 6,Penktadienis,DIENOS PLANAS,4/4,-,,,,,,,
+2026-05-09 18:27,Rinkinys 6,Ketvirtadienis,DIENOS PLANAS,3/6,-,,,,,,,
+2026-05-09 18:27,Rinkinys 6,Ketvirtadienis,DIENOS PLANAS,3/6,-,,,,,,,
+2026-05-09 18:29,Rinkinys 6,Ketvirtadienis,DIENOS PLANAS,6/6,-,,,,,,,
+2026-05-09 18:31,Rinkinys 6,Šeštadienis,DIENOS PLANAS,3/3,-,,,,,,,
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Anglų kalba: Sakiniai,Sakinys su 'Sun':,sun,,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Anglų kalba: Sakiniai,Sakinys su 'Moon':,moon,,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Anglų kalba: Sakiniai,Sakinys su 'Star':,Star is little.,,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Matematika: Daugyba,8 * 8 =,64,64.0,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Matematika: Daugyba,4 * 9 =,36,36.0,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Matematika: Daugyba,11 * 6 =,66,66.0,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Matematika: Daugyba,7 * 5 =,35,35.0,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Matematika: Sudėtis,48 + 37 =,85,85.0,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Matematika: Sudėtis,91 + 19 =,110,110.0,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Matematika: Sudėtis,256 + 44 =,300,300.0,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Matematika: Sudėtis,375 + 125 =,500,500.0,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Matematika: Atimtis,60 - 23 =,37,37.0,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Matematika: Atimtis,134 - 56 =,78,78.0,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Matematika: Atimtis,500 - 281 =,219,219.0,True,20260510-142238
+2026-05-10 14:22,Rinkinys 6,Sekmadienis,,,,Pamokos,Matematika: Atimtis,900 - 347 =,553,553.0,True,20260510-142238
+2026-05-11 16:13,Rinkinys 7,Pirmadienis,,,,Pamokos,Anglų kalba: Vertimas,Vandenynas,ocean,Ocean,True,20260511-161319
+2026-05-11 16:13,Rinkinys 7,Pirmadienis,,,,Pamokos,Anglų kalba: Vertimas,Sala,island,Island,True,20260511-161319
+2026-05-11 16:13,Rinkinys 7,Pirmadienis,,,,Pamokos,Anglų kalba: Vertimas,Tiltas,bridge,Bridge,True,20260511-161319
+2026-05-11 16:13,Rinkinys 7,Pirmadienis,,,,Pamokos,Matematika: Sekos,"2, 6, 18, ...",54 | 162 | 486 | 1458,54 | 162 | 486 | 1458,True,20260511-161319
+2026-05-11 16:13,Rinkinys 7,Pirmadienis,,,,Pamokos,Matematika: Sekos,"80, 70, 60, ...",50 | 40 | 30 | 20,50 | 40 | 30 | 20,True,20260511-161319
+2026-05-11 16:13,Rinkinys 7,Pirmadienis,,,,Pamokos,Matematika: Sekos,"A, C, E, ...",g | i | k | m,G | I | K | M,True,20260511-161319
+2026-05-11 16:16,-,-,,,,Samprotavimas,"Kuri tavo ranka paprastai rašo, jei esi dešiniarankis?","Kuri tavo ranka paprastai rašo, jei esi dešiniarankis?",desine,dešinė,True,20260511-161654
+2026-05-11 16:16,-,-,,,,Samprotavimas,"Jei automobilis rodo dešinį posūkį, į kurią pusę jis suks?","Jei automobilis rodo dešinį posūkį, į kurią pusę jis suks?",desine,dešinę,True,20260511-161654
+2026-05-11 16:16,-,-,,,,Samprotavimas,"Seka: citrina, braškė, šokoladas, citrina, braškė, ... Koks kitas skonis?","Seka: citrina, braškė, šokoladas, citrina, braškė, ... Koks kitas skonis?",sokoladas,šokoladas,True,20260511-161654
+2026-05-11 16:16,-,-,,,,Samprotavimas,"Trys metimai: 2, 3, 4. Kiek taškų iš viso?","Trys metimai: 2, 3, 4. Kiek taškų iš viso?",9,9,True,20260511-161654
+2026-05-11 16:16,-,-,,,,Samprotavimas,"Kiek monetų po 1 eurą reikia, kad gautum 5 eurus?","Kiek monetų po 1 eurą reikia, kad gautum 5 eurus?",5,5,True,20260511-161654
+2026-05-11 16:16,-,-,,,,Samprotavimas,"Jei statiniai yra 1, 3, 2, ką reikia sukeisti, kad būtų nuo žemiausio?","Jei statiniai yra 1, 3, 2, ką reikia sukeisti, kad būtų nuo žemiausio?",3 ir 2,3 ir 2,True,20260511-161654
+2026-05-12 20:09,Rinkinys 7,Antradienis,,,,Pamokos,Anglų kalba: Sakiniai su pirmadienio žodžiais,Sakinys 1 su Ocean:,Ocean is big.,,True,20260512-200947
+2026-05-12 20:09,Rinkinys 7,Antradienis,,,,Pamokos,Anglų kalba: Sakiniai su pirmadienio žodžiais,Sakinys 2 su Island:,Island is little.,,True,20260512-200947
+2026-05-12 20:09,Rinkinys 7,Antradienis,,,,Pamokos,Anglų kalba: Sakiniai su pirmadienio žodžiais,Sakinys 3 su Bridge:,Bridge was over the ocean.,,True,20260512-200947
+2026-05-12 20:09,Rinkinys 7,Antradienis,,,,Pamokos,Matematika: Laikas,"Jei dabar yra 09:40, kiek bus po 2 val. 25 min.?",12:05,12:05,True,20260512-200947
+2026-05-12 20:09,Rinkinys 7,Antradienis,,,,Pamokos,Matematika: Laikas,"Jei dabar yra 17:10, kiek bus po 55 min.?",18:05,18:05,True,20260512-200947
+2026-05-12 20:09,Rinkinys 7,Antradienis,,,,Pamokos,Matematika: Laikas,"Jei dabar yra 11:30, kiek bus po 3 val. 30 min.?",15:00,15:00,True,20260512-200947
+2026-05-12 20:13,Rinkinys 3 / Sekmadienis / Matematika: Atimtis,-,,,,Greita praktika,88 - 39 =,88 - 39 =,49,49,True,20260512-201303
+2026-05-12 20:13,Matematika,-,,,,Greita praktika,54 * 2 =,54 * 2 =,108,108,True,20260512-201303
+2026-05-12 20:13,Logika,-,,,,Greita praktika,Kiek nagų turi viena ranka?,Kiek nagų turi viena ranka?,5,5,True,20260512-201303
+2026-05-12 20:13,Rinkinys 8 / Sekmadienis / Matematika: Sudėtis,-,,,,Greita praktika,450 + 275 =,450 + 275 =,725,725,True,20260512-201303
+2026-05-12 20:13,Rinkinys 8 / Penktadienis / Matematika: Kiaušinių grandinėlė,-,,,,Greita praktika,Turėjau 15 kiaušinių. Sunaudojau kepimui 6. Kiek liko?,Turėjau 15 kiaušinių. Sunaudojau kepimui 6. Kiek liko?,9,9,True,20260512-201303
+2026-05-12 20:13,Rinkinys 3 / Sekmadienis / Matematika: Atimtis,-,,,,Greita praktika,88 - 39 =,88 - 39 =,49,49,True,20260512-201304
+2026-05-12 20:13,Matematika,-,,,,Greita praktika,54 * 2 =,54 * 2 =,108,108,True,20260512-201304
+2026-05-12 20:13,Logika,-,,,,Greita praktika,Kiek nagų turi viena ranka?,Kiek nagų turi viena ranka?,5,5,True,20260512-201304
+2026-05-12 20:13,Rinkinys 8 / Sekmadienis / Matematika: Sudėtis,-,,,,Greita praktika,450 + 275 =,450 + 275 =,725,725,True,20260512-201304
+2026-05-12 20:13,Rinkinys 8 / Penktadienis / Matematika: Kiaušinių grandinėlė,-,,,,Greita praktika,Turėjau 15 kiaušinių. Sunaudojau kepimui 6. Kiek liko?,Turėjau 15 kiaušinių. Sunaudojau kepimui 6. Kiek liko?,9,9,True,20260512-201304
+2026-05-12 20:13,Rinkinys 3 / Sekmadienis / Matematika: Atimtis,-,,,,Greita praktika,88 - 39 =,88 - 39 =,49,49,True,20260512-201305
+2026-05-12 20:13,Matematika,-,,,,Greita praktika,54 * 2 =,54 * 2 =,108,108,True,20260512-201305
+2026-05-12 20:13,Logika,-,,,,Greita praktika,Kiek nagų turi viena ranka?,Kiek nagų turi viena ranka?,5,5,True,20260512-201305
+2026-05-12 20:13,Rinkinys 8 / Sekmadienis / Matematika: Sudėtis,-,,,,Greita praktika,450 + 275 =,450 + 275 =,725,725,True,20260512-201305
+2026-05-12 20:13,Rinkinys 8 / Penktadienis / Matematika: Kiaušinių grandinėlė,-,,,,Greita praktika,Turėjau 15 kiaušinių. Sunaudojau kepimui 6. Kiek liko?,Turėjau 15 kiaušinių. Sunaudojau kepimui 6. Kiek liko?,9,9,True,20260512-201305
+2026-05-12 20:13,Rinkinys 3 / Sekmadienis / Matematika: Atimtis,-,,,,Greita praktika,88 - 39 =,88 - 39 =,49,49,True,20260512-201305
+2026-05-12 20:13,Matematika,-,,,,Greita praktika,54 * 2 =,54 * 2 =,108,108,True,20260512-201305
+2026-05-12 20:13,Logika,-,,,,Greita praktika,Kiek nagų turi viena ranka?,Kiek nagų turi viena ranka?,5,5,True,20260512-201305
+2026-05-12 20:13,Rinkinys 8 / Sekmadienis / Matematika: Sudėtis,-,,,,Greita praktika,450 + 275 =,450 + 275 =,725,725,True,20260512-201305
+2026-05-12 20:13,Rinkinys 8 / Penktadienis / Matematika: Kiaušinių grandinėlė,-,,,,Greita praktika,Turėjau 15 kiaušinių. Sunaudojau kepimui 6. Kiek liko?,Turėjau 15 kiaušinių. Sunaudojau kepimui 6. Kiek liko?,9,9,True,20260512-201305
+2026-05-12 20:13,Rinkinys 3 / Sekmadienis / Matematika: Atimtis,-,,,,Greita praktika,88 - 39 =,88 - 39 =,49,49,True,20260512-201305
+2026-05-12 20:13,Matematika,-,,,,Greita praktika,54 * 2 =,54 * 2 =,108,108,True,20260512-201305
+2026-05-12 20:13,Logika,-,,,,Greita praktika,Kiek nagų turi viena ranka?,Kiek nagų turi viena ranka?,5,5,True,20260512-201305
+2026-05-12 20:13,Rinkinys 8 / Sekmadienis / Matematika: Sudėtis,-,,,,Greita praktika,450 + 275 =,450 + 275 =,725,725,True,20260512-201305
+2026-05-12 20:13,Rinkinys 8 / Penktadienis / Matematika: Kiaušinių grandinėlė,-,,,,Greita praktika,Turėjau 15 kiaušinių. Sunaudojau kepimui 6. Kiek liko?,Turėjau 15 kiaušinių. Sunaudojau kepimui 6. Kiek liko?,9,9,True,20260512-201305
+2026-05-13 17:08,Rinkinys 7,Trečiadienis,,,,Pamokos,Anglų kalba: Istorija,"Sukurk trumpą istoriją (bent 2 sakiniai) panaudojant žodžius: Castle, Knight, Dragon:","The knight came to the castle.In the castle he found a dragon.
+
+
+",Laisvas atsakymas,True,20260513-170840
+2026-05-13 17:08,Rinkinys 7,Trečiadienis,,,,Pamokos,Matematika: Analoginis laikrodis,Koks laikas rodomas? (1),09:00,09:00,True,20260513-170840
+2026-05-13 17:08,Rinkinys 7,Trečiadienis,,,,Pamokos,Matematika: Analoginis laikrodis,Koks laikas rodomas? (2),03:35,03:35,True,20260513-170840
+2026-05-13 17:08,Rinkinys 7,Trečiadienis,,,,Pamokos,Matematika: Analoginis laikrodis,Koks laikas rodomas? (3),06:55,06:55,True,20260513-170840
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173046
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173046
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173046
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173046
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173046
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173046
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173051
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173051
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173051
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173051
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173051
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173051
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173054
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173054
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173054
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173054
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173054
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173054
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173055
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173055
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173055
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173055
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173055
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173055
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173057
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173057
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173057
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173057
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173057
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173057
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173059
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173059
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173059
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173059
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173059
+2026-05-14 17:30,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173059
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173100
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173100
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173100
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173100
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173100
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173100
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173102
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173102
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173102
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173102
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173102
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173102
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173104
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173104
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173104
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173104
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173104
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173104
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173106
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173106
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173106
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173106
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173106
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173106
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173107
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173107
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173107
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173107
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173107
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173107
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173109
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173109
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173109
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173109
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173109
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173109
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173110
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173110
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173110
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173110
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173110
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173110
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173112
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173112
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173112
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173112
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173112
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173112
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173114
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173114
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173114
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173114
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173114
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173114
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173115
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173115
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173115
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173115
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173115
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173115
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173116
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173117
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173118
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 1 sakinį su žodžiu 'Quick':,I am quick.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 2 sakinį su žodžiu 'Quick':,I draw quickly.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Anglų kalba: Naujas žodis 'Quick',Parašyk 3 sakinį su žodžiu 'Quick':,House burnd quick.,,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 8.00€. Perki sumuštinį už 2.65€. Kiek liks?,5.35,5.35,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 16.40€. Perki žaidimą už 7.90€. Kiek liko?,8.50,8.50,True,20260514-173119
+2026-05-14 17:31,Rinkinys 7,Ketvirtadienis,,,,Pamokos,Matematika: Pinigai ir grąža,Turi 40.00€. Perki dviratį aksesuarą už 22.75€. Kiek liko?,17.25,17.25,True,20260514-173119
