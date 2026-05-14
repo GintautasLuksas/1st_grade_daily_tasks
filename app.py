@@ -139,6 +139,26 @@ h1 {
 .try-note { background: #fee2e2; color: #991b1b; }
 .free-note { background: #fef3c7; color: #92400e; }
 
+.answer-hint {
+  align-items: flex-start;
+  background: #fff7ed;
+  border: 2px solid #fed7aa;
+  border-radius: 8px;
+  color: #7c2d12;
+  display: flex;
+  gap: .45rem;
+  font-size: .98rem;
+  font-weight: 900;
+  line-height: 1.35;
+  margin: .45rem 0 .75rem;
+  padding: .55rem .7rem;
+}
+
+.answer-hint span {
+  color: #7c2d12 !important;
+  -webkit-text-fill-color: #7c2d12 !important;
+}
+
 .metric-card {
   background: var(--panel);
   border: 2px solid var(--line);
@@ -408,7 +428,10 @@ def show_feedback(ok: bool, free: bool = False):
 
 def show_correct_answer(correct, enabled: bool):
     if enabled and str(correct).strip():
-        st.caption(f"Atsakymas: {correct}")
+        st.markdown(
+            f'<div class="answer-hint"><span>🔐</span><span>Atsakymas: {correct}</span></div>',
+            unsafe_allow_html=True,
+        )
 
 
 def progress_panel(score: int, total: int, label: str):
