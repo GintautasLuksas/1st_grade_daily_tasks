@@ -174,18 +174,74 @@ h1 {
   min-height: 3rem;
 }
 
-.stTextInput input, .stTextArea textarea {
+.stTextInput,
+.stTextArea,
+[data-testid="stTextInput"],
+[data-testid="stTextArea"] {
+  opacity: 1 !important;
+}
+
+.stTextInput > div,
+.stTextArea > div,
+[data-testid="stTextInput"] > div,
+[data-testid="stTextArea"] > div {
+  opacity: 1 !important;
+}
+
+.stTextInput input,
+.stTextArea textarea,
+[data-testid="stTextInput"] input,
+[data-testid="stTextArea"] textarea,
+[data-baseweb="input"] input,
+[data-baseweb="textarea"] textarea {
   background: #ffffff !important;
   border-radius: 8px !important;
   border: 2px solid #d0d5dd !important;
   color: var(--ink) !important;
+  caret-color: #0f172a !important;
   -webkit-text-fill-color: var(--ink) !important;
   font-size: 1.05rem !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
 }
 
-.stTextInput input::placeholder, .stTextArea textarea::placeholder {
+.stTextInput input:focus,
+.stTextArea textarea:focus,
+[data-testid="stTextInput"] input:focus,
+[data-testid="stTextArea"] textarea:focus,
+[data-baseweb="input"] input:focus,
+[data-baseweb="textarea"] textarea:focus {
+  background: #ffffff !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .18) !important;
+  color: var(--ink) !important;
+  caret-color: #0f172a !important;
+  -webkit-text-fill-color: var(--ink) !important;
+}
+
+.stTextInput input::placeholder,
+.stTextArea textarea::placeholder,
+[data-testid="stTextInput"] input::placeholder,
+[data-testid="stTextArea"] textarea::placeholder {
   color: #8a94a6 !important;
   -webkit-text-fill-color: #8a94a6 !important;
+  opacity: 1 !important;
+}
+
+[data-testid="stSidebar"] .stTextInput input,
+[data-testid="stSidebar"] [data-testid="stTextInput"] input,
+[data-testid="stSidebar"] [data-baseweb="input"] input {
+  background: #ffffff !important;
+  color: var(--ink) !important;
+  caret-color: #0f172a !important;
+  -webkit-text-fill-color: var(--ink) !important;
+}
+
+input::selection,
+textarea::selection {
+  background: rgba(37, 99, 235, .28) !important;
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
 }
 
 .stProgress > div > div > div > div {
