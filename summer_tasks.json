@@ -1,0 +1,1776 @@
+{
+  "Rinkinys 1": {
+    "1 savaitė": {
+      "Pirmadienis": [
+        {
+          "subject": "Skaitymas",
+          "skill": "Kasdienio skaitymo žymėjimas",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "reading_tracker",
+          "title": "Skaitymo žymėjimas",
+          "goal": "Pažymėti skaitymo įprotį be skaitymo tikrinimo programoje.",
+          "instructions": "Pažymėk, ar šiandien skaitei, knygą, minutes, puslapius ir kaip sekėsi.",
+          "questions": [],
+          "parent_check": "Trumpai paklausti, apie ką buvo šiandien skaityta.",
+          "tracking_tags": [
+            "reading",
+            "daily_tracking",
+            "week_1"
+          ]
+        },
+        {
+          "subject": "Lietuvių kalba",
+          "skill": "Trūkstamos raidės u / ū, i / y ir lietuviškos raidės",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "text_input_check",
+          "title": "Įrašyk trūkstamą raidę",
+          "goal": "Įtvirtinti trumpų ir ilgų garsų bei lietuviškų raidžių rašybą.",
+          "instructions": "Įrašyk tik trūkstamą raidę arba raidžių junginį.",
+          "questions": [
+            {
+              "text": "m_sų",
+              "answer": "ū",
+              "hint": "Tai žodis „mūsų“.",
+              "explanation": "mūsų rašomas su ū."
+            },
+            {
+              "text": "s_nus",
+              "answer": "ū",
+              "hint": "Šeimos narys.",
+              "explanation": "sūnus rašomas su ū."
+            },
+            {
+              "text": "d_rys",
+              "answer": "u",
+              "hint": "Čia trumpas u.",
+              "explanation": "durys rašomas su u."
+            },
+            {
+              "text": "p_čia",
+              "answer": "ū",
+              "hint": "Vėjas pučia.",
+              "explanation": "pučia rašomas su ū."
+            },
+            {
+              "text": "p_lis",
+              "answer": "i",
+              "hint": "Trumpas i.",
+              "explanation": "pilis rašomas su i."
+            },
+            {
+              "text": "r_toj",
+              "answer": "y",
+              "hint": "Tai įsidėmėtinas žodis.",
+              "explanation": "rytoj rašomas su y."
+            },
+            {
+              "text": "ž_sis",
+              "answer": "ą",
+              "hint": "Tai paukštis.",
+              "explanation": "žąsis rašomas su ą."
+            },
+            {
+              "text": "_iandien",
+              "answer": "š",
+              "hint": "Žodis prasideda š.",
+              "explanation": "šiandien rašomas su š."
+            },
+            {
+              "text": "m_slė",
+              "answer": "į",
+              "hint": "Tai įsidėmėtinas žodis.",
+              "explanation": "mįslė rašomas su į."
+            },
+            {
+              "text": "ą_uolas",
+              "answer": "ž",
+              "hint": "Didelis medis.",
+              "explanation": "ąžuolas turi raidę ž."
+            }
+          ],
+          "parent_check": "Pažiūrėti, ar vaikas skiria u / ū ir i / y, ne spėlioja.",
+          "tracking_tags": [
+            "lithuanian",
+            "missing_letters",
+            "special_letters",
+            "hard"
+          ]
+        },
+        {
+          "subject": "Matematika",
+          "skill": "Dviženkliai veiksmai peržengiant dešimtį, dviejų žingsnių uždaviniai ir pinigai centais",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "text_input_check",
+          "title": "Sunkesni veiksmai iki 100",
+          "goal": "Treniruoti dviženklius veiksmus, kelių veiksmų skaičiavimą ir pinigų grąžą centais.",
+          "instructions": "Įrašyk atsakymą. Jei klausia centų, rašyk tik centų skaičių.",
+          "questions": [
+            {
+              "text": "47 + 28",
+              "answer": "75",
+              "hint": "Pridėk 20, tada 8.",
+              "explanation": "47 + 20 = 67, 67 + 8 = 75."
+            },
+            {
+              "text": "64 - 27",
+              "answer": "37",
+              "hint": "Atimk 20, tada 7.",
+              "explanation": "64 - 20 = 44, 44 - 7 = 37."
+            },
+            {
+              "text": "38 + 17 - 9",
+              "answer": "46",
+              "hint": "Pirma sudėk, tada atimk.",
+              "explanation": "38 + 17 = 55, 55 - 9 = 46."
+            },
+            {
+              "text": "90 - 36",
+              "answer": "54",
+              "hint": "Atimk 30, tada 6.",
+              "explanation": "90 - 30 = 60, 60 - 6 = 54."
+            },
+            {
+              "text": "25 + 19 + 8",
+              "answer": "52",
+              "hint": "Pridėk 20 ir atimk 1.",
+              "explanation": "25 + 19 = 44, 44 + 8 = 52."
+            },
+            {
+              "text": "72 - 18 + 6",
+              "answer": "60",
+              "hint": "Pirma atimk, tada pridėk.",
+              "explanation": "72 - 18 = 54, 54 + 6 = 60."
+            },
+            {
+              "text": "56 + 29",
+              "answer": "85",
+              "hint": "Pridėk 30, tada atimk 1.",
+              "explanation": "56 + 30 = 86, 86 - 1 = 85."
+            },
+            {
+              "text": "83 - 45",
+              "answer": "38",
+              "hint": "Atimk 40, tada 5.",
+              "explanation": "83 - 40 = 43, 43 - 5 = 38."
+            },
+            {
+              "text": "Jorė turėjo 24 lipdukus. Ji gavo dar 18, o 7 padovanojo draugei. Kiek lipdukų liko?",
+              "answer": "35",
+              "hint": "Pirma pridėk, tada atimk.",
+              "explanation": "24 + 18 = 42, 42 - 7 = 35."
+            },
+            {
+              "text": "Knygoje yra 68 puslapiai. Jorė pirmą dieną perskaitė 19, antrą dieną 23. Kiek puslapių liko?",
+              "answer": "26",
+              "hint": "Pirma suskaičiuok, kiek perskaityta.",
+              "explanation": "19 + 23 = 42, 68 - 42 = 26."
+            },
+            {
+              "text": "Matas turi 36 korteles. Jorė turi 14 daugiau. Kiek kortelių jie turi kartu?",
+              "answer": "86",
+              "hint": "Pirma rask, kiek turi Jorė.",
+              "explanation": "Jorė turi 36 + 14 = 50, kartu 36 + 50 = 86."
+            },
+            {
+              "text": "Turi 10 €. Perki žaislą už 6 € 70 ct. Kiek gausi grąžos centais?",
+              "answer": "330",
+              "hint": "10 € yra 1000 ct.",
+              "explanation": "1000 ct - 670 ct = 330 ct."
+            },
+            {
+              "text": "18, 25, 32, __, __. Įrašyk du skaičius per kablelį.",
+              "answer": "39, 46",
+              "hint": "Didėja po 7.",
+              "explanation": "32 + 7 = 39, 39 + 7 = 46."
+            }
+          ],
+          "parent_check": "Patikrinti, ar dviejų žingsnių uždaviniuose vaikas nepamiršta antro veiksmo.",
+          "tracking_tags": [
+            "math",
+            "two_digit",
+            "two_step",
+            "money_cents",
+            "grade_2_bridge"
+          ]
+        },
+        {
+          "subject": "Anglų kalba",
+          "skill": "Word meaning and short sentence recognition",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "multiple_choice",
+          "title": "English quick check",
+          "goal": "Pakartoti žodžių reikšmes, emoji ir trumpus sakinius.",
+          "instructions": "Pasirink teisingą atsakymą.",
+          "questions": [
+            {
+              "text": "rabbit",
+              "options": [
+                "triušis",
+                "meška",
+                "arklys"
+              ],
+              "answer": "triušis",
+              "hint": "Long ears.",
+              "explanation": "rabbit = triušis."
+            },
+            {
+              "text": "pencil",
+              "options": [
+                "pieštukas",
+                "kėdė",
+                "kuprinė"
+              ],
+              "answer": "pieštukas",
+              "hint": "For writing.",
+              "explanation": "pencil = pieštukas."
+            },
+            {
+              "text": "cheese",
+              "options": [
+                "sūris",
+                "vanduo",
+                "duona"
+              ],
+              "answer": "sūris",
+              "hint": "Food.",
+              "explanation": "cheese = sūris."
+            },
+            {
+              "text": "🐶",
+              "options": [
+                "dog",
+                "cat",
+                "book"
+              ],
+              "answer": "dog",
+              "hint": "It can bark.",
+              "explanation": "dog = šuo."
+            },
+            {
+              "text": "What color is it? 🍎",
+              "options": [
+                "red",
+                "blue",
+                "five"
+              ],
+              "answer": "red",
+              "hint": "Apple color here.",
+              "explanation": "red = raudona."
+            },
+            {
+              "text": "I can ___.",
+              "options": [
+                "jump",
+                "yellow",
+                "book"
+              ],
+              "answer": "jump",
+              "hint": "After can comes an action.",
+              "explanation": "I can jump = Aš galiu šokinėti."
+            },
+            {
+              "text": "This is a ___. 🐱",
+              "options": [
+                "cat",
+                "run",
+                "green"
+              ],
+              "answer": "cat",
+              "hint": "The emoji is an animal.",
+              "explanation": "This is a cat = Tai katė."
+            },
+            {
+              "text": "What is this? 🐱",
+              "options": [
+                "cat",
+                "dog",
+                "book"
+              ],
+              "answer": "cat",
+              "hint": "Emoji rodo katę.",
+              "explanation": "cat = katė."
+            }
+          ],
+          "parent_check": "Paprašyti išversti du pasirinktus atsakymus.",
+          "tracking_tags": [
+            "english",
+            "word_meaning",
+            "emoji_word",
+            "sentence_completion"
+          ]
+        }
+      ],
+      "Antradienis": [
+        {
+          "subject": "Skaitymas",
+          "skill": "Kasdienio skaitymo žymėjimas",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "reading_tracker",
+          "title": "Skaitymo žymėjimas",
+          "goal": "Pažymėti skaitymo įprotį be skaitymo tikrinimo programoje.",
+          "instructions": "Pažymėk šiandienos skaitymą.",
+          "questions": [],
+          "parent_check": "Paklausti vieno veikėjo arba svarbaus daikto iš knygos.",
+          "tracking_tags": [
+            "reading",
+            "daily_tracking",
+            "week_1"
+          ]
+        },
+        {
+          "subject": "Lietuvių kalba",
+          "skill": "Žodžių tvarka sakinyje",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "sentence_order",
+          "title": "Sudėk taisyklingą sakinį",
+          "goal": "Lavinti sakinio logiką, žodžių tvarką, didžiąją raidę ir pabaigos ženklą.",
+          "instructions": "Iš duotų žodžių parašyk taisyklingą sakinį.",
+          "questions": [
+            {
+              "text": "knygą / Jorė / skaito / vakare",
+              "answer": "Jorė vakare skaito knygą.",
+              "hint": "Pradėk vardu.",
+              "explanation": "Sakinys prasideda didžiąja raide ir baigiasi tašku."
+            },
+            {
+              "text": "pieną / katė / geria / ryte",
+              "answer": "Katė ryte geria pieną.",
+              "hint": "Kas geria?",
+              "explanation": "Katė ryte geria pieną."
+            },
+            {
+              "text": "į mokyklą / eina / vaikai / šiandien",
+              "answer": "Vaikai šiandien eina į mokyklą.",
+              "hint": "Kas eina?",
+              "explanation": "Vaikai šiandien eina į mokyklą."
+            },
+            {
+              "text": "ąžuolas / kieme / auga / didelis",
+              "answer": "Kieme auga didelis ąžuolas.",
+              "hint": "Kur auga?",
+              "explanation": "Kieme auga didelis ąžuolas."
+            },
+            {
+              "text": "mįslę / tėtis / sugalvojo / sunkią",
+              "answer": "Tėtis sugalvojo sunkią mįslę.",
+              "hint": "Kas sugalvojo?",
+              "explanation": "Tėtis sugalvojo sunkią mįslę."
+            },
+            {
+              "text": "žąsis / prie / plaukia / upės",
+              "answer": "Žąsis plaukia prie upės.",
+              "hint": "Kas plaukia?",
+              "explanation": "Žąsis plaukia prie upės."
+            },
+            {
+              "text": "sąsiuvinį / ant stalo / padėjo / Jorė",
+              "answer": "Jorė padėjo sąsiuvinį ant stalo.",
+              "hint": "Pradėk vardu.",
+              "explanation": "Jorė padėjo sąsiuvinį ant stalo."
+            },
+            {
+              "text": "kur / mano / yra / knyga",
+              "answer": "Kur yra mano knyga?",
+              "hint": "Tai klausimas.",
+              "explanation": "Klausimas baigiasi klaustuku."
+            }
+          ],
+          "parent_check": "Patikrinti, ar yra didžioji raidė ir tinkamas pabaigos ženklas.",
+          "tracking_tags": [
+            "lithuanian",
+            "sentence_order",
+            "capital_letters",
+            "punctuation"
+          ]
+        },
+        {
+          "subject": "Matematika",
+          "skill": "Sudėtis ir atimtis iki 100, reiškinių palyginimas ir laiko trukmė",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "text_input_check",
+          "title": "Per dešimtį ir atgal",
+          "goal": "Stiprinti skaičiavimą mintinai, kai reikia peržengti arba išardyti dešimtį.",
+          "instructions": "Įrašyk skaičių, ženklą arba laiką formatu HH:MM.",
+          "questions": [
+            {
+              "text": "68 + 17",
+              "answer": "85",
+              "hint": "Pridėk 10, tada 7.",
+              "explanation": "68 + 10 = 78, 78 + 7 = 85."
+            },
+            {
+              "text": "75 - 28",
+              "answer": "47",
+              "hint": "Atimk 30 ir pridėk 2.",
+              "explanation": "75 - 30 = 45, 45 + 2 = 47."
+            },
+            {
+              "text": "46 + 27",
+              "answer": "73",
+              "hint": "Pridėk 20, tada 7.",
+              "explanation": "46 + 20 = 66, 66 + 7 = 73."
+            },
+            {
+              "text": "91 - 46",
+              "answer": "45",
+              "hint": "Atimk 40, tada 6.",
+              "explanation": "91 - 40 = 51, 51 - 6 = 45."
+            },
+            {
+              "text": "34 + 18 - 7",
+              "answer": "45",
+              "hint": "Pirma 34 + 18.",
+              "explanation": "34 + 18 = 52, 52 - 7 = 45."
+            },
+            {
+              "text": "80 - 25 + 9",
+              "answer": "64",
+              "hint": "Pirma 80 - 25.",
+              "explanation": "80 - 25 = 55, 55 + 9 = 64."
+            },
+            {
+              "text": "57 + 36",
+              "answer": "93",
+              "hint": "Pridėk 30, tada 6.",
+              "explanation": "57 + 30 = 87, 87 + 6 = 93."
+            },
+            {
+              "text": "100 - 47",
+              "answer": "53",
+              "hint": "Iki 100 nuo 47 trūksta kiek?",
+              "explanation": "100 - 47 = 53."
+            },
+            {
+              "text": "Jorė nusipirko 18 lipdukų ryte ir 27 vakare. 16 lipdukų panaudojo. Kiek liko?",
+              "answer": "29",
+              "hint": "Pirma sudėk pirkinius.",
+              "explanation": "18 + 27 = 45, 45 - 16 = 29."
+            },
+            {
+              "text": "Dėžėje buvo 72 kaladėlės. Jorė pastatė bokštą iš 28, o Matas iš 19. Kiek kaladėlių liko?",
+              "answer": "25",
+              "hint": "Pirma sudėk panaudotas kaladėles.",
+              "explanation": "28 + 19 = 47, 72 - 47 = 25."
+            },
+            {
+              "text": "Mama iškepė 36 blynus. Per pusryčius suvalgė 14, per vakarienę dar 9. Kiek liko?",
+              "answer": "13",
+              "hint": "Yra du atėmimai.",
+              "explanation": "36 - 14 = 22, 22 - 9 = 13."
+            },
+            {
+              "text": "47 + 18 __ 90 - 24. Įrašyk >, < arba =",
+              "answer": "<",
+              "hint": "Suskaičiuok abi puses.",
+              "explanation": "47 + 18 = 65, 90 - 24 = 66, todėl 65 < 66."
+            },
+            {
+              "text": "Būrelis prasidėjo 13:20 ir baigėsi 14:05. Kiek minučių truko?",
+              "answer": "45",
+              "hint": "Nuo 13:20 iki 14:00 yra 40 min.",
+              "explanation": "40 min. + 5 min. = 45 min."
+            }
+          ],
+          "parent_check": "Paklausti, kaip vaikas lygino du reiškinius: ar tik spėjo, ar suskaičiavo abi puses.",
+          "tracking_tags": [
+            "math",
+            "two_digit",
+            "comparison",
+            "time_duration",
+            "two_step"
+          ]
+        },
+        {
+          "subject": "Anglų kalba",
+          "skill": "Complete simple sentences",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "sentence_completion",
+          "title": "Complete the sentence",
+          "goal": "Sieti sakinio šabloną su tinkamu žodžiu.",
+          "instructions": "Pasirink žodį, kuris tinka sakiniui.",
+          "questions": [
+            {
+              "text": "I like ___.",
+              "options": [
+                "apples",
+                "red",
+                "run"
+              ],
+              "answer": "apples",
+              "hint": "Food fits here.",
+              "explanation": "I like apples."
+            },
+            {
+              "text": "I don't like ___.",
+              "options": [
+                "rainy",
+                "pencil",
+                "jump"
+              ],
+              "answer": "rainy",
+              "hint": "Weather can fit.",
+              "explanation": "I don't like rainy weather."
+            },
+            {
+              "text": "I have a ___.",
+              "options": [
+                "bag",
+                "sleep",
+                "yellow"
+              ],
+              "answer": "bag",
+              "hint": "Thing fits here.",
+              "explanation": "I have a bag."
+            },
+            {
+              "text": "I see a ___.",
+              "options": [
+                "bird",
+                "hot",
+                "drink"
+              ],
+              "answer": "bird",
+              "hint": "Animal fits here.",
+              "explanation": "I see a bird."
+            },
+            {
+              "text": "My pencil is ___.",
+              "options": [
+                "blue",
+                "cow",
+                "eat"
+              ],
+              "answer": "blue",
+              "hint": "Color fits here.",
+              "explanation": "My pencil is blue."
+            },
+            {
+              "text": "The dog is ___.",
+              "options": [
+                "happy",
+                "five",
+                "milk"
+              ],
+              "answer": "happy",
+              "hint": "Feeling fits here.",
+              "explanation": "The dog is happy."
+            },
+            {
+              "text": "I can ___.",
+              "options": [
+                "read",
+                "green",
+                "chair"
+              ],
+              "answer": "read",
+              "hint": "Action fits here.",
+              "explanation": "I can read."
+            },
+            {
+              "text": "It is ___. ☀️",
+              "options": [
+                "sunny",
+                "fish",
+                "ten"
+              ],
+              "answer": "sunny",
+              "hint": "Weather word.",
+              "explanation": "It is sunny."
+            }
+          ],
+          "parent_check": "Paprašyti vieną sakinį pasakyti lietuviškai.",
+          "tracking_tags": [
+            "english",
+            "sentence_completion",
+            "actions",
+            "weather"
+          ]
+        }
+      ],
+      "Trečiadienis": [
+        {
+          "subject": "Skaitymas",
+          "skill": "Kasdienio skaitymo žymėjimas",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "reading_tracker",
+          "title": "Skaitymo žymėjimas",
+          "goal": "Pažymėti skaitymo įprotį be skaitymo tikrinimo programoje.",
+          "instructions": "Pažymėk šiandienos skaitymą.",
+          "questions": [],
+          "parent_check": "Paklausti, kas knygoje buvo sunkiausia arba įdomiausia.",
+          "tracking_tags": [
+            "reading",
+            "daily_tracking",
+            "week_1"
+          ]
+        },
+        {
+          "subject": "Lietuvių kalba",
+          "skill": "Įsidėmėtini žodžiai, didžiosios raidės ir klausimų logika",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "multiple_choice",
+          "title": "Pasirink teisingą variantą",
+          "goal": "Įtvirtinti lietuviškų raidžių, keblių žodžių ir klausimų prasmę.",
+          "instructions": "Pasirink teisingą atsakymą.",
+          "questions": [
+            {
+              "text": "Pasirink teisingą žodį.",
+              "options": [
+                "ąžuolas",
+                "ažuolas",
+                "azuolas"
+              ],
+              "answer": "ąžuolas",
+              "hint": "Pradžioje ą, viduryje ž.",
+              "explanation": "Teisingai: ąžuolas."
+            },
+            {
+              "text": "Pasirink teisingą žodį.",
+              "options": [
+                "žąsis",
+                "žasis",
+                "žasys"
+              ],
+              "answer": "žąsis",
+              "hint": "Reikia ą.",
+              "explanation": "Teisingai: žąsis."
+            },
+            {
+              "text": "Pasirink teisingą žodį.",
+              "options": [
+                "šiandien",
+                "šendien",
+                "šianden"
+              ],
+              "answer": "šiandien",
+              "hint": "Tai įsidėmėtinas žodis.",
+              "explanation": "Teisingai: šiandien."
+            },
+            {
+              "text": "Pasirink teisingą žodį.",
+              "options": [
+                "mįslė",
+                "myslė",
+                "mislė"
+              ],
+              "answer": "mįslė",
+              "hint": "Reikia į.",
+              "explanation": "Teisingai: mįslė."
+            },
+            {
+              "text": "Pasirink teisingą sakinį.",
+              "options": [
+                "jorė skaito.",
+                "Jorė skaito.",
+                "Jorė skaito"
+              ],
+              "answer": "Jorė skaito.",
+              "hint": "Didžioji raidė ir taškas.",
+              "explanation": "Sakinys prasideda didžiąja raide ir baigiasi tašku."
+            },
+            {
+              "text": "Katė ___ pieną.",
+              "options": [
+                "geria",
+                "skaito",
+                "bėga"
+              ],
+              "answer": "geria",
+              "hint": "Kas tinka su pienu?",
+              "explanation": "Katė geria pieną."
+            },
+            {
+              "text": "Kur yra katė?",
+              "options": [
+                "kieme",
+                "bėga",
+                "obuolį"
+              ],
+              "answer": "kieme",
+              "hint": "Klausimas „kur?“ prašo vietos.",
+              "explanation": "Kur? Kieme."
+            },
+            {
+              "text": "Ką veikia vaikas?",
+              "options": [
+                "skaito",
+                "knygą",
+                "namuose"
+              ],
+              "answer": "skaito",
+              "hint": "Klausimas prašo veiksmo.",
+              "explanation": "Ką veikia? Skaito."
+            },
+            {
+              "text": "Ko daug sode?",
+              "options": [
+                "obuolių",
+                "obuolys",
+                "bėga"
+              ],
+              "answer": "obuolių",
+              "hint": "Po „ko daug?“ keičiasi žodžio forma.",
+              "explanation": "Daug obuolių."
+            },
+            {
+              "text": "Ką Jorė skaito?",
+              "options": [
+                "knygą",
+                "vakare",
+                "skaito"
+              ],
+              "answer": "knygą",
+              "hint": "Klausimas prašo daikto.",
+              "explanation": "Jorė skaito knygą."
+            }
+          ],
+          "parent_check": "Pažiūrėti, ar klausimų atsakymai pasirenkami pagal prasmę.",
+          "tracking_tags": [
+            "lithuanian",
+            "tricky_words",
+            "capital_letters",
+            "question_logic"
+          ]
+        },
+        {
+          "subject": "Matematika",
+          "skill": "Dviženkliai veiksmai, pinigai centais ir sudėtingesnės sekos",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "text_input_check",
+          "title": "Pinigai, sekos ir keli veiksmai",
+          "goal": "Treniruoti skaičiavimą su keliais veiksmais, centais ir didesniu sekos žingsniu.",
+          "instructions": "Įrašyk atsakymą. Centų užduotyse rašyk tik centų skaičių.",
+          "questions": [
+            {
+              "text": "39 + 46",
+              "answer": "85",
+              "hint": "Pridėk 40, tada 6.",
+              "explanation": "39 + 40 = 79, 79 + 6 = 85."
+            },
+            {
+              "text": "82 - 37",
+              "answer": "45",
+              "hint": "Atimk 30, tada 7.",
+              "explanation": "82 - 30 = 52, 52 - 7 = 45."
+            },
+            {
+              "text": "28 + 35 - 16",
+              "answer": "47",
+              "hint": "Pirma sudėk.",
+              "explanation": "28 + 35 = 63, 63 - 16 = 47."
+            },
+            {
+              "text": "94 - 58 + 7",
+              "answer": "43",
+              "hint": "Pirma 94 - 58.",
+              "explanation": "94 - 58 = 36, 36 + 7 = 43."
+            },
+            {
+              "text": "49 + 28",
+              "answer": "77",
+              "hint": "Pridėk 30, atimk 2.",
+              "explanation": "49 + 30 = 79, 79 - 2 = 77."
+            },
+            {
+              "text": "70 - 29",
+              "answer": "41",
+              "hint": "Atimk 30, pridėk 1.",
+              "explanation": "70 - 30 = 40, 40 + 1 = 41."
+            },
+            {
+              "text": "63 + 18",
+              "answer": "81",
+              "hint": "Pridėk 20, atimk 2.",
+              "explanation": "63 + 20 = 83, 83 - 2 = 81."
+            },
+            {
+              "text": "96 - 49",
+              "answer": "47",
+              "hint": "Atimk 50, pridėk 1.",
+              "explanation": "96 - 50 = 46, 46 + 1 = 47."
+            },
+            {
+              "text": "Jorė turėjo 50 ct, tėtis davė 2 € 40 ct. Ji nusipirko lipdukų už 1 € 75 ct. Kiek centų liko?",
+              "answer": "115",
+              "hint": "Viską paversk centais.",
+              "explanation": "50 + 240 = 290 ct, 290 - 175 = 115 ct."
+            },
+            {
+              "text": "Kasoje buvo 9 €. Nupirkta knyga už 4 € 80 ct ir pieštukas už 1 € 30 ct. Kiek centų liko?",
+              "answer": "290",
+              "hint": "9 € yra 900 ct.",
+              "explanation": "480 + 130 = 610 ct, 900 - 610 = 290 ct."
+            },
+            {
+              "text": "Jorė skaitė 18 puslapių pirmadienį, 24 antradienį, o trečiadienį 9 mažiau nei antradienį. Kiek puslapių perskaitė iš viso?",
+              "answer": "57",
+              "hint": "Pirma rask trečiadienį.",
+              "explanation": "Trečiadienį 24 - 9 = 15, iš viso 18 + 24 + 15 = 57."
+            },
+            {
+              "text": "13, 22, 31, __, __. Įrašyk du skaičius per kablelį.",
+              "answer": "40, 49",
+              "hint": "Didėja po 9.",
+              "explanation": "31 + 9 = 40, 40 + 9 = 49."
+            },
+            {
+              "text": "84 - 28 __ 27 + 31. Įrašyk >, < arba =",
+              "answer": "<",
+              "hint": "Suskaičiuok abi puses.",
+              "explanation": "84 - 28 = 56, 27 + 31 = 58, todėl <."
+            }
+          ],
+          "parent_check": "Patikrinti, ar pinigų užduotyse vaikas tikrai pavertė eurus centais.",
+          "tracking_tags": [
+            "math",
+            "money_cents",
+            "sequences",
+            "comparison",
+            "two_step"
+          ]
+        },
+        {
+          "subject": "Anglų kalba",
+          "skill": "Question to answer",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "multiple_choice",
+          "title": "Answer the question",
+          "goal": "Atpažinti trumpus klausimus ir parinkti logiškus atsakymus.",
+          "instructions": "Pasirink tinkamą atsakymą.",
+          "questions": [
+            {
+              "text": "What color is it? 🟢",
+              "options": [
+                "green",
+                "five",
+                "book"
+              ],
+              "answer": "green",
+              "hint": "Color question.",
+              "explanation": "green = žalia."
+            },
+            {
+              "text": "How many? 🖐️",
+              "options": [
+                "five",
+                "red",
+                "dog"
+              ],
+              "answer": "five",
+              "hint": "Number question.",
+              "explanation": "five = penki."
+            },
+            {
+              "text": "Can you read?",
+              "options": [
+                "Yes, I can.",
+                "It is blue.",
+                "This is milk."
+              ],
+              "answer": "Yes, I can.",
+              "hint": "Can question.",
+              "explanation": "Yes, I can = Taip, galiu."
+            },
+            {
+              "text": "What do you have?",
+              "options": [
+                "I have a book.",
+                "I am sunny.",
+                "It is a dog."
+              ],
+              "answer": "I have a book.",
+              "hint": "Have question.",
+              "explanation": "What do you have? I have a book."
+            },
+            {
+              "text": "How do you feel?",
+              "options": [
+                "happy",
+                "pencil",
+                "seven"
+              ],
+              "answer": "happy",
+              "hint": "Feeling question.",
+              "explanation": "happy = laiminga / laimingas."
+            },
+            {
+              "text": "What is this? 🐟",
+              "options": [
+                "fish",
+                "cow",
+                "chair"
+              ],
+              "answer": "fish",
+              "hint": "Animal.",
+              "explanation": "fish = žuvis."
+            },
+            {
+              "text": "Where is the book?",
+              "options": [
+                "on the desk",
+                "yellow",
+                "jump"
+              ],
+              "answer": "on the desk",
+              "hint": "Place answer.",
+              "explanation": "Where? On the desk."
+            },
+            {
+              "text": "What is this? 🐶",
+              "options": [
+                "dog",
+                "cat",
+                "fish"
+              ],
+              "answer": "dog",
+              "hint": "Emoji rodo šunį.",
+              "explanation": "dog = šuo."
+            }
+          ],
+          "parent_check": "Paprašyti lietuviškai pasakyti, ko klausia du klausimai.",
+          "tracking_tags": [
+            "english",
+            "question_answer",
+            "missing_letter",
+            "week_1"
+          ]
+        }
+      ],
+      "Ketvirtadienis": [
+        {
+          "subject": "Skaitymas",
+          "skill": "Kasdienio skaitymo žymėjimas",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "reading_tracker",
+          "title": "Skaitymo žymėjimas",
+          "goal": "Pažymėti skaitymo įprotį be skaitymo tikrinimo programoje.",
+          "instructions": "Pažymėk šiandienos skaitymą.",
+          "questions": [],
+          "parent_check": "Paklausti, kodėl skaitymas šiandien buvo lengvas, normalus arba sunkus.",
+          "tracking_tags": [
+            "reading",
+            "daily_tracking",
+            "week_1"
+          ]
+        },
+        {
+          "subject": "Lietuvių kalba",
+          "skill": "Sakinio pabaigos ženklai . ? !",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "punctuation_choice",
+          "title": "Taškas, klaustukas ar šauktukas",
+          "goal": "Atpažinti sakinio tikslą pagal prasmę.",
+          "instructions": "Pasirink tinkamą sakinio pabaigos ženklą.",
+          "questions": [
+            {
+              "text": "Kur yra mano knyga",
+              "options": [
+                ".",
+                "?",
+                "!"
+              ],
+              "answer": "?",
+              "hint": "Klausia vietos.",
+              "explanation": "Klausimas baigiasi klaustuku."
+            },
+            {
+              "text": "Katė miega ant kėdės",
+              "options": [
+                ".",
+                "?",
+                "!"
+              ],
+              "answer": ".",
+              "hint": "Ramus pasakymas.",
+              "explanation": "Paprastas sakinys baigiasi tašku."
+            },
+            {
+              "text": "Valio, radau ąsotį",
+              "options": [
+                ".",
+                "?",
+                "!"
+              ],
+              "answer": "!",
+              "hint": "Stiprus jausmas.",
+              "explanation": "Džiaugsmas gali baigtis šauktuku."
+            },
+            {
+              "text": "Ar šiandien skaitei",
+              "options": [
+                ".",
+                "?",
+                "!"
+              ],
+              "answer": "?",
+              "hint": "Klausia.",
+              "explanation": "Klausimas baigiasi klaustuku."
+            },
+            {
+              "text": "Rytoj važiuosime prie ežero",
+              "options": [
+                ".",
+                "?",
+                "!"
+              ],
+              "answer": ".",
+              "hint": "Pasakymas.",
+              "explanation": "Tai pasakojamas sakinys."
+            },
+            {
+              "text": "Atsargiai, karšta",
+              "options": [
+                ".",
+                "?",
+                "!"
+              ],
+              "answer": "!",
+              "hint": "Perspėjimas.",
+              "explanation": "Perspėjimas dažnai baigiasi šauktuku."
+            },
+            {
+              "text": "Ką veikia žąsis",
+              "options": [
+                ".",
+                "?",
+                "!"
+              ],
+              "answer": "?",
+              "hint": "Klausia veiksmo.",
+              "explanation": "Klausimas baigiasi klaustuku."
+            },
+            {
+              "text": "Mįslė buvo sunki",
+              "options": [
+                ".",
+                "?",
+                "!"
+              ],
+              "answer": ".",
+              "hint": "Pasakymas.",
+              "explanation": "Paprastas sakinys baigiasi tašku."
+            },
+            {
+              "text": "Kaip gražiai parašei",
+              "options": [
+                ".",
+                "?",
+                "!"
+              ],
+              "answer": "!",
+              "hint": "Pagyrimas su jausmu.",
+              "explanation": "Šaukiamasis sakinys baigiasi šauktuku."
+            },
+            {
+              "text": "Ko daug ant stalo",
+              "options": [
+                ".",
+                "?",
+                "!"
+              ],
+              "answer": "?",
+              "hint": "Klausimas prasideda „ko“.",
+              "explanation": "Klausimas baigiasi klaustuku."
+            }
+          ],
+          "parent_check": "Paklausti, kaip vaikas atpažino klausimą.",
+          "tracking_tags": [
+            "lithuanian",
+            "punctuation",
+            "sentence_logic",
+            "questions"
+          ]
+        },
+        {
+          "subject": "Matematika",
+          "skill": "Laiko uždaviniai, dviženkliai veiksmai, matavimas ir palyginimas",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "text_input_check",
+          "title": "Laikas ir sunkesni veiksmai",
+          "goal": "Treniruoti laiko trukmę, pradžios laiką ir dviženklius veiksmus iki 100.",
+          "instructions": "Įrašyk atsakymą. Laiką rašyk formatu HH:MM.",
+          "questions": [
+            {
+              "text": "58 + 27",
+              "answer": "85",
+              "hint": "Pridėk 20, tada 7.",
+              "explanation": "58 + 20 = 78, 78 + 7 = 85."
+            },
+            {
+              "text": "73 - 38",
+              "answer": "35",
+              "hint": "Atimk 40, pridėk 2.",
+              "explanation": "73 - 40 = 33, 33 + 2 = 35."
+            },
+            {
+              "text": "44 + 39",
+              "answer": "83",
+              "hint": "Pridėk 40, atimk 1.",
+              "explanation": "44 + 40 = 84, 84 - 1 = 83."
+            },
+            {
+              "text": "92 - 57",
+              "answer": "35",
+              "hint": "Atimk 50, tada 7.",
+              "explanation": "92 - 50 = 42, 42 - 7 = 35."
+            },
+            {
+              "text": "37 + 28 - 19",
+              "answer": "46",
+              "hint": "Pirma sudėk.",
+              "explanation": "37 + 28 = 65, 65 - 19 = 46."
+            },
+            {
+              "text": "86 - 29 + 14",
+              "answer": "71",
+              "hint": "Atimk 30, pridėk 1, tada +14.",
+              "explanation": "86 - 29 = 57, 57 + 14 = 71."
+            },
+            {
+              "text": "65 + 18 - 27",
+              "answer": "56",
+              "hint": "Pirma +18.",
+              "explanation": "65 + 18 = 83, 83 - 27 = 56."
+            },
+            {
+              "text": "100 - 64 + 18",
+              "answer": "54",
+              "hint": "Pirma 100 - 64.",
+              "explanation": "100 - 64 = 36, 36 + 18 = 54."
+            },
+            {
+              "text": "Filmukas truko 35 minutes ir baigėsi 16:10. Kada prasidėjo?",
+              "answer": "15:35",
+              "hint": "Atimk 35 min. nuo 16:10.",
+              "explanation": "16:10 - 10 min. = 16:00, dar -25 min. = 15:35."
+            },
+            {
+              "text": "Treniruotė prasidėjo 17:45 ir truko 50 minučių. Kada baigėsi?",
+              "answer": "18:35",
+              "hint": "Iki 18:00 yra 15 min.",
+              "explanation": "50 - 15 = 35, todėl baigėsi 18:35."
+            },
+            {
+              "text": "Bibliotekoje buvo 83 knygos. 26 paėmė vaikai, o 18 grąžino. Kiek knygų dabar yra?",
+              "answer": "75",
+              "hint": "Pirma atimk, tada pridėk.",
+              "explanation": "83 - 26 = 57, 57 + 18 = 75."
+            },
+            {
+              "text": "Vienoje dėžėje 48 pieštukai, kitoje 17 mažiau. Kiek pieštukų abiejose dėžėse?",
+              "answer": "79",
+              "hint": "Pirma rask antrą dėžę.",
+              "explanation": "Antroje 48 - 17 = 31, kartu 48 + 31 = 79."
+            },
+            {
+              "text": "Lentos ilgis matuojamas cm, kg ar l?",
+              "answer": "cm",
+              "hint": "Klausia ilgio.",
+              "explanation": "Ilgį matuojame centimetrais."
+            },
+            {
+              "text": "19, 31, 43, __, __. Įrašyk du skaičius per kablelį.",
+              "answer": "55, 67",
+              "hint": "Didėja po 12.",
+              "explanation": "43 + 12 = 55, 55 + 12 = 67."
+            }
+          ],
+          "parent_check": "Patikrinti, ar laiko užduotyse vaikas juda per valandos ribą, o ne tiesiog atima minutes iš minučių.",
+          "tracking_tags": [
+            "math",
+            "time",
+            "two_digit",
+            "measurement",
+            "sequences"
+          ]
+        },
+        {
+          "subject": "Anglų kalba",
+          "skill": "Choose correct sentence and emoji word",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "multiple_choice",
+          "title": "Choose the sentence",
+          "goal": "Susieti emoji, tekstą ir trumpą anglišką sakinį.",
+          "instructions": "Pasirink tinkamą atsakymą.",
+          "questions": [
+            {
+              "text": "🐱",
+              "options": [
+                "This is a cat.",
+                "This is a dog.",
+                "This is a book."
+              ],
+              "answer": "This is a cat.",
+              "hint": "Cat.",
+              "explanation": "This is a cat = Tai katė."
+            },
+            {
+              "text": "☀️",
+              "options": [
+                "It is sunny.",
+                "It is rainy.",
+                "It is cold."
+              ],
+              "answer": "It is sunny.",
+              "hint": "Sun.",
+              "explanation": "sunny = saulėta."
+            },
+            {
+              "text": "📘",
+              "options": [
+                "I see a book.",
+                "I see a fish.",
+                "I see a chair."
+              ],
+              "answer": "I see a book.",
+              "hint": "Book.",
+              "explanation": "I see a book = Matau knygą."
+            },
+            {
+              "text": "🍌",
+              "options": [
+                "banana",
+                "bread",
+                "milk"
+              ],
+              "answer": "banana",
+              "hint": "Yellow fruit.",
+              "explanation": "banana = bananas."
+            },
+            {
+              "text": "The ___ is red. 🍎",
+              "options": [
+                "apple",
+                "cow",
+                "chair"
+              ],
+              "answer": "apple",
+              "hint": "Fruit.",
+              "explanation": "The apple is red."
+            },
+            {
+              "text": "I am ___. 😴",
+              "options": [
+                "tired",
+                "green",
+                "ruler"
+              ],
+              "answer": "tired",
+              "hint": "Feeling.",
+              "explanation": "tired = pavargusi / pavargęs."
+            },
+            {
+              "text": "What is this? 🐦",
+              "options": [
+                "bird",
+                "fish",
+                "horse"
+              ],
+              "answer": "bird",
+              "hint": "Emoji rodo paukštį.",
+              "explanation": "bird = paukštis."
+            },
+            {
+              "text": "Can you jump?",
+              "options": [
+                "Yes, I can.",
+                "It is yellow.",
+                "This is a bag."
+              ],
+              "answer": "Yes, I can.",
+              "hint": "Can question.",
+              "explanation": "Yes, I can."
+            }
+          ],
+          "parent_check": "Paprašyti vieną sakinį perskaityti ir išversti.",
+          "tracking_tags": [
+            "english",
+            "choose_sentence",
+            "emoji_word",
+            "missing_letter"
+          ]
+        }
+      ],
+      "Penktadienis": [
+        {
+          "subject": "Skaitymas",
+          "skill": "Savaitės skaitymo žymėjimas",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "reading_tracker",
+          "title": "Skaitymo žymėjimas",
+          "goal": "Užbaigti savaitę pažymint skaitymą.",
+          "instructions": "Pažymėk penktadienio skaitymą.",
+          "questions": [],
+          "parent_check": "Paklausti, kuri savaitės skaitymo dalis buvo įdomiausia.",
+          "tracking_tags": [
+            "reading",
+            "weekly_review",
+            "week_1"
+          ]
+        },
+        {
+          "subject": "Lietuvių kalba",
+          "skill": "Savaitės kartojimas: raidės, žodžiai, sakiniai ir klausimai",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "mixed_review",
+          "title": "Lietuvių savaitės kartojimas",
+          "goal": "Pakartoti dažniausias savaitės klaidų vietas.",
+          "instructions": "Pasirink teisingą atsakymą.",
+          "questions": [
+            {
+              "text": "Kuri raidė tinka: s_nus?",
+              "options": [
+                "u",
+                "ū",
+                "ų"
+              ],
+              "answer": "ū",
+              "hint": "Sūnus.",
+              "explanation": "sūnus rašomas su ū."
+            },
+            {
+              "text": "Kuri raidė tinka: p_lis?",
+              "options": [
+                "i",
+                "y",
+                "į"
+              ],
+              "answer": "i",
+              "hint": "Pilis.",
+              "explanation": "pilis rašomas su i."
+            },
+            {
+              "text": "Pasirink teisingą žodį.",
+              "options": [
+                "rytoj",
+                "ritoj",
+                "rytoi"
+              ],
+              "answer": "rytoj",
+              "hint": "Įsidėmėtinas žodis.",
+              "explanation": "rytoj rašomas su y."
+            },
+            {
+              "text": "Pasirink teisingą žodį.",
+              "options": [
+                "ąsotis",
+                "asotis",
+                "ąsotys"
+              ],
+              "answer": "ąsotis",
+              "hint": "Pradžioje ą.",
+              "explanation": "Teisingai: ąsotis."
+            },
+            {
+              "text": "Pasirink teisingą žodį.",
+              "options": [
+                "čiū",
+                "čiu",
+                "čių"
+              ],
+              "answer": "čiū",
+              "hint": "Trumpas įsidėmėtinas žodis.",
+              "explanation": "Teisingai: čiū."
+            },
+            {
+              "text": "Koks ženklas tinka: Kur mano knyga",
+              "options": [
+                ".",
+                "?",
+                "!"
+              ],
+              "answer": "?",
+              "hint": "Klausimas.",
+              "explanation": "Klausimas baigiasi klaustuku."
+            },
+            {
+              "text": "Kuris sakinys taisyklingas?",
+              "options": [
+                "jorė skaito knygą.",
+                "Jorė skaito knygą.",
+                "Jorė skaito knygą"
+              ],
+              "answer": "Jorė skaito knygą.",
+              "hint": "Didžioji raidė ir taškas.",
+              "explanation": "Taisyklingas sakinys turi pradžią ir pabaigą."
+            },
+            {
+              "text": "Katė ___ pieną.",
+              "options": [
+                "geria",
+                "skaito",
+                "bėga"
+              ],
+              "answer": "geria",
+              "hint": "Tinka su pienu.",
+              "explanation": "Katė geria pieną."
+            },
+            {
+              "text": "Kur yra kuprinė?",
+              "options": [
+                "prie stalo",
+                "rašo",
+                "pieštuką"
+              ],
+              "answer": "prie stalo",
+              "hint": "Vieta.",
+              "explanation": "Kur? Prie stalo."
+            },
+            {
+              "text": "Ką veikia vaikas?",
+              "options": [
+                "piešia",
+                "sąsiuvinį",
+                "rytoj"
+              ],
+              "answer": "piešia",
+              "hint": "Veiksmas.",
+              "explanation": "Ką veikia? Piešia."
+            },
+            {
+              "text": "Ko daug dėžėje?",
+              "options": [
+                "žaislų",
+                "žaislas",
+                "žaidžia"
+              ],
+              "answer": "žaislų",
+              "hint": "Daug ko?",
+              "explanation": "Daug žaislų."
+            },
+            {
+              "text": "Sudėk mintį: knygą / Jorė / skaito / vakare",
+              "options": [
+                "Jorė vakare skaito knygą.",
+                "Vakare knygą skaito.",
+                "Skaito Jorė vakare"
+              ],
+              "answer": "Jorė vakare skaito knygą.",
+              "hint": "Aiškus pilnas sakinys.",
+              "explanation": "Jorė vakare skaito knygą."
+            }
+          ],
+          "parent_check": "Pažiūrėti, kurios klaidos kartojasi: raidės, ženklai ar klausimai.",
+          "tracking_tags": [
+            "lithuanian",
+            "mixed_review",
+            "mistake_repetition",
+            "week_1"
+          ]
+        },
+        {
+          "subject": "Matematika",
+          "skill": "Savaitės mišrus kartojimas: dviženkliai veiksmai, pinigai, laikas, sekos ir palyginimas",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "mixed_review",
+          "title": "Matematikos savaitės sunkus kartojimas",
+          "goal": "Pakartoti sunkiausias savaitės vietas su klaidų stiliaus pasirinkimais.",
+          "instructions": "Pasirink teisingą atsakymą. Neskubėk: kai kurie variantai yra dažnos klaidos.",
+          "questions": [
+            {
+              "text": "47 + 28",
+              "answer": "75",
+              "hint": "47 + 20 + 8.",
+              "explanation": "47 + 28 = 75.",
+              "options": [
+                "75",
+                "65",
+                "76"
+              ]
+            },
+            {
+              "text": "64 - 27",
+              "answer": "37",
+              "hint": "64 - 20 - 7.",
+              "explanation": "64 - 27 = 37.",
+              "options": [
+                "37",
+                "47",
+                "43"
+              ]
+            },
+            {
+              "text": "38 + 17 - 9",
+              "answer": "46",
+              "hint": "Pirma +17, tada -9.",
+              "explanation": "38 + 17 = 55, 55 - 9 = 46.",
+              "options": [
+                "46",
+                "54",
+                "45"
+              ]
+            },
+            {
+              "text": "25 + 19 + 8",
+              "answer": "52",
+              "hint": "25 + 19 = 44.",
+              "explanation": "44 + 8 = 52.",
+              "options": [
+                "52",
+                "51",
+                "62"
+              ]
+            },
+            {
+              "text": "72 - 18 + 6",
+              "answer": "60",
+              "hint": "72 - 18 = 54.",
+              "explanation": "54 + 6 = 60.",
+              "options": [
+                "60",
+                "48",
+                "66"
+              ]
+            },
+            {
+              "text": "83 - 45",
+              "answer": "38",
+              "hint": "83 - 40 - 5.",
+              "explanation": "83 - 45 = 38.",
+              "options": [
+                "38",
+                "48",
+                "42"
+              ]
+            },
+            {
+              "text": "57 + 36",
+              "answer": "93",
+              "hint": "57 + 30 + 6.",
+              "explanation": "57 + 36 = 93.",
+              "options": [
+                "93",
+                "83",
+                "94"
+              ]
+            },
+            {
+              "text": "100 - 47",
+              "answer": "53",
+              "hint": "Iki 100 nuo 47.",
+              "explanation": "100 - 47 = 53.",
+              "options": [
+                "53",
+                "63",
+                "57"
+              ]
+            },
+            {
+              "text": "Jorė turėjo 24 lipdukus. Gavo 18, padovanojo 7. Kiek liko?",
+              "answer": "35",
+              "hint": "Pirma +18, tada -7.",
+              "explanation": "24 + 18 - 7 = 35.",
+              "options": [
+                "35",
+                "49",
+                "42"
+              ]
+            },
+            {
+              "text": "68 puslapiai. Perskaitė 19 ir 23. Kiek liko?",
+              "answer": "26",
+              "hint": "Pirma 19 + 23.",
+              "explanation": "68 - (19 + 23) = 26.",
+              "options": [
+                "26",
+                "42",
+                "36"
+              ]
+            },
+            {
+              "text": "Matas turi 36 korteles. Jorė turi 14 daugiau. Kiek kartu?",
+              "answer": "86",
+              "hint": "Jorė turi 50.",
+              "explanation": "36 + 50 = 86.",
+              "options": [
+                "86",
+                "50",
+                "76"
+              ]
+            },
+            {
+              "text": "10 € - 6 € 70 ct. Kiek grąžos centais?",
+              "answer": "330",
+              "hint": "1000 - 670.",
+              "explanation": "1000 ct - 670 ct = 330 ct.",
+              "options": [
+                "330",
+                "430",
+                "370"
+              ]
+            },
+            {
+              "text": "Būrelis 13:20-14:05. Kiek minučių?",
+              "answer": "45",
+              "hint": "40 min. iki 14:00 ir dar 5.",
+              "explanation": "Iš viso 45 minutės.",
+              "options": [
+                "45",
+                "35",
+                "55"
+              ]
+            },
+            {
+              "text": "47 + 18 __ 90 - 24",
+              "answer": "<",
+              "hint": "65 ir 66.",
+              "explanation": "65 < 66.",
+              "options": [
+                "<",
+                ">",
+                "="
+              ]
+            },
+            {
+              "text": "18, 25, 32, __, __",
+              "answer": "39, 46",
+              "hint": "Po 7.",
+              "explanation": "32 + 7 = 39, 39 + 7 = 46.",
+              "options": [
+                "39, 46",
+                "37, 42",
+                "40, 48"
+              ]
+            }
+          ],
+          "parent_check": "Peržiūrėti klaidas ir pažymėti, ar jos dažniau kyla iš perėjimo per dešimtį, dviejų žingsnių teksto ar laiko/pinigų.",
+          "tracking_tags": [
+            "math",
+            "mixed_review",
+            "hard_grade_1",
+            "grade_2_bridge",
+            "mistake_repetition"
+          ]
+        },
+        {
+          "subject": "Anglų kalba",
+          "skill": "Weekly review",
+          "level": "hard_grade_1_bridge_grade_2",
+          "type": "multiple_choice",
+          "title": "English weekly review",
+          "goal": "Pakartoti žodžius, sakinius, klausimus ir trūkstamas raides.",
+          "instructions": "Pasirink teisingą atsakymą.",
+          "questions": [
+            {
+              "text": "dog",
+              "options": [
+                "šuo",
+                "katė",
+                "žuvis"
+              ],
+              "answer": "šuo",
+              "hint": "It can bark.",
+              "explanation": "dog = šuo."
+            },
+            {
+              "text": "What color is it? 🍎",
+              "options": [
+                "red",
+                "green",
+                "ten"
+              ],
+              "answer": "red",
+              "hint": "Apple color.",
+              "explanation": "red = raudona."
+            },
+            {
+              "text": "I have a ___.",
+              "options": [
+                "book",
+                "green",
+                "run"
+              ],
+              "answer": "book",
+              "hint": "Thing.",
+              "explanation": "I have a book."
+            },
+            {
+              "text": "How do you feel?",
+              "options": [
+                "happy",
+                "three",
+                "pencil"
+              ],
+              "answer": "happy",
+              "hint": "Feeling.",
+              "explanation": "happy = laiminga / laimingas."
+            },
+            {
+              "text": "🐰",
+              "options": [
+                "rabbit",
+                "horse",
+                "mouse"
+              ],
+              "answer": "rabbit",
+              "hint": "Long ears.",
+              "explanation": "rabbit = triušis."
+            },
+            {
+              "text": "This is a ___. 🐶",
+              "options": [
+                "dog",
+                "bread",
+                "blue"
+              ],
+              "answer": "dog",
+              "hint": "Animal.",
+              "explanation": "This is a dog."
+            },
+            {
+              "text": "Choose the correct sentence. 🐱",
+              "options": [
+                "This is a cat.",
+                "This is a dog.",
+                "This is a pencil."
+              ],
+              "answer": "This is a cat.",
+              "hint": "Emoji rodo katę.",
+              "explanation": "This is a cat = Tai katė."
+            },
+            {
+              "text": "Can you read?",
+              "options": [
+                "Yes, I can.",
+                "It is sunny.",
+                "This is milk."
+              ],
+              "answer": "Yes, I can.",
+              "hint": "Can question.",
+              "explanation": "Yes, I can."
+            },
+            {
+              "text": "The pencil is ___.",
+              "options": [
+                "yellow",
+                "jump",
+                "fish"
+              ],
+              "answer": "yellow",
+              "hint": "Color.",
+              "explanation": "yellow = geltona."
+            },
+            {
+              "text": "I can ___.",
+              "options": [
+                "draw",
+                "chair",
+                "purple"
+              ],
+              "answer": "draw",
+              "hint": "Action.",
+              "explanation": "I can draw."
+            }
+          ],
+          "parent_check": "Paprašyti išversti tris pasirinktus atsakymus.",
+          "tracking_tags": [
+            "english",
+            "weekly_review",
+            "mistake_repetition",
+            "week_1"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -295,6 +295,35 @@ button[data-baseweb="tab"][aria-selected="true"] p {
   color: var(--ink) !important;
 }
 
+[data-testid="stSidebar"] [data-testid="stSelectbox"] div[data-baseweb="select"] *,
+[data-testid="stSidebar"] [data-testid="stSelectbox"] div[data-baseweb="select"] input,
+[data-testid="stSidebar"] input[aria-label^="Selected"] {
+  color: var(--ink) !important;
+  -webkit-text-fill-color: var(--ink) !important;
+}
+
+[data-baseweb="popover"] [role="option"],
+[data-baseweb="popover"] [role="listbox"] * {
+  color: var(--ink) !important;
+  -webkit-text-fill-color: var(--ink) !important;
+}
+
+[data-baseweb="popover"] [role="listbox"],
+[data-baseweb="popover"] [role="option"] {
+  background: #ffffff !important;
+}
+
+[data-baseweb="popover"] [role="option"]:hover,
+[data-baseweb="popover"] [aria-selected="true"] {
+  background: #eaf1ff !important;
+  color: var(--ink) !important;
+  -webkit-text-fill-color: var(--ink) !important;
+}
+
+[data-baseweb="popover"] {
+  color: var(--ink) !important;
+}
+
 [data-testid="stWidgetLabel"] p,
 [data-testid="stWidgetLabel"] label,
 [data-testid="stWidgetLabel"] {
@@ -493,6 +522,70 @@ def append_log(rows):
     new_df = pd.DataFrame(rows)
     if LOG_FILE.exists():
         old_df = pd.read_csv(LOG_FILE)
+        if not old_df.empty and not new_df.empty:
+            duplicate_columns = ["Režimas", "Rinkinys", "Savaitė", "Diena", "Užduotis", "Klausimas"]
+
+            def duplicate_keys(df):
+                parts = [df.get("Laikas", pd.Series([""] * len(df))).astype(str).str[:10]]
+                parts.extend(df.get(col, pd.Series([""] * len(df))).fillna("").astype(str) for col in duplicate_columns)
+                return set(zip(*parts))
+
+            existing_keys = duplicate_keys(old_df)
+            new_keys = list(
+                zip(
+                    new_df.get("Laikas", pd.Series([""] * len(new_df))).astype(str).str[:10],
+                    new_df.get("Režimas", pd.Series([""] * len(new_df))).fillna("").astype(str),
+                    new_df.get("Rinkinys", pd.Series([""] * len(new_df))).fillna("").astype(str),
+                    new_df.get("Savaitė", pd.Series([""] * len(new_df))).fillna("").astype(str),
+                    new_df.get("Diena", pd.Series([""] * len(new_df))).fillna("").astype(str),
+                    new_df.get("Užduotis", pd.Series([""] * len(new_df))).fillna("").astype(str),
+                    new_df.get("Klausimas", pd.Series([""] * len(new_df))).fillna("").astype(str),
+                )
+            )
+
+            keep_rows = []
+            seen_new_keys = set()
+            for key in new_keys:
+                keep = key not in existing_keys and key not in seen_new_keys
+                keep_rows.append(keep)
+                if keep:
+                    seen_new_keys.add(key)
+            new_df = new_df[keep_rows]
+
+            reading_mask = (
+                new_df.get("Režimas", pd.Series([""] * len(new_df))).astype(str).eq("Vasaros užduotys")
+                & new_df.get("Užduotis", pd.Series([""] * len(new_df))).astype(str).eq("Skaitymas")
+                & new_df.get("Klausimas", pd.Series([""] * len(new_df))).astype(str).eq("Skaitymo žymėjimas")
+            )
+            if not new_df.empty and reading_mask.any():
+                old_reading = old_df[
+                    old_df.get("Režimas", pd.Series([""] * len(old_df))).astype(str).eq("Vasaros užduotys")
+                    & old_df.get("Užduotis", pd.Series([""] * len(old_df))).astype(str).eq("Skaitymas")
+                    & old_df.get("Klausimas", pd.Series([""] * len(old_df))).astype(str).eq("Skaitymo žymėjimas")
+                ].copy()
+                existing_reading_keys = set()
+                if not old_reading.empty:
+                    existing_reading_keys = set(
+                        zip(
+                            old_reading.get("Laikas", pd.Series([""] * len(old_reading))).astype(str).str[:10],
+                            old_reading.get("Rinkinys", pd.Series([""] * len(old_reading))).astype(str),
+                            old_reading.get("Savaitė", pd.Series([""] * len(old_reading))).astype(str),
+                            old_reading.get("Diena", pd.Series([""] * len(old_reading))).astype(str),
+                        )
+                    )
+                new_reading_keys = list(
+                    zip(
+                        new_df.get("Laikas", pd.Series([""] * len(new_df))).astype(str).str[:10],
+                        new_df.get("Rinkinys", pd.Series([""] * len(new_df))).astype(str),
+                        new_df.get("Savaitė", pd.Series([""] * len(new_df))).astype(str),
+                        new_df.get("Diena", pd.Series([""] * len(new_df))).astype(str),
+                    )
+                )
+                keep_reading = [
+                    (not is_reading) or (key not in existing_reading_keys)
+                    for is_reading, key in zip(reading_mask.tolist(), new_reading_keys)
+                ]
+                new_df = new_df[keep_reading]
         df = pd.concat([old_df, new_df], ignore_index=True)
     else:
         df = new_df
@@ -798,6 +891,244 @@ def render_daily_lessons(data, child_name: str, show_answers: bool, active_weeks
         render_metric("Šios dienos rezultatas", f"{score}/{total}", "Rezultatas skaičiuojamas pagal įrašytus atsakymus.")
 
 
+def summer_log_row(rinkinys, week, day, task, question, answer, correct, result):
+    row = log_row("Vasaros užduotys", rinkinys, day, task.get("subject", ""), question, answer, correct, result)
+    row["Savaitė"] = week
+    row["Įgūdis"] = task.get("skill", "")
+    row["Tracking tags"] = ", ".join(task.get("tracking_tags", []))
+    return row
+
+
+def render_hint_and_explanation(question, has_answer: bool, ok: bool, show_answers: bool):
+    if show_answers and question.get("hint"):
+        with st.expander("Užuomina", expanded=False):
+            st.write(question["hint"])
+    if has_answer and (ok or show_answers) and question.get("explanation"):
+        st.info(question["explanation"])
+
+
+def check_summer_answer(answer, correct, exact: bool = False):
+    answer_text = str(answer).strip()
+    correct_text = str(correct).strip()
+
+    if exact:
+        return answer_text == correct_text
+
+    lt_letters = "ąčęėįšųūžĄČĘĖĮŠŲŪŽ"
+    if len(correct_text) == 1 or any(ch in correct_text for ch in lt_letters):
+        answer_clean = re.sub(r"\s+", " ", answer_text).strip().lower()
+        correct_clean = re.sub(r"\s+", " ", correct_text).strip().lower()
+        return answer_clean == correct_clean
+
+    if correct_text in {".", "?", "!", "<", ">", "="}:
+        return answer_text == correct_text
+
+    if "," in correct_text:
+        answer_parts = [normalize_answer(part) for part in re.split(r"[,;|]", answer_text) if part.strip()]
+        correct_parts = [normalize_answer(part) for part in re.split(r"[,;|]", correct_text) if part.strip()]
+        return answer_parts == correct_parts
+
+    return check_answer(answer_text, correct_text)
+
+
+def render_reading_tracker(rinkinys, week, day, task, task_key):
+    st.markdown(f'<div class="task-title"><span>📚</span><span>{task.get("title", "Skaitymo žymėjimas")}</span></div>', unsafe_allow_html=True)
+    st.write(task.get("instructions", "Pažymėk, kaip šiandien sekėsi skaityti."))
+
+    read_today = st.selectbox("Ar šiandien skaitei?", ["Taip", "Ne"], key=f"{task_key}_read")
+    book_title = st.text_input("Knygos pavadinimas", key=f"{task_key}_book")
+    minutes = st.number_input("Kiek minučių skaitei?", min_value=0, step=1, key=f"{task_key}_minutes")
+    pages = st.number_input("Kiek puslapių perskaitei?", min_value=0, step=1, key=f"{task_key}_pages")
+    feeling = st.selectbox("Kaip sekėsi?", ["lengva", "normalu", "sunku"], key=f"{task_key}_feeling")
+
+    done = read_today == "Taip" and bool(book_title.strip() or minutes or pages)
+    if done:
+        show_feedback(True, free=True)
+    elif read_today == "Ne":
+        st.caption("Nieko tokio. Pažymėta, kad šiandien skaitymo nebuvo.")
+
+    answer = f"{read_today}; {book_title}; {minutes} min.; {pages} psl.; {feeling}"
+    row = summer_log_row(rinkinys, week, day, task, "Skaitymo žymėjimas", answer, "Tėčio / vaiko žymėjimas", done)
+    row["Knyga"] = book_title.strip()
+    row["Skaitymo minutės"] = int(minutes)
+    row["Skaitymo puslapiai"] = int(pages)
+    row["Kaip sekėsi"] = feeling
+    return int(done), 1, [row]
+
+
+def parse_old_reading_answer(value):
+    parts = [part.strip() for part in str(value).split(";")]
+    book = parts[1] if len(parts) > 1 else ""
+    minutes = 0
+    pages = 0
+    feeling = parts[4] if len(parts) > 4 else ""
+    if len(parts) > 2:
+        match = re.search(r"\d+", parts[2])
+        minutes = int(match.group()) if match else 0
+    if len(parts) > 3:
+        match = re.search(r"\d+", parts[3])
+        pages = int(match.group()) if match else 0
+    return book, minutes, pages, feeling
+
+
+def load_reading_progress():
+    if not LOG_FILE.exists():
+        return pd.DataFrame()
+
+    try:
+        df = repair_dataframe(pd.read_csv(LOG_FILE))
+    except (OSError, pd.errors.ParserError):
+        return pd.DataFrame()
+
+    required = {"Režimas", "Užduotis", "Klausimas", "Laikas"}
+    if not required.issubset(df.columns):
+        return pd.DataFrame()
+
+    reading = df[
+        df["Režimas"].astype(str).eq("Vasaros užduotys")
+        & df["Užduotis"].astype(str).eq("Skaitymas")
+        & df["Klausimas"].astype(str).eq("Skaitymo žymėjimas")
+    ].copy()
+    if reading.empty:
+        return reading
+
+    if not {"Knyga", "Skaitymo minutės", "Skaitymo puslapiai", "Kaip sekėsi"}.issubset(reading.columns):
+        parsed = reading["Vaiko atsakymas"].map(parse_old_reading_answer)
+        reading["Knyga"] = parsed.map(lambda item: item[0])
+        reading["Skaitymo minutės"] = parsed.map(lambda item: item[1])
+        reading["Skaitymo puslapiai"] = parsed.map(lambda item: item[2])
+        reading["Kaip sekėsi"] = parsed.map(lambda item: item[3])
+
+    reading["Skaitymo minutės"] = pd.to_numeric(reading["Skaitymo minutės"], errors="coerce").fillna(0).astype(int)
+    reading["Skaitymo puslapiai"] = pd.to_numeric(reading["Skaitymo puslapiai"], errors="coerce").fillna(0).astype(int)
+    reading["Data"] = pd.to_datetime(reading["Laikas"], errors="coerce").dt.date
+    return reading.dropna(subset=["Data"])
+
+
+def render_reading_progress_chart():
+    reading = load_reading_progress()
+    if reading.empty:
+        st.info("Skaitymo statistikos dar nėra. Ji atsiras išsaugojus vasaros rezultatą.")
+        return
+
+    daily = (
+        reading.groupby("Data", as_index=False)
+        .agg(
+            Puslapiai=("Skaitymo puslapiai", "sum"),
+            Minutės=("Skaitymo minutės", "sum"),
+        )
+        .sort_values("Data")
+    )
+    st.line_chart(daily.set_index("Data")[["Puslapiai", "Minutės"]])
+
+    latest = reading[["Laikas", "Diena", "Knyga", "Skaitymo minutės", "Skaitymo puslapiai", "Kaip sekėsi"]].tail(10)
+    st.dataframe(latest.iloc[::-1], use_container_width=True, hide_index=True)
+
+
+def render_summer_question(task_type, question, key, show_answers):
+    prompt = question.get("text", "")
+    correct = question.get("answer", "")
+    options = question.get("options", [])
+    st.markdown(f'<div class="question">{prompt}</div>', unsafe_allow_html=True)
+
+    if task_type in {"multiple_choice", "punctuation_choice", "sentence_completion"} and options:
+        answer = st.selectbox("Pasirink atsakymą", [""] + [str(option) for option in options], key=key)
+    elif task_type == "number_input_check":
+        answer = st.text_input("Atsakymas", key=key, placeholder="Įrašyk skaičių")
+    else:
+        placeholder = "Įrašyk atsakymą"
+        if task_type == "sentence_order":
+            placeholder = "Sudėk sakinį"
+        elif task_type == "word_building":
+            placeholder = "Sudėk žodį"
+        answer = st.text_input("Atsakymas", key=key, placeholder=placeholder)
+
+    show_correct_answer(correct, show_answers)
+    has_answer = bool(str(answer).strip())
+    ok = check_summer_answer(answer, correct, exact=bool(options)) if has_answer else False
+    if has_answer:
+        show_feedback(ok)
+    render_hint_and_explanation(question, has_answer, ok, show_answers)
+    return answer, correct, ok, has_answer
+
+
+def render_summer_task(rinkinys, week, day, task, task_index, show_answers):
+    task_type = task.get("type", "text_input_check")
+    task_key = f"summer_{rinkinys}_{week}_{day}_{task_index}"
+
+    if task_type == "reading_tracker":
+        return render_reading_tracker(rinkinys, week, day, task, task_key)
+
+    subject = task.get("subject", "Užduotis")
+    symbol = section_icon(subject, "📌")
+    st.markdown(f'<div class="task-title"><span>{symbol}</span><span>{subject}: {task.get("title", "Užduotis")}</span></div>', unsafe_allow_html=True)
+    if task.get("goal"):
+        st.caption(task["goal"])
+    if task.get("instructions"):
+        st.write(task["instructions"])
+
+    score = 0
+    total = 0
+    rows = []
+    render_type = "multiple_choice" if task_type == "mixed_review" else task_type
+
+    for q_index, question in enumerate(task.get("questions", [])):
+        total += 1
+        answer, correct, ok, has_answer = render_summer_question(render_type, question, f"{task_key}_{q_index}", show_answers)
+        if has_answer:
+            score += int(ok)
+            rows.append(summer_log_row(rinkinys, week, day, task, question.get("text", ""), answer, correct, ok))
+
+    if task.get("parent_check"):
+        st.checkbox("Patikrinta", key=f"{task_key}_parent_check", help="Pažymėkite, kai tėvų patikrinimas atliktas.")
+        st.markdown("**Tėvų patikrinimas:**")
+        st.caption(task["parent_check"])
+
+    return score, total, rows
+
+
+def render_summer_tasks(summer_data, child_name: str, show_answers: bool):
+    if not summer_data:
+        st.error("Nerastas arba tuščias summer_tasks.json failas.")
+        return
+
+    rinkinys = st.sidebar.selectbox("Vasaros rinkinys", list(summer_data.keys()))
+    weeks = summer_data.get(rinkinys, {})
+    week = st.sidebar.selectbox("Savaitė", list(weeks.keys()))
+    days = weeks.get(week, {})
+    day = st.sidebar.selectbox("Diena", list(days.keys()))
+
+    hero(f"{child_name}: Vasaros užduotys", f"{rinkinys} · {week} · {day}")
+    st.info(f"Pasirinkta: {rinkinys} → {week} → {day}")
+
+    score = 0
+    total = 0
+    rows_to_log = []
+
+    for task_index, task in enumerate(days.get(day, [])):
+        with st.container(border=True):
+            task_score, task_total, task_rows = render_summer_task(rinkinys, week, day, task, task_index, show_answers)
+            score += task_score
+            total += task_total
+            rows_to_log.extend(task_rows)
+
+    progress_panel(score, total, "Vasaros pažanga")
+
+    st.divider()
+    col1, col2 = st.columns([1, 2])
+    with col1:
+        if st.button("Išsaugoti vasaros rezultatą", type="primary", use_container_width=True):
+            append_log(rows_to_log or [log_row("Vasaros užduotys", rinkinys, day, "Dienos rezultatas", "-", f"{score}/{total}", "-", score == total)])
+            st.success(f"Išsaugota: {score}/{total}")
+            if total and score == total:
+                st.balloons()
+    with col2:
+        render_metric("Šios dienos rezultatas", f"{score}/{total}", "Skaitymas įskaitomas pagal pažymėjimą, kitos užduotys tikrinamos automatiškai.")
+
+    with st.expander("Skaitymo statistika", expanded=False):
+        render_reading_progress_chart()
+
+
 def render_drill(title, subtitle, source, mode_name, count_options, sample_key, show_answers: bool):
     hero(title, subtitle)
     if not source:
@@ -1053,12 +1384,17 @@ def render_parent_settings(data, child_name: str, settings):
 
 
 data = load_json_file("tasks.json")
+summer_data = load_json_file("summer_tasks.json")
 numbers_db = load_json_file("numbers.json")
 logic_db = load_json_file("logic.json")
 reasoning_db = load_json_file("reasoning.json")
 settings = load_settings()
+top_level = st.sidebar.radio(
+    "Pasirink užduočių tipą",
+    ["Kasdienės užduotys", "Vasaros užduotys"],
+)
 
-st.sidebar.markdown("## ⭐ Kasdienės užduotys")
+st.sidebar.markdown(f"## ⭐ {top_level}")
 
 if "child_name" not in st.session_state:
     st.session_state.child_name = ""
@@ -1089,6 +1425,10 @@ if not st.session_state.child_name:
 child_name = st.session_state.child_name
 completed_rinkiniai = set(settings.get("completed_rinkiniai", []))
 active_weeks = [week for week in data.keys() if week not in completed_rinkiniai]
+
+if top_level == "Vasaros užduotys":
+    render_summer_tasks(summer_data, child_name, show_answers)
+    st.stop()
 
 mode = st.sidebar.radio(
     "Pasirink režimą",
