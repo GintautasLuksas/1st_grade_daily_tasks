@@ -1025,14 +1025,91 @@ def render_reading_progress_chart():
     st.dataframe(latest.iloc[::-1], use_container_width=True, hide_index=True)
 
 
+def should_split_missing_parts_question(prompt, correct, options):
+    return not options and "_" in str(prompt) and "," in str(correct)
+
+
+def split_expected_parts(correct):
+    return [part.strip() for part in str(correct).split(",") if part.strip()]
+
+
+def is_comparison_symbol_question(correct, options):
+    return not options and str(correct).strip() in {"<", ">", "="}
+
+
+def render_missing_parts_inputs(correct, key):
+    expected_parts = split_expected_parts(correct)
+    columns = st.columns(min(len(expected_parts), 4))
+    answer_parts = []
+    part_results = []
+
+    for index, expected in enumerate(expected_parts):
+        with columns[index % len(columns)]:
+            answer_part = st.text_input(
+                f"{index + 1} dalis",
+                key=f"{key}_part_{index}",
+                placeholder="raide / dalis",
+            )
+            answer_parts.append(answer_part)
+            if answer_part.strip():
+                part_ok = check_summer_answer(answer_part, expected)
+                part_results.append(part_ok)
+                show_feedback(part_ok)
+            else:
+                part_results.append(False)
+
+    return ", ".join(part.strip() for part in answer_parts), part_results
+
+
+def render_option_buttons(options, correct, key, max_attempts=2):
+    answer_key = f"{key}_button_answer"
+    attempts_key = f"{key}_button_attempts"
+    solved_key = f"{key}_button_solved"
+
+    st.session_state.setdefault(answer_key, "")
+    st.session_state.setdefault(attempts_key, 0)
+    st.session_state.setdefault(solved_key, False)
+
+    locked = st.session_state[attempts_key] >= max_attempts or st.session_state[solved_key]
+    st.caption(f"Bandymai: {st.session_state[attempts_key]}/{max_attempts}")
+
+    columns = st.columns(min(len(options), 3))
+    for index, option in enumerate(options):
+        option_text = str(option)
+        with columns[index % len(columns)]:
+            if st.button(
+                option_text,
+                key=f"{key}_option_{index}",
+                use_container_width=True,
+                disabled=locked,
+            ):
+                st.session_state[answer_key] = option_text
+                st.session_state[attempts_key] = min(max_attempts, st.session_state[attempts_key] + 1)
+                st.session_state[solved_key] = check_summer_answer(option_text, correct, exact=True)
+
+    if st.session_state[answer_key]:
+        st.caption(f"Pasirinkta: {st.session_state[answer_key]}")
+    if st.session_state[attempts_key] >= max_attempts and not st.session_state[solved_key]:
+        st.caption("Bandymų nebėra.")
+
+    return st.session_state[answer_key]
+
+
 def render_summer_question(task_type, question, key, show_answers):
     prompt = question.get("text", "")
     correct = question.get("answer", "")
     options = question.get("options", [])
     st.markdown(f'<div class="question">{prompt}</div>', unsafe_allow_html=True)
 
-    if task_type in {"multiple_choice", "punctuation_choice", "sentence_completion"} and options:
-        answer = st.selectbox("Pasirink atsakymą", [""] + [str(option) for option in options], key=key)
+    split_missing_parts = should_split_missing_parts_question(prompt, correct, options)
+    part_results = []
+
+    if split_missing_parts:
+        answer, part_results = render_missing_parts_inputs(correct, key)
+    elif task_type in {"multiple_choice", "punctuation_choice", "sentence_completion"} and options:
+        answer = render_option_buttons(options, correct, key)
+    elif is_comparison_symbol_question(correct, options):
+        answer = render_option_buttons(["<", ">", "="], correct, key, max_attempts=1)
     elif task_type == "number_input_check":
         answer = st.text_input("Atsakymas", key=key, placeholder="Įrašyk skaičių")
     else:
@@ -1044,9 +1121,14 @@ def render_summer_question(task_type, question, key, show_answers):
         answer = st.text_input("Atsakymas", key=key, placeholder=placeholder)
 
     show_correct_answer(correct, show_answers)
-    has_answer = bool(str(answer).strip())
+    if split_missing_parts:
+        expected_count = len(split_expected_parts(correct))
+        filled_count = sum(1 for part in answer.split(",") if str(part).strip())
+        has_answer = filled_count == expected_count
+    else:
+        has_answer = bool(str(answer).strip())
     ok = check_summer_answer(answer, correct, exact=bool(options)) if has_answer else False
-    if has_answer:
+    if has_answer and not split_missing_parts:
         show_feedback(ok)
     render_hint_and_explanation(question, has_answer, ok, show_answers)
     return answer, correct, ok, has_answer
