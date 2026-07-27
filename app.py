@@ -5,6 +5,7 @@ import random
 import re
 import unicodedata
 from datetime import datetime
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 import pandas as pd
@@ -442,7 +443,21 @@ def normalize_answer(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+def parse_decimal_answer(value: str):
+    normalized = normalize_answer(value)
+    if re.fullmatch(r"-?\d+(\.\d+)?", normalized):
+        try:
+            return Decimal(normalized)
+        except InvalidOperation:
+            return None
+    return None
+
+
 def check_answer(answer: str, correct: str) -> bool:
+    answer_number = parse_decimal_answer(answer)
+    correct_number = parse_decimal_answer(correct)
+    if answer_number is not None and correct_number is not None:
+        return answer_number == correct_number
     return normalize_answer(answer) == normalize_answer(correct)
 
 
@@ -766,21 +781,37 @@ def section_icon(subject: str, fallback: str = "📌") -> str:
     return fallback
 
 
-def render_daily_lessons(data, child_name: str, show_answers: bool, active_weeks):
+def render_daily_lessons(classrooms, child_name: str, show_answers: bool, settings):
+    class_name = st.selectbox("Klasė", list(classrooms.keys()), key="daily_class")
+    data = classrooms.get(class_name, {})
+
+    if not data:
+        hero(f"{child_name}: {class_name}", "Šiai klasei užduočių banką dar kursime.")
+        st.info("Dabar visi turimi rinkiniai perkelti į „1 klasė“. „2 klasė“ paruošta naujai logikai ir būsimoms užduotims.")
+        return
+
+    completed_rinkiniai = set(settings.get("completed_rinkiniai", [])) if class_name == "1 klasė" else set()
+    active_weeks = [week for week in data.keys() if week not in completed_rinkiniai]
+
     if not data:
         st.error("Nerastas arba tuščias tasks.json failas.")
         return
 
     if not active_weeks:
-        hero(f"{child_name}: pamokos", "Visi rinkiniai pažymėti kaip užbaigti.")
-        st.info("Atidarykite „Tėvų nustatymai“ ir grąžinkite bent vieną rinkinį, kad jis vėl būtų rodomas vaikui.")
+        hero(f"{child_name}: {class_name}", "Visi rinkiniai pažymėti kaip užbaigti.")
+        st.info("Atidarykite „Papildomai“ → „Tėvų nustatymai“ ir grąžinkite bent vieną rinkinį, kad jis vėl būtų rodomas vaikui.")
         return
 
-    week = st.sidebar.selectbox("Rinkinys", active_weeks)
-    day = st.sidebar.selectbox("Diena", list(data[week].keys()))
+    pick_class, pick_week, pick_day = st.columns([1, 1, 1])
+    with pick_class:
+        st.markdown(f'<span class="pill">{class_name}</span>', unsafe_allow_html=True)
+    with pick_week:
+        week = st.selectbox("Rinkinys", active_weeks, key=f"week_{class_name}")
+    with pick_day:
+        day = st.selectbox("Diena", list(data[week].keys()), key=f"day_{class_name}_{week}")
     sections = data[week][day]
 
-    hero(f"{child_name}: {week} · {day}", "Dienos užduotys su aiškiu grįžtamuoju ryšiu ir išsaugomu rezultatu.")
+    hero(f"{child_name}: {week} · {day}", "Kasdienės užduotys ir pamokos viename lange.")
 
     score = 0
     total = 0
@@ -1174,11 +1205,15 @@ def render_summer_tasks(summer_data, child_name: str, show_answers: bool):
         st.error("Nerastas arba tuščias summer_tasks.json failas.")
         return
 
-    rinkinys = st.sidebar.selectbox("Vasaros rinkinys", list(summer_data.keys()))
+    pick_rinkinys, pick_week, pick_day = st.columns([1, 1, 1])
+    with pick_rinkinys:
+        rinkinys = st.selectbox("Vasaros rinkinys", list(summer_data.keys()), key="summer_rinkinys")
     weeks = summer_data.get(rinkinys, {})
-    week = st.sidebar.selectbox("Savaitė", list(weeks.keys()))
+    with pick_week:
+        week = st.selectbox("Savaitė", list(weeks.keys()), key=f"summer_week_{rinkinys}")
     days = weeks.get(week, {})
-    day = st.sidebar.selectbox("Diena", list(days.keys()))
+    with pick_day:
+        day = st.selectbox("Diena", list(days.keys()), key=f"summer_day_{rinkinys}_{week}")
 
     hero(f"{child_name}: Vasaros užduotys", f"{rinkinys} · {week} · {day}")
     st.info(f"Pasirinkta: {rinkinys} → {week} → {day}")
@@ -1281,7 +1316,7 @@ def render_adaptive(data, numbers, logic, show_answers: bool):
     if "adaptive_drill" not in st.session_state:
         st.session_state.adaptive_drill = []
 
-    count = st.sidebar.slider("Praktikos ilgis", 5, 20, 10)
+    count = st.slider("Praktikos ilgis", 5, 20, 10)
     if st.button("Sukurti greitą praktiką", type="primary"):
         st.session_state.adaptive_drill = random.sample(bank, min(count, len(bank)))
 
@@ -1411,6 +1446,7 @@ def render_parent_settings(data, child_name: str, settings):
         active = [week for week in all_weeks if week not in completed]
 
         st.subheader("Rinkinių valdymas")
+        st.caption("Dabar šie rinkiniai priklauso „1 klasė“. „2 klasė“ bus pildoma atskirai, kai perdėliosime logiką.")
         st.caption("Pažymėti rinkiniai laikomi užbaigtais ir vaikui neberodomi pamokų pasirinkime.")
 
         c_active, c_done = st.columns(2)
@@ -1450,7 +1486,7 @@ def render_parent_settings(data, child_name: str, settings):
             st.warning("Visi rinkiniai paslėpti. Vaikas pamokų režime nematys pasirinkimų.")
 
         st.markdown("#### Nauji rinkiniai")
-        st.info("Programoje jau yra Rinkinys 1-8. Kai į tasks.json pridėsite Rinkinys 9, 10 ir t. t., jie automatiškai atsiras čia ir bus rodomi vaikui, kol nepažymėsite jų užbaigtais.")
+        st.info("Programoje jau yra Rinkinys 1-12. Nauji 1 klasės rinkiniai automatiškai atsiras čia ir bus rodomi vaikui, kol nepažymėsite jų užbaigtais.")
 
     with tab3:
         if vocab:
@@ -1465,18 +1501,60 @@ def render_parent_settings(data, child_name: str, settings):
             st.rerun()
 
 
+def switch_main_view(view: str):
+    st.session_state.main_view = view
+
+
+def render_top_navigation():
+    if "main_view" not in st.session_state:
+        st.session_state.main_view = "Kasdienės užduotys"
+
+    nav_items = ["Kasdienės užduotys", "Vasaros užduotys", "Papildomai"]
+    nav_cols = st.columns([1.2, 1.1, 1, 3])
+    for col, label in zip(nav_cols, nav_items):
+        with col:
+            st.button(
+                label,
+                key=f"nav_{label}",
+                type="primary" if st.session_state.main_view == label else "secondary",
+                use_container_width=True,
+                on_click=switch_main_view,
+                args=(label,),
+            )
+
+    st.divider()
+    return st.session_state.main_view
+
+
+def render_extra_tools(data, numbers_db, logic_db, reasoning_db, child_name: str, show_answers: bool, settings):
+    hero("Papildomai", "Papildomos praktikos, logikos ir tėvų nustatymų vieta.")
+    extra_mode = st.selectbox(
+        "Papildomas langas",
+        ["Greita praktika", "Matematika", "Samprotavimas", "Logika", "Tėvų nustatymai"],
+        key="extra_mode",
+    )
+
+    if extra_mode == "Greita praktika":
+        render_adaptive(data, numbers_db, logic_db, show_answers)
+    elif extra_mode == "Matematika":
+        render_drill("🧮 Matematikos laboratorija", "Trumpi skaičiavimo pratimai su greitu patikrinimu.", numbers_db, "Matematika", [8, 12, 16, 24], "math_drill", show_answers)
+    elif extra_mode == "Samprotavimas":
+        render_drill("🧠 Matematinis samprotavimas", "1 klasės užduotys apie korteles, monetas, sekas, statinius ir kryptis.", reasoning_db, "Samprotavimas", [6, 8, 10, 12], "reasoning_drill", show_answers)
+    elif extra_mode == "Logika":
+        render_drill("🧩 Logikos kampelis", "Mįslės ir gudrūs klausimai, lavinantys samprotavimą.", logic_db, "Logika", [3, 5, 8, 12, 15], "logic_drill", show_answers)
+    else:
+        render_parent_settings(data, child_name, settings)
+
+
 data = load_json_file("tasks.json")
 summer_data = load_json_file("summer_tasks.json")
 numbers_db = load_json_file("numbers.json")
 logic_db = load_json_file("logic.json")
 reasoning_db = load_json_file("reasoning.json")
 settings = load_settings()
-top_level = st.sidebar.radio(
-    "Pasirink užduočių tipą",
-    ["Kasdienės užduotys", "Vasaros užduotys"],
-)
+classrooms = {"1 klasė": data, "2 klasė": {}}
 
-st.sidebar.markdown(f"## ⭐ {top_level}")
+st.sidebar.markdown("## ⭐ Kasdienės užduotys")
 
 if "child_name" not in st.session_state:
     st.session_state.child_name = ""
@@ -1505,28 +1583,11 @@ if not st.session_state.child_name:
     st.stop()
 
 child_name = st.session_state.child_name
-completed_rinkiniai = set(settings.get("completed_rinkiniai", []))
-active_weeks = [week for week in data.keys() if week not in completed_rinkiniai]
+main_view = render_top_navigation()
 
-if top_level == "Vasaros užduotys":
+if main_view == "Kasdienės užduotys":
+    render_daily_lessons(classrooms, child_name, show_answers, settings)
+elif main_view == "Vasaros užduotys":
     render_summer_tasks(summer_data, child_name, show_answers)
-    st.stop()
-
-mode = st.sidebar.radio(
-    "Pasirink režimą",
-    ["Pamokos", "Greita praktika", "Matematika", "Samprotavimas", "Logika", "Tėvų nustatymai"],
-)
-st.sidebar.divider()
-
-if mode == "Pamokos":
-    render_daily_lessons(data, child_name, show_answers, active_weeks)
-elif mode == "Greita praktika":
-    render_adaptive(data, numbers_db, logic_db, show_answers)
-elif mode == "Matematika":
-    render_drill("🧮 Matematikos laboratorija", "Trumpi skaičiavimo pratimai su greitu patikrinimu.", numbers_db, "Matematika", [8, 12, 16, 24], "math_drill", show_answers)
-elif mode == "Samprotavimas":
-    render_drill("🧠 Matematinis samprotavimas", "1 klasės užduotys apie korteles, monetas, sekas, statinius ir kryptis.", reasoning_db, "Samprotavimas", [6, 8, 10, 12], "reasoning_drill", show_answers)
-elif mode == "Logika":
-    render_drill("🧩 Logikos kampelis", "Mįslės ir gudrūs klausimai, lavinantys samprotavimą.", logic_db, "Logika", [3, 5, 8, 12, 15], "logic_drill", show_answers)
 else:
-    render_parent_settings(data, child_name, settings)
+    render_extra_tools(data, numbers_db, logic_db, reasoning_db, child_name, show_answers, settings)
