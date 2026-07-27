@@ -353,6 +353,97 @@ button[data-baseweb="tab"][aria-selected="true"] p {
   border-radius: 8px;
   overflow: hidden;
 }
+
+.sidebar-progress-card {
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  margin: .6rem 0 1rem;
+  padding: .8rem;
+  position: sticky;
+  top: .75rem;
+  z-index: 10;
+}
+
+.sidebar-progress-card h3 {
+  color: #172033 !important;
+  font-size: 1rem !important;
+  margin: 0 0 .55rem !important;
+}
+
+.sidebar-progress-bar {
+  background: #e5e7eb;
+  border-radius: 999px;
+  height: .75rem;
+  margin-bottom: .6rem;
+  overflow: hidden;
+}
+
+.sidebar-progress-fill {
+  background: var(--accent);
+  border-radius: inherit;
+  height: 100%;
+}
+
+.sidebar-progress-card strong,
+.sidebar-progress-card span {
+  color: #172033 !important;
+}
+
+.sidebar-progress-card p {
+  color: #5f6b7a !important;
+  font-weight: 800 !important;
+  margin: .35rem 0 0 !important;
+}
+
+.lesson-progress-card {
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 14px 30px rgba(16, 24, 40, .16);
+  bottom: 1.25rem;
+  margin: 0;
+  max-width: 34rem;
+  padding: .85rem 1rem;
+  position: fixed;
+  right: 1.5rem;
+  width: min(34rem, calc(100vw - 24rem));
+  z-index: 9999;
+}
+
+.lesson-progress-card h3 {
+  color: #172033 !important;
+  font-size: 1.05rem !important;
+  margin: 0 0 .55rem !important;
+}
+
+.lesson-progress-meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+.lesson-progress-meta strong,
+.lesson-progress-meta span {
+  color: #172033 !important;
+  font-weight: 900 !important;
+}
+
+.lesson-progress-meta p {
+  color: #5f6b7a !important;
+  font-weight: 800 !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .lesson-progress-card {
+    bottom: .75rem;
+    left: .75rem;
+    right: .75rem;
+    width: auto;
+  }
+}
 </style>
 """,
     unsafe_allow_html=True,
@@ -478,17 +569,30 @@ def show_correct_answer(correct, enabled: bool):
         )
 
 
-def progress_panel(score: int, total: int, label: str):
+def progress_panel(score: int, total: int, label: str, target=None, variant: str = "sidebar"):
+    target = target or st.sidebar
     pct = int(score / total * 100) if total else 0
-    st.sidebar.markdown(f"### {label}")
-    st.sidebar.progress(pct / 100 if total else 0)
-    st.sidebar.markdown(f"**{score}/{total}** teisingai  \n**{pct}%**")
     if pct == 100 and total:
-        st.sidebar.success("Puikus darbas!")
+        message = "Puikus darbas!"
     elif pct >= 70:
-        st.sidebar.info("Labai gerai. Liko truputis.")
+        message = "Labai gerai. Liko truputis."
     elif total:
-        st.sidebar.warning("Ramu. Mokomės po vieną žingsnį.")
+        message = "Ramu. Mokomės po vieną žingsnį."
+    else:
+        message = "Pradėkime."
+
+    card_class = "lesson-progress-card" if variant == "main" else "sidebar-progress-card"
+    meta_class = ' class="lesson-progress-meta"' if variant == "main" else ""
+    target.markdown(
+        f"""
+<div class="{card_class}">
+  <h3>{label}</h3>
+  <div class="sidebar-progress-bar"><div class="sidebar-progress-fill" style="width:{pct}%"></div></div>
+  <div{meta_class}><strong>{score}/{total}</strong><span> teisingai · {pct}%</span><p>{message}</p></div>
+</div>
+""",
+        unsafe_allow_html=True,
+    )
 
 
 def draw_clock(time_str: str):
@@ -782,7 +886,24 @@ def section_icon(subject: str, fallback: str = "📌") -> str:
 
 
 def render_daily_lessons(classrooms, child_name: str, show_answers: bool, settings):
-    class_name = st.selectbox("Klasė", list(classrooms.keys()), key="daily_class")
+    if "daily_class" not in st.session_state:
+        st.session_state.daily_class = "1 klasė"
+
+    st.sidebar.markdown("### Klasė")
+    class_cols = st.sidebar.columns(2)
+    class_labels = list(classrooms.keys())
+    for idx, class_label in enumerate(class_labels):
+        with class_cols[idx % len(class_cols)]:
+            if st.button(
+                class_label.replace(" klasė", ""),
+                key=f"class_{class_label}",
+                type="primary" if st.session_state.daily_class == class_label else "secondary",
+                use_container_width=True,
+            ):
+                st.session_state.daily_class = class_label
+                st.rerun()
+
+    class_name = st.session_state.daily_class
     data = classrooms.get(class_name, {})
 
     if not data:
@@ -802,16 +923,13 @@ def render_daily_lessons(classrooms, child_name: str, show_answers: bool, settin
         st.info("Atidarykite „Papildomai“ → „Tėvų nustatymai“ ir grąžinkite bent vieną rinkinį, kad jis vėl būtų rodomas vaikui.")
         return
 
-    pick_class, pick_week, pick_day = st.columns([1, 1, 1])
-    with pick_class:
-        st.markdown(f'<span class="pill">{class_name}</span>', unsafe_allow_html=True)
-    with pick_week:
-        week = st.selectbox("Rinkinys", active_weeks, key=f"week_{class_name}")
-    with pick_day:
-        day = st.selectbox("Diena", list(data[week].keys()), key=f"day_{class_name}_{week}")
+    st.sidebar.markdown("### Pamoka")
+    week = st.sidebar.selectbox("Rinkinys", active_weeks, key=f"week_{class_name}")
+    day = st.sidebar.selectbox("Diena", list(data[week].keys()), key=f"day_{class_name}_{week}")
     sections = data[week][day]
 
     hero(f"{child_name}: {week} · {day}", "Kasdienės užduotys ir pamokos viename lange.")
+    progress_slot = st.empty()
 
     score = 0
     total = 0
@@ -908,7 +1026,8 @@ def render_daily_lessons(classrooms, child_name: str, show_answers: bool, settin
                             score += int(ok)
                             rows_to_log.append(log_row("Pamokos", week, day, subject, prompt, answer, correct, ok))
 
-    progress_panel(score, total, "Dienos pažanga")
+    with progress_slot.container():
+        progress_panel(score, total, "Dienos pažanga", target=st, variant="main")
 
     st.divider()
     col1, col2 = st.columns([1, 2])
@@ -1092,7 +1211,7 @@ def render_missing_parts_inputs(correct, key):
     return ", ".join(part.strip() for part in answer_parts), part_results
 
 
-def render_option_buttons(options, correct, key, max_attempts=2):
+def render_option_buttons(options, correct, key, max_attempts=2, labels=None):
     answer_key = f"{key}_button_answer"
     attempts_key = f"{key}_button_attempts"
     solved_key = f"{key}_button_solved"
@@ -1105,11 +1224,12 @@ def render_option_buttons(options, correct, key, max_attempts=2):
     st.caption(f"Bandymai: {st.session_state[attempts_key]}/{max_attempts}")
 
     columns = st.columns(min(len(options), 3))
+    button_labels = labels or [str(option) for option in options]
     for index, option in enumerate(options):
         option_text = str(option)
         with columns[index % len(columns)]:
             if st.button(
-                option_text,
+                button_labels[index],
                 key=f"{key}_option_{index}",
                 use_container_width=True,
                 disabled=locked,
@@ -1140,7 +1260,13 @@ def render_summer_question(task_type, question, key, show_answers):
     elif task_type in {"multiple_choice", "punctuation_choice", "sentence_completion"} and options:
         answer = render_option_buttons(options, correct, key)
     elif is_comparison_symbol_question(correct, options):
-        answer = render_option_buttons(["<", ">", "="], correct, key, max_attempts=1)
+        answer = render_option_buttons(
+            ["<", ">", "="],
+            correct,
+            key,
+            max_attempts=1,
+            labels=["Mažiau <", "Daugiau >", "Lygu ="],
+        )
     elif task_type == "number_input_check":
         answer = st.text_input("Atsakymas", key=key, placeholder="Įrašyk skaičių")
     else:
@@ -1509,20 +1635,19 @@ def render_top_navigation():
     if "main_view" not in st.session_state:
         st.session_state.main_view = "Kasdienės užduotys"
 
+    st.sidebar.markdown("### Meniu")
     nav_items = ["Kasdienės užduotys", "Vasaros užduotys", "Papildomai"]
-    nav_cols = st.columns([1.2, 1.1, 1, 3])
-    for col, label in zip(nav_cols, nav_items):
-        with col:
-            st.button(
-                label,
-                key=f"nav_{label}",
-                type="primary" if st.session_state.main_view == label else "secondary",
-                use_container_width=True,
-                on_click=switch_main_view,
-                args=(label,),
-            )
+    for label in nav_items:
+        st.sidebar.button(
+            label,
+            key=f"nav_{label}",
+            type="primary" if st.session_state.main_view == label else "secondary",
+            use_container_width=True,
+            on_click=switch_main_view,
+            args=(label,),
+        )
 
-    st.divider()
+    st.sidebar.divider()
     return st.session_state.main_view
 
 
