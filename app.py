@@ -1,4 +1,5 @@
 import json
+import calendar
 import math
 import os
 import random
@@ -332,6 +333,20 @@ button[data-baseweb="tab"][aria-selected="true"] p {
   font-weight: 800 !important;
 }
 
+[data-testid="stRadio"] label,
+[data-testid="stRadio"] label *,
+[data-testid="stRadio"] p,
+[data-testid="stRadio"] span {
+  color: var(--ink) !important;
+  -webkit-text-fill-color: var(--ink) !important;
+  font-weight: 800 !important;
+  opacity: 1 !important;
+}
+
+[data-testid="stRadio"] div[role="radiogroup"] {
+  gap: 1.25rem !important;
+}
+
 [data-testid="stSidebar"] [data-testid="stWidgetLabel"] p,
 [data-testid="stSidebar"] [data-testid="stWidgetLabel"] label,
 [data-testid="stSidebar"] [data-testid="stWidgetLabel"] {
@@ -505,25 +520,189 @@ def load_json_file(filename: str):
 
 def load_settings():
     if not SETTINGS_FILE.exists():
-        return {"completed_rinkiniai": []}
+        return {"completed_rinkiniai": [], "completed_lessons": []}
     try:
         with SETTINGS_FILE.open("r", encoding="utf-8") as f:
             settings = json.load(f)
     except (json.JSONDecodeError, OSError):
-        return {"completed_rinkiniai": []}
+        return {"completed_rinkiniai": [], "completed_lessons": []}
 
     completed = settings.get("completed_rinkiniai", [])
     if not isinstance(completed, list):
         completed = []
-    return {"completed_rinkiniai": completed}
+    completed_lessons = settings.get("completed_lessons", [])
+    if not isinstance(completed_lessons, list):
+        completed_lessons = []
+    return {"completed_rinkiniai": completed, "completed_lessons": completed_lessons}
 
 
 def save_settings(settings):
     safe_settings = {
-        "completed_rinkiniai": sorted(set(settings.get("completed_rinkiniai", [])))
+        "completed_rinkiniai": sorted(set(settings.get("completed_rinkiniai", []))),
+        "completed_lessons": sorted(set(settings.get("completed_lessons", []))),
     }
     with SETTINGS_FILE.open("w", encoding="utf-8") as f:
         json.dump(safe_settings, f, ensure_ascii=False, indent=2)
+
+
+def lesson_key(class_name: str, week: str, day: str) -> str:
+    return f"{class_name}|{week}|{day}"
+
+
+def start_lesson_timer(current_lesson_key: str, reset: bool = False):
+    timer_key = f"lesson_started_at_{current_lesson_key}"
+    if reset or st.session_state.get("active_lesson_key") != current_lesson_key or timer_key not in st.session_state:
+        st.session_state.active_lesson_key = current_lesson_key
+        st.session_state[timer_key] = datetime.now().isoformat()
+    return timer_key
+
+
+def lesson_elapsed_seconds(current_lesson_key: str) -> int:
+    timer_key = f"lesson_started_at_{current_lesson_key}"
+    started_raw = st.session_state.get(timer_key)
+    if not started_raw:
+        return 0
+    try:
+        started = datetime.fromisoformat(started_raw)
+    except ValueError:
+        return 0
+    return max(0, int((datetime.now() - started).total_seconds()))
+
+
+def format_duration(seconds: int) -> str:
+    minutes, remainder = divmod(max(0, int(seconds)), 60)
+    hours, minutes = divmod(minutes, 60)
+    if hours:
+        return f"{hours} val. {minutes} min."
+    if minutes:
+        return f"{minutes} min. {remainder} sek."
+    return f"{remainder} sek."
+
+
+def selected_study_date(prefix: str):
+    today = datetime.now().date()
+    year_options = list(range(today.year - 1, today.year + 2))
+    year_default = year_options.index(today.year)
+
+    date_cols = st.columns([1, 1, 1, 3])
+    with date_cols[0]:
+        year = st.selectbox("Metai", year_options, index=year_default, key=f"{prefix}_year")
+    with date_cols[1]:
+        month = st.selectbox("Mėnuo", list(range(1, 13)), index=today.month - 1, key=f"{prefix}_month")
+    max_day = calendar.monthrange(int(year), int(month))[1]
+    default_day = min(today.day, max_day)
+    with date_cols[2]:
+        day = st.selectbox("Diena", list(range(1, max_day + 1)), index=default_day - 1, key=f"{prefix}_calendar_day")
+
+    return datetime(int(year), int(month), int(day)).date()
+
+
+def render_daily_start_form(class_name: str, week: str, weekday: str, current_lesson_key: str):
+    prefix = f"daily_meta_{class_name}_{week}_{weekday}"
+    stage_key = f"{prefix}_stage"
+    metadata_key = f"{prefix}_metadata"
+    st.session_state.setdefault(stage_key, "date")
+
+    if st.session_state[stage_key] == "tasks" and metadata_key in st.session_state:
+        return st.session_state[metadata_key]
+
+    with st.container(border=True):
+        st.markdown('<div class="task-title"><span>📅</span><span>Dienos pradžia</span></div>', unsafe_allow_html=True)
+
+        if st.session_state[stage_key] == "date":
+            solved_date = selected_study_date(prefix)
+            if st.button("Toliau", type="primary", key=f"{prefix}_date_next"):
+                st.session_state[f"{prefix}_solved_date"] = solved_date.isoformat()
+                st.session_state[stage_key] = "reading"
+                st.rerun()
+            return None
+
+        solved_date = st.session_state.get(f"{prefix}_solved_date", datetime.now().date().isoformat())
+        st.caption(f"Sprendimo data: {solved_date}")
+        st.markdown("#### Skaitymas")
+        read_key = f"{prefix}_read"
+        st.markdown("**Ar skaitei?**")
+        yes_col, no_col, _ = st.columns([0.7, 0.7, 4.6])
+        with yes_col:
+            if st.button(
+                "Taip",
+                key=f"{prefix}_read_yes",
+                type="primary" if st.session_state.get(read_key) == "Taip" else "secondary",
+                use_container_width=True,
+            ):
+                st.session_state[read_key] = "Taip"
+                st.rerun()
+        with no_col:
+            if st.button(
+                "Ne",
+                key=f"{prefix}_read_no",
+                type="primary" if st.session_state.get(read_key) == "Ne" else "secondary",
+                use_container_width=True,
+            ):
+                st.session_state[read_key] = "Ne"
+                st.rerun()
+        read_today = st.session_state.get(read_key)
+        if read_today is None:
+            st.info("Pasirink, ar šiandien skaitei.")
+            return None
+
+        book_title = ""
+        pages = 0
+        minutes = 0
+        if read_today == "Taip":
+            read_cols = st.columns([2, 1, 1])
+            with read_cols[0]:
+                book_title = st.text_input("Knyga", key=f"{prefix}_book", placeholder="Knygos pavadinimas")
+            with read_cols[1]:
+                pages = st.number_input("Kiek puslapių skaitei?", min_value=0, step=1, key=f"{prefix}_pages")
+            with read_cols[2]:
+                minutes = st.number_input("Kiek minučių skaitei?", min_value=0, step=1, key=f"{prefix}_minutes")
+        else:
+            st.caption("Gerai, šiandien skaitymo laukų pildyti nereikia.")
+
+        if st.button("Pradėti užduotis", type="primary", key=f"{prefix}_reading_next"):
+            metadata = {
+                "solved_date": solved_date,
+                "read_today": read_today,
+                "book_title": book_title.strip() if read_today == "Taip" else "",
+                "reading_pages": int(pages) if read_today == "Taip" else 0,
+                "reading_minutes": int(minutes) if read_today == "Taip" else 0,
+            }
+            st.session_state[metadata_key] = metadata
+            st.session_state[stage_key] = "tasks"
+            start_lesson_timer(current_lesson_key, reset=True)
+            st.rerun()
+        return None
+
+
+def daily_reading_log_row(week: str, day: str, metadata: dict):
+    read_today = metadata.get("read_today", "Ne")
+    book_title = metadata.get("book_title", "")
+    minutes = int(metadata.get("reading_minutes", 0))
+    pages = int(metadata.get("reading_pages", 0))
+    done = read_today == "Taip" and bool(book_title or minutes or pages)
+    answer = f"{read_today}; {book_title}; {minutes} min.; {pages} psl."
+    row = log_row("Pamokos", week, day, "Skaitymas", "Skaitymo žymėjimas", answer, "Tėvų / vaiko žymėjimas", done or read_today == "Ne")
+    row["Knyga"] = book_title
+    row["Skaitymo minutės"] = minutes
+    row["Skaitymo puslapiai"] = pages
+    row["Kaip sekėsi"] = "dienos pradžia"
+    return row
+
+
+def with_daily_metadata(rows, metadata: dict):
+    enriched = []
+    for row in rows:
+        updated = dict(row)
+        updated["Sprendimo data"] = metadata.get("solved_date", "")
+        updated["Sprendimo trukmė sek."] = int(metadata.get("duration_seconds", 0))
+        updated["Sprendimo trukmė"] = metadata.get("duration_text", "")
+        updated["Ar skaitei"] = metadata.get("read_today", "")
+        updated["Knyga"] = updated.get("Knyga", metadata.get("book_title", ""))
+        updated["Skaitymo minutės"] = updated.get("Skaitymo minutės", metadata.get("reading_minutes", 0))
+        updated["Skaitymo puslapiai"] = updated.get("Skaitymo puslapiai", metadata.get("reading_pages", 0))
+        enriched.append(updated)
+    return enriched
 
 
 def normalize_answer(value: str) -> str:
@@ -544,7 +723,78 @@ def parse_decimal_answer(value: str):
     return None
 
 
+def normalize_comparison_symbol(value: str) -> str:
+    return str(value).strip().replace("＜", "<").replace("＞", ">")
+
+
+def is_eur_ct_answer(correct: str) -> bool:
+    return bool(re.fullmatch(r"\s*\d+\s*eur\s+\d+\s*ct\s*", str(correct).strip(), flags=re.IGNORECASE))
+
+
+def parse_eur_ct_answer(value: str):
+    match = re.fullmatch(r"\s*(\d+)\s*eur\s+(\d+)\s*ct\s*", str(value).strip(), flags=re.IGNORECASE)
+    if not match:
+        return None
+    return int(match.group(1)) * 100 + int(match.group(2))
+
+
+def render_eur_ct_inputs(key: str) -> str:
+    eur_col, ct_col, _ = st.columns([0.75, 0.75, 4.5])
+    with eur_col:
+        eur = st.text_input("Eur", key=f"{key}_eur", placeholder="0", max_chars=4)
+    with ct_col:
+        ct = st.text_input("ct", key=f"{key}_ct", placeholder="0", max_chars=2)
+
+    if eur.strip() and ct.strip():
+        return f"{eur.strip()} Eur {ct.strip()} ct"
+    return ""
+
+
+def render_compact_answer_input(label: str, key: str, placeholder: str = "Tavo atsakymas", max_chars: int = 12) -> str:
+    answer_col, _ = st.columns([1.15, 4.85])
+    with answer_col:
+        return st.text_input(label, key=key, placeholder=placeholder, max_chars=max_chars)
+
+
+def is_largest_smallest_number_question(subject: str, correct: str) -> bool:
+    return (
+        "did" in normalize_answer(subject)
+        and "maz" in normalize_answer(subject)
+        and bool(re.fullmatch(r"\s*\d+\s*,\s*\d+\s*", str(correct)))
+    )
+
+
+def render_largest_smallest_inputs(key: str, correct: str) -> str:
+    expected_parts = split_expected_parts(correct)
+    expected_largest = expected_parts[0] if len(expected_parts) > 0 else ""
+    expected_smallest = expected_parts[1] if len(expected_parts) > 1 else ""
+
+    largest_col, smallest_col, _ = st.columns([0.95, 0.95, 4.1])
+    with largest_col:
+        largest = st.text_input("Didžiausias", key=f"{key}_largest", placeholder="000", max_chars=3)
+        if largest.strip() and expected_largest:
+            show_feedback(check_answer(largest, expected_largest))
+    with smallest_col:
+        smallest = st.text_input("Mažiausias", key=f"{key}_smallest", placeholder="000", max_chars=3)
+        if smallest.strip() and expected_smallest:
+            show_feedback(check_answer(smallest, expected_smallest))
+
+    if largest.strip() and smallest.strip():
+        return f"{largest.strip()}, {smallest.strip()}"
+    return ""
+
+
 def check_answer(answer: str, correct: str) -> bool:
+    answer_symbol = normalize_comparison_symbol(answer)
+    correct_symbol = normalize_comparison_symbol(correct)
+    if answer_symbol in {"<", ">", "="} or correct_symbol in {"<", ">", "="}:
+        return answer_symbol == correct_symbol
+
+    answer_money = parse_eur_ct_answer(answer)
+    correct_money = parse_eur_ct_answer(correct)
+    if answer_money is not None and correct_money is not None:
+        return answer_money == correct_money
+
     answer_number = parse_decimal_answer(answer)
     correct_number = parse_decimal_answer(correct)
     if answer_number is not None and correct_number is not None:
@@ -817,11 +1067,17 @@ def build_session_summary(df: pd.DataFrame) -> pd.DataFrame:
     detailed = detailed_log_rows(df)
     if detailed.empty:
         return pd.DataFrame()
+    if "Sprendimo data" not in detailed.columns:
+        detailed["Sprendimo data"] = ""
+    if "Sprendimo trukmė" not in detailed.columns:
+        detailed["Sprendimo trukmė"] = ""
 
     grouped = (
         detailed.groupby("Sesija", dropna=False)
         .agg(
             Laikas=("Laikas", "first"),
+            Sprendimo_data=("Sprendimo data", "first"),
+            Sprendimo_trukmė=("Sprendimo trukmė", "first"),
             Režimas=("Režimas", "first"),
             Rinkinys=("Rinkinys", "first"),
             Diena=("Diena", "first"),
@@ -886,8 +1142,15 @@ def section_icon(subject: str, fallback: str = "📌") -> str:
 
 
 def render_daily_lessons(classrooms, child_name: str, show_answers: bool, settings):
-    if "daily_class" not in st.session_state:
-        st.session_state.daily_class = "1 klasė"
+    if (
+        "daily_class" not in st.session_state
+        or (
+            not st.session_state.get("daily_class_user_selected", False)
+            and st.session_state.daily_class == "1 klasė"
+            and classrooms.get("2 klasė")
+        )
+    ):
+        st.session_state.daily_class = "2 klasė" if classrooms.get("2 klasė") else "1 klasė"
 
     st.sidebar.markdown("### Klasė")
     class_cols = st.sidebar.columns(2)
@@ -901,6 +1164,7 @@ def render_daily_lessons(classrooms, child_name: str, show_answers: bool, settin
                 use_container_width=True,
             ):
                 st.session_state.daily_class = class_label
+                st.session_state.daily_class_user_selected = True
                 st.rerun()
 
     class_name = st.session_state.daily_class
@@ -912,7 +1176,19 @@ def render_daily_lessons(classrooms, child_name: str, show_answers: bool, settin
         return
 
     completed_rinkiniai = set(settings.get("completed_rinkiniai", [])) if class_name == "1 klasė" else set()
-    active_weeks = [week for week in data.keys() if week not in completed_rinkiniai]
+    completed_lessons = set(settings.get("completed_lessons", []))
+    show_completed_lessons = st.sidebar.checkbox("Rodyti atliktas dienas", value=False)
+    active_weeks = []
+    for week_name, week_days in data.items():
+        if week_name in completed_rinkiniai:
+            continue
+        visible_days = [
+            day_name
+            for day_name in week_days.keys()
+            if show_completed_lessons or lesson_key(class_name, week_name, day_name) not in completed_lessons
+        ]
+        if visible_days:
+            active_weeks.append(week_name)
 
     if not data:
         st.error("Nerastas arba tuščias tasks.json failas.")
@@ -925,10 +1201,38 @@ def render_daily_lessons(classrooms, child_name: str, show_answers: bool, settin
 
     st.sidebar.markdown("### Pamoka")
     week = st.sidebar.selectbox("Rinkinys", active_weeks, key=f"week_{class_name}")
-    day = st.sidebar.selectbox("Diena", list(data[week].keys()), key=f"day_{class_name}_{week}")
+    available_days = [
+        day_name
+        for day_name in data[week].keys()
+        if show_completed_lessons or lesson_key(class_name, week, day_name) not in completed_lessons
+    ]
+    day = st.sidebar.selectbox("Diena", available_days, key=f"day_{class_name}_{week}")
     sections = data[week][day]
+    current_lesson_key = lesson_key(class_name, week, day)
+    lesson_done = current_lesson_key in completed_lessons
+    repeat_key = f"repeat_done_{current_lesson_key}"
+    daily_meta_prefix = f"daily_meta_{class_name}_{week}_{day}"
 
     hero(f"{child_name}: {week} · {day}", "Kasdienės užduotys ir pamokos viename lange.")
+    if lesson_done:
+        st.success("Ši diena jau pažymėta kaip atlikta.")
+        if not st.session_state.get(repeat_key, False):
+            st.warning("Šitas rinkinys ir diena jau spręsti. Ar nori spręsti iš naujo?")
+            c_repeat, c_skip = st.columns([1, 2])
+            with c_repeat:
+                if st.button("Spręsti iš naujo", type="primary", use_container_width=True):
+                    st.session_state[repeat_key] = True
+                    st.session_state[f"{daily_meta_prefix}_stage"] = "date"
+                    st.session_state.pop(f"{daily_meta_prefix}_metadata", None)
+                    start_lesson_timer(current_lesson_key, reset=True)
+                    st.rerun()
+            with c_skip:
+                st.info("Jei nenori kartoti, šone pasirink kitą dieną arba nuimk „Rodyti atliktas dienas“.")
+            return
+    daily_metadata = render_daily_start_form(class_name, week, day, current_lesson_key)
+    if daily_metadata is None:
+        return
+    start_lesson_timer(current_lesson_key)
     progress_slot = st.empty()
 
     score = 0
@@ -994,6 +1298,29 @@ def render_daily_lessons(classrooms, child_name: str, show_answers: bool, settin
                             score += int(ok)
                             rows_to_log.append(log_row("Pamokos", week, day, subject, prompt, answer, correct, ok))
 
+            elif sec_type == "multiple_choice":
+                options_list = sec.get("options", [])
+                answers_list = sec.get("answers", [])
+                for i, prompt in enumerate(prompts):
+                    total += 1
+                    key = f"mc_{week}_{day}_{s_idx}_{i}"
+                    correct = answers_list[i] if i < len(answers_list) else ""
+                    options = options_list[i] if i < len(options_list) else []
+                    max_attempts = int(sec.get("max_attempts", 2))
+                    if options == ["<", ">", "="]:
+                        show_correct_answer(correct, show_answers)
+                        answer = render_comparison_buttons(prompt, correct, key, max_attempts=max_attempts)
+                    else:
+                        st.markdown(f'<div class="question">{prompt}</div>', unsafe_allow_html=True)
+                        show_correct_answer(correct, show_answers)
+                        answer = render_option_buttons(options, correct, key, max_attempts=max_attempts) if options else ""
+                    if answer:
+                        ok = check_answer(answer, correct)
+                        if options != ["<", ">", "="]:
+                            show_feedback(ok)
+                        score += int(ok)
+                        rows_to_log.append(log_row("Pamokos", week, day, subject, prompt, answer, correct, ok))
+
             elif sec_type == "area":
                 for i, prompt in enumerate(prompts):
                     total += 1
@@ -1016,8 +1343,16 @@ def render_daily_lessons(classrooms, child_name: str, show_answers: bool, settin
                         parent = st.container()
                     with parent:
                         st.markdown(f'<div class="question">{prompt}</div>', unsafe_allow_html=True)
-                        answer = st.text_input("Atsakymas", key=f"tx_{week}_{day}_{s_idx}_{i}", placeholder="Tavo atsakymas")
                         correct = sec.get("answers", [""])[i] if i < len(sec.get("answers", [])) else "Laisvas atsakymas"
+                        key = f"tx_{week}_{day}_{s_idx}_{i}"
+                        if "__ Eur __ ct" in str(prompt) and is_eur_ct_answer(correct):
+                            answer = render_eur_ct_inputs(key)
+                        elif is_largest_smallest_number_question(subject, correct):
+                            answer = render_largest_smallest_inputs(key, correct)
+                        elif checkable and subject.lower().startswith("matematika") and not cols:
+                            answer = render_compact_answer_input("Atsakymas", key=key, placeholder="0")
+                        else:
+                            answer = st.text_input("Atsakymas", key=key, placeholder="Tavo atsakymas")
                         if checkable:
                             show_correct_answer(correct, show_answers)
                         if answer:
@@ -1030,13 +1365,29 @@ def render_daily_lessons(classrooms, child_name: str, show_answers: bool, settin
         progress_panel(score, total, "Dienos pažanga", target=st, variant="main")
 
     st.divider()
-    col1, col2 = st.columns([1, 2])
+    col1, col_done, col2 = st.columns([1, 1, 2])
     with col1:
         if st.button("Išsaugoti dienos rezultatą", type="primary", use_container_width=True):
-            append_log(rows_to_log or [log_row("Pamokos", week, day, "Dienos rezultatas", "-", f"{score}/{total}", "-", score == total)])
+            duration_seconds = lesson_elapsed_seconds(current_lesson_key)
+            daily_metadata["duration_seconds"] = duration_seconds
+            daily_metadata["duration_text"] = format_duration(duration_seconds)
+            daily_rows = rows_to_log or [log_row("Pamokos", week, day, "Dienos rezultatas", "-", f"{score}/{total}", "-", score == total)]
+            daily_rows.append(daily_reading_log_row(week, day, daily_metadata))
+            append_log(with_daily_metadata(daily_rows, daily_metadata))
             st.success(f"Išsaugota: {score}/{total}")
+            st.caption(f"Sprendimo trukmė: {daily_metadata['duration_text']}")
             if total and score == total:
+                settings["completed_lessons"] = sorted(completed_lessons | {current_lesson_key})
+                save_settings(settings)
+                st.success("Diena automatiškai pažymėta kaip atlikta.")
                 st.balloons()
+    with col_done:
+        done_label = "Atlikta" if lesson_done else "Pažymėti atlikta"
+        if st.button(done_label, disabled=lesson_done, use_container_width=True):
+            settings["completed_lessons"] = sorted(completed_lessons | {current_lesson_key})
+            save_settings(settings)
+            st.success("Diena pažymėta kaip atlikta.")
+            st.rerun()
     with col2:
         render_metric("Šios dienos rezultatas", f"{score}/{total}", "Rezultatas skaičiuojamas pagal įrašytus atsakymus.")
 
@@ -1135,8 +1486,7 @@ def load_reading_progress():
         return pd.DataFrame()
 
     reading = df[
-        df["Režimas"].astype(str).eq("Vasaros užduotys")
-        & df["Užduotis"].astype(str).eq("Skaitymas")
+        df["Užduotis"].astype(str).eq("Skaitymas")
         & df["Klausimas"].astype(str).eq("Skaitymo žymėjimas")
     ].copy()
     if reading.empty:
@@ -1151,7 +1501,12 @@ def load_reading_progress():
 
     reading["Skaitymo minutės"] = pd.to_numeric(reading["Skaitymo minutės"], errors="coerce").fillna(0).astype(int)
     reading["Skaitymo puslapiai"] = pd.to_numeric(reading["Skaitymo puslapiai"], errors="coerce").fillna(0).astype(int)
-    reading["Data"] = pd.to_datetime(reading["Laikas"], errors="coerce").dt.date
+    if "Sprendimo data" in reading.columns:
+        solved_dates = pd.to_datetime(reading["Sprendimo data"], errors="coerce")
+        logged_dates = pd.to_datetime(reading["Laikas"], errors="coerce")
+        reading["Data"] = solved_dates.fillna(logged_dates).dt.date
+    else:
+        reading["Data"] = pd.to_datetime(reading["Laikas"], errors="coerce").dt.date
     return reading.dropna(subset=["Data"])
 
 
@@ -1221,7 +1576,8 @@ def render_option_buttons(options, correct, key, max_attempts=2, labels=None):
     st.session_state.setdefault(solved_key, False)
 
     locked = st.session_state[attempts_key] >= max_attempts or st.session_state[solved_key]
-    st.caption(f"Bandymai: {st.session_state[attempts_key]}/{max_attempts}")
+    attempts_left = max(0, max_attempts - st.session_state[attempts_key])
+    st.caption(f"Liko bandymų: {attempts_left}")
 
     columns = st.columns(min(len(options), 3))
     button_labels = labels or [str(option) for option in options]
@@ -1246,6 +1602,36 @@ def render_option_buttons(options, correct, key, max_attempts=2, labels=None):
     return st.session_state[answer_key]
 
 
+def render_comparison_buttons(prompt, correct, key, max_attempts=2):
+    answer_key = f"{key}_button_answer"
+    attempts_key = f"{key}_button_attempts"
+    solved_key = f"{key}_button_solved"
+
+    st.session_state.setdefault(answer_key, "")
+    st.session_state.setdefault(attempts_key, 0)
+    st.session_state.setdefault(solved_key, False)
+
+    locked = st.session_state[attempts_key] >= max_attempts or st.session_state[solved_key]
+    prompt_col, less_col, greater_col, equal_col, status_col = st.columns([4.2, 0.55, 0.55, 0.55, 1.25])
+    with prompt_col:
+        st.markdown(f'<div class="question" style="margin:.12rem 0;padding:.55rem .75rem;">{prompt}</div>', unsafe_allow_html=True)
+
+    for col, label, value in [(less_col, "<", "<"), (greater_col, "＞", ">"), (equal_col, "=", "=")]:
+        with col:
+            if st.button(label, key=f"{key}_comparison_{value}", disabled=locked, use_container_width=True):
+                st.session_state[answer_key] = value
+                st.session_state[attempts_key] = min(max_attempts, st.session_state[attempts_key] + 1)
+                st.session_state[solved_key] = check_answer(value, correct)
+
+    with status_col:
+        attempts_left = max(0, max_attempts - st.session_state[attempts_key])
+        st.caption(f"Liko: {attempts_left}")
+        if st.session_state[answer_key]:
+            show_feedback(check_answer(st.session_state[answer_key], correct))
+
+    return st.session_state[answer_key]
+
+
 def render_summer_question(task_type, question, key, show_answers):
     prompt = question.get("text", "")
     correct = question.get("answer", "")
@@ -1264,8 +1650,8 @@ def render_summer_question(task_type, question, key, show_answers):
             ["<", ">", "="],
             correct,
             key,
-            max_attempts=1,
-            labels=["Mažiau <", "Daugiau >", "Lygu ="],
+            max_attempts=2,
+            labels=["<", "＞", "="],
         )
     elif task_type == "number_input_check":
         answer = st.text_input("Atsakymas", key=key, placeholder="Įrašyk skaičių")
@@ -1554,7 +1940,7 @@ def render_parent_settings(data, child_name: str, settings):
 
                 with st.expander("Visos sesijos"):
                     st.dataframe(
-                        session_df[["Laikas", "Režimas", "Rinkinys", "Diena", "Teisingai", "Iš_viso", "Procentai"]],
+                        session_df[["Laikas", "Sprendimo_data", "Sprendimo_trukmė", "Režimas", "Rinkinys", "Diena", "Teisingai", "Iš_viso", "Procentai"]],
                         use_container_width=True,
                         hide_index=True,
                     )
@@ -1610,6 +1996,16 @@ def render_parent_settings(data, child_name: str, settings):
             st.dataframe(pd.DataFrame({"Rinkinys": active}), use_container_width=True, hide_index=True)
         else:
             st.warning("Visi rinkiniai paslėpti. Vaikas pamokų režime nematys pasirinkimų.")
+
+        st.markdown("#### Atliktos dienos")
+        completed_lessons = settings.get("completed_lessons", [])
+        st.caption(f"Pažymėta atliktų dienų: {len(completed_lessons)}")
+        if completed_lessons:
+            st.dataframe(pd.DataFrame({"Diena": completed_lessons}), use_container_width=True, hide_index=True)
+            if st.button("Išvalyti atliktas dienas", use_container_width=True):
+                settings["completed_lessons"] = []
+                save_settings(settings)
+                st.rerun()
 
         st.markdown("#### Nauji rinkiniai")
         st.info("Programoje jau yra Rinkinys 1-12. Nauji 1 klasės rinkiniai automatiškai atsiras čia ir bus rodomi vaikui, kol nepažymėsite jų užbaigtais.")
@@ -1672,12 +2068,13 @@ def render_extra_tools(data, numbers_db, logic_db, reasoning_db, child_name: str
 
 
 data = load_json_file("tasks.json")
+grade2_data = load_json_file("grade2_tasks.json")
 summer_data = load_json_file("summer_tasks.json")
 numbers_db = load_json_file("numbers.json")
 logic_db = load_json_file("logic.json")
 reasoning_db = load_json_file("reasoning.json")
 settings = load_settings()
-classrooms = {"1 klasė": data, "2 klasė": {}}
+classrooms = {"1 klasė": data, "2 klasė": grade2_data}
 
 st.sidebar.markdown("## ⭐ Kasdienės užduotys")
 
